@@ -1,0 +1,43 @@
+# =========================
+# FRONTEND
+# =========================
+**/node_modules/
+**/dist/
+
+# =========================
+# PYTHON
+# =========================
+**/__pycache__/
+*.pyc
+
+# Entornos virtuales
+venv/
+.env
+
+# =========================
+# EDITORES
+# =========================
+.vscode/
+
+# =========================
+# LOGS
+# =========================
+*.log
+
+# =========================
+# SISTEMA
+# =========================
+Thumbs.db
+.DS_Store
+
+# Base de datos SQLite
+*.sqlite3
+
+# Cache de Parcel
+.parcel-cache/
+
+# Cache de Vite
+.vite/
+
+# Archivos de entorno
+.env
