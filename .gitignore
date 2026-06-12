@@ -3,12 +3,14 @@
 # =========================
 **/node_modules/
 **/dist/
+.vite/
 
 # =========================
 # PYTHON
 # =========================
 **/__pycache__/
 *.pyc
+*.sqlite3
 
 # Entornos virtuales
 venv/
@@ -30,14 +32,12 @@ venv/
 Thumbs.db
 .DS_Store
 
-# Base de datos SQLite
-*.sqlite3
-
-# Cache de Parcel
+# =========================
+# CACHE
+# =========================
 .parcel-cache/
 
-# Cache de Vite
-.vite/
-
-# Archivos de entorno
-.env
+# =========================
+# RESPALDOS LOCALES
+# =========================
+PROYECTO_frontend/project_SICA_backup/

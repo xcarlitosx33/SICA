@@ -1,103 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="description" content="Web site created using Locofy" />
 
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Work Sans:wght@100;200;400;500&display=swap"
-    />
+    <title>sica</title>
   </head>
-  <body>
-    <div class="inicio-secion">
-      <img
-        class="inicio-secion-child"
-        loading="lazy"
-        alt=""
-        src="./public/Group-1@2x.png"
-      />
-
-      <section class="login-card">
-        <div class="frame-wrapper">
-          <div class="frame">
-            <div class="frame2">
-              <div class="frame3">
-                <div class="sica">
-                  <span class="sica-txt">
-                    <span class="span"> </span>
-                    <span class="sica2">S.I.C.A</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="login-card-inner">
-          <img
-            class="frame-child"
-            loading="lazy"
-            alt=""
-            src="./public/Group-12@2x.png"
-          />
-        </div>
-        <div class="bienvenido-de-nuevo">
-          <h1 class="bienvenido-de-nuevo2">Bienvenido de nuevo</h1>
-        </div>
-        <div class="ingresa-tus-credenciales-insti">
-          <div class="ingresa-tus-credenciales">
-            Ingresa tus credenciales institucionales para continuar.
-          </div>
-        </div>
-        <div class="email-field-group">
-          <div class="correo-electronico">Correo electronico</div>
-          <div class="mecha-protocol">
-            <div class="frame4">
-              <input
-                class="usuariosenaeduco"
-                placeholder="Usuario@sena.edu.co *."
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="password-field-group">
-          <div class="no-recuerdas-tu">¿No recuerdas tu contraseña?</div>
-          <div class="frame5">
-            <input
-              class="password-field-space"
-              placeholder="************."
-              type="text"
-            />
-
-            <h3 class="password-field-space-container">
-              <span class="span2"> </span>
-              <span class="span3">*.</span>
-            </h3>
-          </div>
-          <div class="contrasea">Contraseña</div>
-        </div>
-        <div class="remember-me-row">
-          <div class="recordar-mi-inicio">Recordar mi inicio de sesión</div>
-          <input class="rectangle-input" type="checkbox" />
-        </div>
-        <div class="action-buttons-row">
-          <div class="back-button">
-            <button class="continue-button">
-              <div class="volver">Volver</div>
-            </button>
-          </div>
-          <button class="password-field">
-            <div class="continuar">Continuar</div>
-          </button>
-        </div>
-      </section>
-    </div>
+  <body style="margin: 0; line-height: normal">
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
