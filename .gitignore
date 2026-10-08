@@ -31,9 +31,6 @@ __pycache__/
 backend/env/
 backend/.venv/
 
-# Django local database
-backend/sica.sqlite3
-*.sqlite3
 
 # Logs
 *.log
