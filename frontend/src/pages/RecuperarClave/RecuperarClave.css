@@ -1,0 +1,95 @@
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("/Confirmaci-n-de-Env-o-Unificada-S-I-C-A@3x.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Work Sans", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  color: #007832;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.contenido {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.centeredCard {
+  background-color: white;
+  border-radius: 24px;
+  max-width: 480px;
+  width: 100%;
+  padding: 40px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1b1c1c;
+}
+
+.mensaje {
+  font-size: 14px;
+  margin-bottom: 24px;
+  color: #3f4a3e;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  box-sizing: border-box;
+}
+
+.btnPrincipal {
+  width: 100%;
+  padding: 12px;
+  background-color: #007832;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.btnPrincipal:hover {
+  background-color: #269e59;
+}
+
+.btnSecundario {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  border: none;
+  color: #007832;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
