@@ -3,7 +3,6 @@
 # React + Vite + Django
 # ==========================================
 
-
 # ==========================================
 # FRONTEND - React / Vite
 # ==========================================
@@ -29,12 +28,12 @@ __pycache__/
 *$py.class
 
 # Virtual environment
-backend/venv/
+backend/env/
 backend/.venv/
 
 # Django local database
-backend/db.sqlite3
-backend/db.sqlite3-journal
+backend/sica.sqlite3
+*.sqlite3
 
 # Logs
 *.log
