@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap");
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* Common Style Variables */
+
+  /* Color */
+  --color-darkslategray: #3f4a3e;
+  --color-firebrick: #ba1a1a;
+  --color-gray: #1b1c1c;
+  --color-mediumseagreen-100: #269e59;
+  --color-mediumseagreen-200: rgba(38, 158, 89, 0.09);
+  --color-seagreen: #007832;
+  --color-silver-100: #becabb;
+  --color-silver-200: rgba(190, 202, 187, 0.3);
+  --color-white: #fff;
+  --color-whitesmoke: rgba(245, 243, 243, 0.3);
+
+  /* Gap */
+  --gap-8: 8px;
+
+  /* Padding */
+  --padding-0: 0px;
+  --padding-12: 12px;
+  --padding-16: 16px;
+  --padding-20: 20px;
+  --padding-24: 24px;
+  --padding-32: 32px;
+  --padding-48: 48px;
+
+  /* Font */
+  --font-work-sans: Work Sans;
+
+  /* FontSize */
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-19: 19px;
+
+  /* WidthHeights */
+  --height-19: 19px;
+  --width-11: 11px;
+
+  /* LineHeights */
+  --lh-16: 16px;
+  --lh-24: 24px;
+  --lh-28: 28px;
+  --lh-32: 32px;
+
+  /* Extras para ConfirmacionEnvio */
+
+--color-darkgreen: #007832;
+--color-silver: #becabb;
+--color-gainsboro: #d9d9d9;
+
+--color-seagreen-100: #269e59;
+--color-seagreen-200: rgba(38, 158, 89, 0.09);
+
+--fs-12: 12px;
+--fs-32: 32px;
+
+--height-32: 32px;
+--height-40: 40px;
+--height-48: 48px;
+
+--ls-0_14: 0.14px;
+--lh-20: 20px;
+--lh-40: 40px;
+
+--br-48: 48px;
+--br-9999: 9999px;
+
+--shadow-drop: 0px 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+.link2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;       /* quita el borde negro */
+  background: none;   /* quita el fondo del botón */
+  cursor: pointer;    /* pone el cursor de mano */
+  font-family: var(--font-work-sans);
+  font-size: var(--fs-16);
+  color: var(--color-darkslategray); /* color igual que antes */
+}
+
+.linkNo {
+  color: var(--color-seagreen); /* verde */
+  text-decoration: none;         /* quita el subrayado si quieres */
+  cursor: pointer;
+}
+
+.linkNo:hover {
+  text-decoration: underline;    /* opcional, subrayado al pasar el mouse */
+}

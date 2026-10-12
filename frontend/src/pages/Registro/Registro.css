@@ -1,0 +1,50 @@
+.navInternalTabs {
+  display: flex;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.link,
+.link2 {
+  flex: 1;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 16px 0;
+  font-family: var(--font-work-sans);
+  font-size: var(--fs-16);
+  font-weight: 400;
+  color: var(--color-darkslategray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link.activo,
+.link2.activo {
+  color: var(--color-seagreen);
+  font-weight: 600;
+  border-bottom: 3px solid var(--color-seagreen);
+  margin-bottom: -1px;
+}
+
+.passwordRules {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.passwordRules div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #1b1c1c;
+  font-weight: 400;
+}
+
+.passwordRules input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+}
