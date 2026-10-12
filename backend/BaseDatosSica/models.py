@@ -20,6 +20,9 @@ class Usuario(models.Model):
     email = models.EmailField(unique=True)
     genero = models.CharField(max_length=20)
     estado = models.BooleanField(default=True) 
+    password = models.CharField(max_length=128, null=True, blank=True)
+    intentos_fallidos = models.PositiveIntegerField(default=0)
+    bloqueado = models.BooleanField(default=False)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     fecha_actualizacion = models.DateTimeField(auto_now=True)
 
