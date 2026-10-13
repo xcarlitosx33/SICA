@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'BaseDatosSica',
     'usuarios',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
