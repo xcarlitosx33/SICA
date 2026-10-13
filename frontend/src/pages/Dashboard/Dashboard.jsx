@@ -5,12 +5,12 @@ function Dashboard() {
     <div className="pagina">
 
       <header className="header">
-        <h2>Dashboard Administrativo</h2>
+        <h2>Bienvenido a SICA</h2>
       </header>
 
       <main className="contenido">
         <p>
-          ¡Bienvenido al Dashboard! Aquí irá todo el contenido administrativo.
+          Bienvenido al Sistema Integral de Corresponsabilidad de Ambientes.
         </p>
       </main>
 
