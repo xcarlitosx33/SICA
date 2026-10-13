@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'BaseDatosSica', 
+    'rest_framework',
+    'BaseDatosSica',
+    'usuarios',
 ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
