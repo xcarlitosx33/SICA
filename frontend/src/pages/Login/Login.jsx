@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import fondoSica from "../../assets/imagenes/fondo_sica.png";
+import logoSica from "../../assets/imagenes/Logo-Login.png";
+
 import "./Login.css";
 
 function Login() {
@@ -8,281 +11,238 @@ function Login() {
 
   const [documento, setDocumento] = useState("");
   const [password, setPassword] = useState("");
+  const [mostrarPassword, setMostrarPassword] = useState(false);
+  const [recordarSesion, setRecordarSesion] = useState(false);
   const [mensaje, setMensaje] = useState("");
-  const [tipoMensaje, setTipoMensaje] = useState("");
-
-  function irRegistro() {
-    navigate("/registro");
-  }
-
-  function irRecuperar() {
-    navigate("/recuperar");
-  }
-
-  function volverInicio() {
-    navigate("/");
-  }
+  const [cargando, setCargando] = useState(false);
 
   async function login(evento) {
     evento.preventDefault();
+    setMensaje("");
 
-    const res = await fetch("http://127.0.0.1:8000/api/login/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        documento: documento,
-        password: password,
-      }),
-    });
+    if (!documento.trim() || !password) {
+      setMensaje("Ingresa tu documento y tu contraseña.");
+      return;
+    }
 
-    const data = await res.json();
+    setCargando(true);
 
-    console.log("RESPUESTA:", data);
+    try {
+      const respuesta = await fetch("http://127.0.0.1:8000/api/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          documento: documento.trim(),
+          password: password,
+        }),
+      });
 
-    setMensaje(data.mensaje);
+      const data = await respuesta.json();
 
-    setTipoMensaje(
-      data.mensaje === "Bienvenido, al sistema SICA"
-        ? "success"
-        : "error"
-    );
+      if (!respuesta.ok) {
+        setMensaje(data.mensaje || "No fue posible iniciar sesión.");
+        return;
+      }
 
-    if (data.mensaje === "Bienvenido, al sistema SICA") {
-      setTimeout(function () {
+      setMensaje(data.mensaje || "Respuesta recibida del servidor.");
+
+      if (data.mensaje === "Bienvenido, al sistema SICA") {
+        if (recordarSesion) {
+          sessionStorage.removeItem("sicaSesion");
+          localStorage.setItem("sicaSesion", "recordar");
+        } else {
+          localStorage.removeItem("sicaSesion");
+          sessionStorage.setItem("sicaSesion", "temporal");
+        }
+
         navigate("/dashboard");
-      }, 1000);
+      }
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error);
+
+      setMensaje(
+        "No se pudo conectar con el servidor. Comprueba que Django esté ejecutándose."
+      );
+    } finally {
+      setCargando(false);
     }
   }
 
   return (
-    <div className="mainContentParent">
-      <main className="mainContent">
-        <div className="container">
-          <div className="loginCard">
-
-            {/* Tabs */}
-            <div className="navInternalTabs">
-
-              <button
-                className="link"
-                type="button"
-                onClick={volverInicio}
-              >
-                <div className="text">Iniciar sesión</div>
-              </button>
-
-              <button
-                className="link2"
-                type="button"
-                onClick={irRegistro}
-              >
-                <div className="text">Registrarse</div>
-              </button>
-
+    <main
+      className="loginPage"
+      style={{ backgroundImage: `url("${fondoSica}")` }}
+    >
+      <section className="loginCard">
+        {/* Panel de identidad de SICA */}
+        <aside className="loginBrand">
+          <div className="loginBrandContent">
+            <div className="loginLogoContainer">
+              <img
+                className="loginLogo"
+                src={logoSica}
+                alt="Logo SICA"
+              />
             </div>
 
-            {/* Branding */}
-            <section className="container2">
+            <p className="loginBrandDescription">
+              SISTEMA INTEGRAL DE
+              <br />
+              CORRESPONSABILIDAD DE AMBIENTE
+            </p>
+          </div>
+        </aside>
 
-              <div className="brandingInsideCardmargin">
-                <div className="brandingInsideCard">
+        {/* Formulario de inicio de sesión */}
+        <section className="loginFormPanel">
+          <div className="loginFormContent">
+            <div className="loginIcon" aria-hidden="true">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M13 4h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5" />
+                <path d="M3 12h12" />
+                <path d="m10 7 5 5-5 5" />
+              </svg>
+            </div>
 
-                  <img
-                    className="senaLogoIcon"
-                    loading="lazy"
-                    alt="SENA Logo"
-                    src="/SENA-Logo@2x.png"
+            <h1>Iniciar sesión</h1>
+
+            <p className="loginSubtitle">
+              Ingrese su documento y contraseña del SENA Sofia Plus
+            </p>
+
+            <form onSubmit={login}>
+              {/* Documento */}
+              <div className="loginField">
+                <input
+                  id="documento"
+                  name="documento"
+                  type="text"
+                  autoComplete="username"
+                  aria-label="Documento de identidad"
+                  placeholder="Ej. 12345678"
+                  value={documento}
+                  onChange={(evento) => setDocumento(evento.target.value)}
+                  required
+                />
+              </div>
+
+              {/* Contraseña */}
+              <div className="loginField">
+                <label htmlFor="password">Contraseña</label>
+
+                <div className="loginPasswordInput">
+                  <input
+                    id="password"
+                    name="password"
+                    type={mostrarPassword ? "text" : "password"}
+                    autoComplete="current-password"
+                    placeholder="Ingresa tu contraseña"
+                    value={password}
+                    onChange={(evento) => setPassword(evento.target.value)}
+                    required
                   />
 
-                  <h3 className="heading1">S.I.C.A</h3>
+                  <button
+                    className="loginShowPassword"
+                    type="button"
+                    aria-label={
+                      mostrarPassword
+                        ? "Ocultar contraseña"
+                        : "Mostrar contraseña"
+                    }
+                    onClick={() => setMostrarPassword(!mostrarPassword)}
+                  >
+                    {mostrarPassword ? (
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M3 3l18 18" />
+                        <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8" />
+                        <path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c5 0 8.5 5 9 7a12.7 12.7 0 0 1-3.1 4.7" />
+                        <path d="M6.2 6.2C3.8 7.8 2.3 10.4 2 12c.5 2 4 7 10 7a10 10 0 0 0 3-.5" />
+                      </svg>
+                    ) : (
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    )}
+                  </button>
+                </div>
 
+                {/* Recuperar contraseña */}
+                <div className="loginForgotContainer">
+                  <button
+                    className="loginForgotLink"
+                    type="button"
+                    onClick={() => navigate("/recuperar")}
+                  >
+                    ¿Olvidaste tu contraseña?
+                  </button>
                 </div>
               </div>
 
-              <div className="margin">
-                <div className="container3">
+              {/* Recordar sesión */}
+              <label className="loginRemember">
+                <input
+                  type="checkbox"
+                  checked={recordarSesion}
+                  onChange={(evento) =>
+                    setRecordarSesion(evento.target.checked)
+                  }
+                />
+                <span>Recordar sesión</span>
+              </label>
 
-                  <div className="heading2">
-                    <h1 className="text3">
-                      Bienvenido de nuevo
-                    </h1>
-                  </div>
-
-                  <div className="container4">
-                    <div className="text4">
-                      Ingresa tus credenciales institucionales
-                      <br />
-                      para continuar.
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
+              {/* Mensajes del servidor */}
               {mensaje && (
-                <div
-                  className={tipoMensaje}
-                  style={{
-                    marginBottom: "20px",
-                    textAlign: "center",
-                    fontWeight: "bold",
-                  }}
-                >
+                <p className="loginMessage" role="status">
                   {mensaje}
-                </div>
+                </p>
               )}
 
-              {/* Formulario */}
-              <div className="formmargin">
-
-                <form className="form" onSubmit={login}>
-
-                  {/* Documento */}
-                  <div className="emailField">
-
-                    <div className="label">
-                      <div className="text5">
-                        Documento
-                      </div>
-                    </div>
-
-                    <div className="container5">
-
-                      <div className="input">
-                        <input
-                          className="container6"
-                          value={documento}
-                          onChange={function (evento) {
-                            setDocumento(evento.target.value);
-                          }}
-                          placeholder="ejemplo:123456789*"
-                          type="text"
-                        />
-                      </div>
-
-                      <div className="container7">
-                        <div className="text6">*</div>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  {/* Contraseña */}
-                  <div className="emailField">
-
-                    <div className="label">
-                      <div className="text5">
-                        Contraseña
-                      </div>
-                    </div>
-
-                    <div className="container5">
-
-                      <div className="input">
-                        <input
-                          className="container6"
-                          value={password}
-                          onChange={function (evento) {
-                            setPassword(evento.target.value);
-                          }}
-                          placeholder="*************"
-                          type="password"
-                        />
-                      </div>
-
-                    </div>
-
-                    {/* Recuperar contraseña */}
-                    <div className="container11">
-
-                      <a
-                        className="linkNo"
-                        href="/recuperar"
-                        onClick={function (evento) {
-                          evento.preventDefault();
-                          irRecuperar();
-                        }}
-                      >
-                        ¿No recuerdas tu contraseña?
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                  {/* Recordar sesión */}
-                  <div className="checkbox">
-
-                    <div className="label3">
-
-                      <input
-                        className="input3"
-                        type="checkbox"
-                      />
-
-                      <div className="margin2">
-                        <div className="container12">
-                          <div className="text9">
-                            Recordar mi inicio de sesión
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  {/* Botones */}
-                  <div className="actions">
-
-                    <button
-                      className="button"
-                      type="button"
-                      onClick={volverInicio}
-                    >
-                      <div className="text10">
-                        Volver
-                      </div>
-                    </button>
-
-                    <button
-                      className="button2"
-                      type="submit"
-                    >
-                      <div className="text11">
-                        Continuar
-                      </div>
-                    </button>
-
-                  </div>
-
-                </form>
-
-              </div>
-
-            </section>
-
+              {/* Botón de acceso */}
+              <button
+                className="loginSubmit"
+                type="submit"
+                disabled={cargando}
+              >
+                {cargando ? "Ingresando..." : "Iniciar sesión →"}
+              </button>
+            </form>
           </div>
-        </div>
-      </main>
-
-      {/* Footer */}
-      <section className="footer">
-
-        <div className="margin3">
-
-          <div className="text4">
-            © Servicio Nacional de Aprendizaje SENA
-          </div>
-
-        </div>
-
+        </section>
       </section>
-
-    </div>
+    </main>
   );
 }
 
