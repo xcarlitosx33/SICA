@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import api from "../../services/api.js";
+
 import "./Login.css";
 
 function Login() {
@@ -23,38 +25,23 @@ function Login() {
     navigate("/");
   }
 
-  async function login(evento) {
-    evento.preventDefault();
+async function login(evento) {
+  evento.preventDefault();
 
-    const res = await fetch("http://127.0.0.1:8000/api/login/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        documento: documento,
-        password: password,
-      }),
+  try {
+    const res = await api.post("login/", {
+      num_doc: documento,
+      password: password,
     });
 
-    const data = await res.json();
+    console.log("RESPUESTA:", res.data);
 
-    console.log("RESPUESTA:", data);
+    navigate("/dashboard");
 
-    setMensaje(data.mensaje);
-
-    setTipoMensaje(
-      data.mensaje === "Bienvenido, al sistema SICA"
-        ? "success"
-        : "error"
-    );
-
-    if (data.mensaje === "Bienvenido, al sistema SICA") {
-      setTimeout(function () {
-        navigate("/dashboard");
-      }, 1000);
-    }
+  } catch (error) {
+    console.log("ERROR:", error.response?.data);
   }
+}
 
   return (
     <div className="mainContentParent">
