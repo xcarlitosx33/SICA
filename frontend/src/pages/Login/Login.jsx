@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import fondoSica from "../../assets/imagenes/fondo_sica.png";
 import logoSica from "../../assets/imagenes/Logo-Login.png";
 
+import api from "../../services/api.js";
+
 import "./Login.css";
 
 function Login() {
