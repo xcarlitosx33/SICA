@@ -1,23 +1,26 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import fondoSica from "../../assets/imagenes/fondo_sica.png";
+import logoSica from "../../assets/imagenes/Logo-Login.png";
+
 import "./RecuperarClave.css";
 
 function RecuperarClave() {
   const navigate = useNavigate();
 
-  const [correo, setCorreo] = useState("");
+  const [documento, setDocumento] = useState("");
 
-  function enviarEnlace() {
-    if (!correo) {
-      alert("Por favor ingresa tu correo institucional");
+  function enviarEnlace(evento) {
+    evento.preventDefault();
+
+    if (!documento.trim()) {
+      alert("Por favor ingresa tu documento de identidad.");
       return;
     }
 
-    // Guardamos el correo para usarlo en la pantalla de confirmación
-    localStorage.setItem("correoRecuperacion", correo);
+    localStorage.setItem("documentoRecuperacion", documento.trim());
 
-    // Vamos a la pantalla de confirmación
     navigate("/confirmacion");
   }
 
@@ -26,60 +29,65 @@ function RecuperarClave() {
   }
 
   return (
-    <div className="pagina">
+    <main
+      className="recuperarPagina"
+      style={{ backgroundImage: `url("${fondoSica}")` }}
+    >
+      <section className="recuperarTarjeta">
+        <div className="recuperarLogoContenedor">
+          <img
+            className="recuperarLogo"
+            src={logoSica}
+            alt="Logo SICA"
+          />
+        </div>
 
-      {/* Header */}
-      <header className="header">
-        <h2>S.I.C.A.</h2>
-      </header>
+        <h1 className="recuperarTitulo">
+          Recuperar contraseña
+        </h1>
 
-      {/* Main content */}
-      <main className="contenido">
+        <p className="recuperarMensaje">
+          Ingresa tu documento de identidad para recuperar el acceso a tu cuenta.
+        </p>
 
-        <div className="centeredCard">
-
-          <h1 className="titulo">
-            ¿Olvidaste tu contraseña?
-          </h1>
-
-          <p className="mensaje">
-            Ingresa tu correo institucional para recibir un enlace de recuperación.
-          </p>
+        <form className="recuperarFormulario" onSubmit={enviarEnlace}>
+          <label
+            className="recuperarEtiqueta"
+            htmlFor="documentoRecuperacion"
+          >
+            Ingresar documento
+          </label>
 
           <input
-            value={correo}
-            onChange={(evento) => setCorreo(evento.target.value)}
-            type="email"
-            placeholder="Correo institucional"
-            className="input"
+            id="documentoRecuperacion"
+            name="documento"
+            type="text"
+            inputMode="numeric"
+            autoComplete="off"
+            placeholder="Ej. 12345678"
+            className="recuperarInput"
+            value={documento}
+            onChange={(evento) => setDocumento(evento.target.value)}
+            required
           />
 
           <button
-            className="btnPrincipal"
-            type="button"
-            onClick={enviarEnlace}
+            className="recuperarBotonPrincipal"
+            type="submit"
           >
-            Enviar enlace de recuperación →
+            Continuar →
           </button>
+        </form>
 
-          <button
-            className="btnSecundario"
-            type="button"
-            onClick={volverLogin}
-          >
-            Volver al inicio de sesión
-          </button>
-
-        </div>
-
-      </main>
-
-      {/* Footer */}
-      <footer className="footer">
-        S.I.C.A | © 2024 Servicio Nacional de Aprendizaje SENA.
-      </footer>
-
-    </div>
+        <button
+          className="recuperarBotonSecundario"
+          type="button"
+          onClick={volverLogin}
+        >
+          Volver al inicio de sesión
+        </button>
+      </section>
+    </main>
   );
 }
 

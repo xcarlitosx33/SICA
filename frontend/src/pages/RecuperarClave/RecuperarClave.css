@@ -1,95 +1,214 @@
-.pagina {
+/* Página de recuperación */
+.recuperarPagina {
   min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  background-image: url("/Confirmaci-n-de-Env-o-Unificada-S-I-C-A@3x.png");
+  justify-content: center;
+  align-items: center;
+  padding: 32px 20px;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   font-family: "Work Sans", sans-serif;
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
-  color: #007832;
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.contenido {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.centeredCard {
-  background-color: white;
-  border-radius: 24px;
-  max-width: 480px;
+/* Tarjeta principal */
+.recuperarTarjeta {
   width: 100%;
-  padding: 40px 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-width: 600px;
+  box-sizing: border-box;
+  padding: 36px 44px 32px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background-color: #ffffff;
+  border-top: 3px solid #007832;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+
+/* Contenedor verde del logo */
+.recuperarLogoContenedor {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #005b35;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+}
+
+/* Logo original de SICA */
+.recuperarLogo {
+  display: block;
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+}
+
+/* Título */
+.recuperarTitulo {
+  margin: 0 0 12px;
+  color: #17221c;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
   text-align: center;
 }
 
-.titulo {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #1b1c1c;
-}
+/* Texto descriptivo */
+.recuperarMensaje {
+  max-width: 440px;
+  margin: 0 0 24px;
 
-.mensaje {
+  color: #68736b;
   font-size: 14px;
-  margin-bottom: 24px;
-  color: #3f4a3e;
+  line-height: 1.6;
+  text-align: center;
 }
 
-.input {
+/* Formulario */
+.recuperarFormulario {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Etiqueta del documento */
+.recuperarEtiqueta {
+  margin-bottom: 8px;
+  color: #17221c;
   font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 9999px;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* Campo de documento */
+.recuperarInput {
+  width: 100%;
+  height: 48px;
   box-sizing: border-box;
-}
+  margin-bottom: 16px;
+  padding: 0 14px;
 
-.btnPrincipal {
-  width: 100%;
-  padding: 12px;
-  background-color: #007832;
-  color: white;
-  border: none;
-  border-radius: 9999px;
-  margin-bottom: 12px;
-  cursor: pointer;
-}
+  color: #17221c;
+  background-color: #ffffff;
+  border: 1px solid #cbd5ce;
+  border-radius: 9px;
+  outline: none;
 
-.btnPrincipal:hover {
-  background-color: #269e59;
-}
-
-.btnSecundario {
-  width: 100%;
-  padding: 12px;
-  background-color: transparent;
-  border: none;
-  color: #007832;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.footer {
-  text-align: center;
-  padding: 20px;
+  font-family: inherit;
   font-size: 14px;
-  opacity: 0.7;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recuperarInput::placeholder {
+  color: #9aa6b5;
+}
+
+.recuperarInput:focus {
+  border-color: #007832;
+  box-shadow: 0 0 0 3px rgba(0, 120, 50, 0.12);
+}
+
+/* Botón principal */
+.recuperarBotonPrincipal {
+  width: 100%;
+  min-height: 48px;
+  margin-bottom: 14px;
+  padding: 12px 16px;
+
+  color: #ffffff;
+  background-color: #007832;
+  border: none;
+  border-radius: 9px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.recuperarBotonPrincipal:hover {
+  background-color: #00652b;
+}
+
+.recuperarBotonPrincipal:focus-visible,
+.recuperarBotonSecundario:focus-visible {
+  outline: 3px solid rgba(0, 120, 50, 0.3);
+  outline-offset: 3px;
+}
+
+/* Enlace para volver al login */
+.recuperarBotonSecundario {
+  padding: 8px 12px;
+
+  color: #007832;
+  background: transparent;
+  border: none;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: center;
+  cursor: pointer;
+}
+
+.recuperarBotonSecundario:hover {
+  color: #005b35;
+  text-decoration: underline;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 600px) {
+  .recuperarPagina {
+    padding: 20px 16px;
+  }
+
+  .recuperarTarjeta {
+    max-width: 460px;
+    padding: 28px 22px 24px;
+    border-radius: 14px;
+  }
+
+  .recuperarLogoContenedor {
+    width: 104px;
+    height: 104px;
+    margin-bottom: 18px;
+    border-radius: 16px;
+  }
+
+  .recuperarLogo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .recuperarTitulo {
+    font-size: 24px;
+  }
+
+  .recuperarMensaje {
+    font-size: 13px;
+  }
+}
+
+/* Pantallas con poca altura */
+@media (max-height: 650px) {
+  .recuperarPagina {
+    align-items: flex-start;
+  }
 }
