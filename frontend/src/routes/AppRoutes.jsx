@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../pages/Login/Login";
 import RecuperarClave from "../pages/RecuperarClave/RecuperarClave";
 import EnlaceEnviado from "../pages/EnlaceEnviado/EnlaceEnviado";
-import Dashboard from "../pages/Dashboard/Dashboard";
 
 function AppRoutes() {
   return (
@@ -12,7 +11,6 @@ function AppRoutes() {
         <Route path="/" element={<Login />} />
         <Route path="/recuperar" element={<RecuperarClave />} />
         <Route path="/confirmacion" element={<EnlaceEnviado />} />
-        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
