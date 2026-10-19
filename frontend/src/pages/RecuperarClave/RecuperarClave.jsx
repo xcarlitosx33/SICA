@@ -11,18 +11,31 @@ function RecuperarClave() {
 
   const [documento, setDocumento] = useState("");
 
-  function enviarEnlace(evento) {
-    evento.preventDefault();
+function enviarEnlace(evento) {
+  evento.preventDefault();
 
-    if (!documento.trim()) {
-      alert("Por favor ingresa tu documento de identidad.");
-      return;
-    }
+  const documentoLimpio = documento.trim();
 
-    localStorage.setItem("documentoRecuperacion", documento.trim());
-
-    navigate("/confirmacion");
+  if (!documentoLimpio) {
+    alert("Por favor ingresa tu documento de identidad.");
+    return;
   }
+
+  if (!/^\d+$/.test(documentoLimpio)) {
+    alert("El documento debe contener únicamente números.");
+    return;
+  }
+
+  if (documentoLimpio.length < 6 || documentoLimpio.length > 12) {
+    alert("Ingresa un documento de entre 6 y 12 dígitos.");
+    return;
+  }
+
+  localStorage.setItem("documentoRecuperacion", documentoLimpio);
+
+  navigate("/confirmacion");
+}
+
 
   function volverLogin() {
     navigate("/");
@@ -63,6 +76,7 @@ function RecuperarClave() {
             name="documento"
             type="text"
             inputMode="numeric"
+            maxLength={12}
             autoComplete="off"
             placeholder="Ej. 12345678"
             className="recuperarInput"

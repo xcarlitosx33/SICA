@@ -3,7 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/Confirmaci-n-de-Env-o-Unificada-S-I-C-A@3x.png");
+  padding: 24px 16px;
+  box-sizing: border-box;
+  background-image: url("../../assets/imagenes/fondo_sica.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -15,8 +17,9 @@
   max-width: 480px;
   padding: 40px 30px;
   background-color: #fff;
+  border: 1px solid rgba(0, 120, 50, 0.06);
   border-radius: 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 35px rgba(0, 48, 25, 0.14);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,10 +27,12 @@
   box-sizing: border-box;
 }
 
-.marginIcon {
-  width: 70px;
-  height: auto;
-  margin-bottom: 20px;
+.margin {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
 }
 
 .heading1 {
@@ -37,7 +42,8 @@
 .text {
   font-size: 24px;
   font-weight: 600;
-  color: #1b1c1c;
+  line-height: 1.3;
+  color: #18312a;
   margin: 0;
 }
 
@@ -45,57 +51,152 @@
   margin-bottom: 24px;
   font-size: 14px;
   color: #3f4a3e;
-  line-height: 20px;
+  line-height: 1.6;
 }
 
 .background {
-  background-color: #f5f5f5;
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  background-color: #f5f7f5;
   padding: 12px 20px;
+  border: 1px solid #edf1ed;
   border-radius: 9999px;
   margin-bottom: 24px;
-  width: fit-content;
   font-weight: 500;
   color: #007832;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .container3 {
   margin-bottom: 24px;
   font-size: 12px;
-  opacity: 0.7;
+  line-height: 1.5;
+  color: #65756d;
+}
+
+.text4 {
+  margin: 0;
 }
 
 .container4 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 16px;
+  gap: 14px;
+}
+
+.button,
+.button2 {
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 16px;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .button {
-  width: 100%;
-  padding: 12px;
   background-color: #007832;
   color: #fff;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
+  border: 1px solid #007832;
 }
 
 .button:hover {
-  background-color: #269e59;
+  background-color: #00652b;
+  border-color: #00652b;
 }
 
 .button2 {
-  width: 100%;
-  padding: 12px;
-  background-color: transparent;
+  background-color: #fff;
+  color: #18312a;
   border: 1px solid #007832;
-  border-radius: 9999px;
-  cursor: pointer;
 }
 
 .button2:hover {
-  background-color: rgba(38, 158, 89, 0.1);
+  background-color: #f0f8f2;
+}
+
+.button:focus-visible,
+.button2:focus-visible {
+  outline: 3px solid rgba(0, 120, 50, 0.25);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .centeredCard {
+    padding: 32px 22px;
+    border-radius: 20px;
+  }
+
+  .text {
+    font-size: 22px;
+  }
+
+  .container2 {
+    font-size: 13px;
+  }
+
+  .background {
+    padding: 11px 16px;
+    font-size: 14px;
+  }
+}
+
+
+
+/* Ajustes para celulares */
+@media (max-width: 480px) {
+  .pagina {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 16px;
+    box-sizing: border-box;
+  }
+
+  .centeredCard {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 28px 20px;
+    box-sizing: border-box;
+  }
+
+  .margin,
+  .container,
+  .container2,
+  .container3,
+  .container4 {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .text {
+    font-size: 22px;
+  }
+
+  .container2 {
+    overflow-wrap: break-word;
+  }
+
+  .background {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    box-sizing: border-box;
+  }
+
+  .button,
+  .button2 {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
