@@ -53,13 +53,6 @@ function EnlaceEnviado() {
 
       <div className="centeredCard">
 
-        <img
-          className="marginIcon"
-          loading="lazy"
-          alt="Decoración"
-          src="/Margin@2x.png"
-        />
-
         <section className="margin">
 
           <div className="container">
@@ -87,8 +80,7 @@ function EnlaceEnviado() {
 
             <div className="container3">
               <div className="text4">
-                El enlace de recuperación expirará en 15
-                minutos por motivos de seguridad.
+               El enlace de recuperación expirará en 5 minutos por motivos de seguridad.
               </div>
             </div>
 

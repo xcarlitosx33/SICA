@@ -173,42 +173,79 @@
   text-decoration: underline;
 }
 
+
+
 /* Adaptación para móviles */
 @media (max-width: 600px) {
   .recuperarPagina {
+    width: 100%;
+    min-height: 100vh;
     padding: 20px 16px;
+    box-sizing: border-box;
   }
 
   .recuperarTarjeta {
+    width: 100%;
     max-width: 460px;
+    min-width: 0;
     padding: 28px 22px 24px;
     border-radius: 14px;
+    box-sizing: border-box;
   }
 
   .recuperarLogoContenedor {
-    width: 104px;
-    height: 104px;
+    width: 96px;
+    height: 96px;
     margin-bottom: 18px;
     border-radius: 16px;
+    flex-shrink: 0;
   }
 
   .recuperarLogo {
-    width: 80px;
-    height: 80px;
+    width: 74px;
+    height: 74px;
   }
 
   .recuperarTitulo {
     font-size: 24px;
+    overflow-wrap: break-word;
   }
 
   .recuperarMensaje {
+    width: 100%;
     font-size: 13px;
+    overflow-wrap: break-word;
+  }
+
+  .recuperarFormulario {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .recuperarInput,
+  .recuperarBotonPrincipal {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .recuperarBotonSecundario {
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 }
 
-/* Pantallas con poca altura */
-@media (max-height: 650px) {
+/* Celulares muy estrechos */
+@media (max-width: 360px) {
   .recuperarPagina {
-    align-items: flex-start;
+    padding: 16px 12px;
+  }
+
+  .recuperarTarjeta {
+    padding: 24px 16px 20px;
+  }
+
+  .recuperarTitulo {
+    font-size: 22px;
   }
 }
