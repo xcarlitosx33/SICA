@@ -36,7 +36,7 @@ function Login() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          documento: documento.trim(),
+          num_doc: documento.trim(),
           password: password,
         }),
       });
@@ -50,7 +50,7 @@ function Login() {
 
       setMensaje(data.mensaje || "Respuesta recibida del servidor.");
 
-      if (data.mensaje === "Bienvenido, al sistema SICA") {
+      if (data.mensaje === "Usuario encontrado") {
         if (recordarSesion) {
           sessionStorage.removeItem("sicaSesion");
           localStorage.setItem("sicaSesion", "recordar");
@@ -59,7 +59,15 @@ function Login() {
           sessionStorage.setItem("sicaSesion", "temporal");
         }
 
-        navigate("/dashboard");
+          if (data.rol === "Instructor") {
+              navigate("/dashboard/instructor");
+            } else if (data.rol === "Administrador de Edificio") {
+              navigate("/dashboard/admin-edificio");
+            } else if (data.rol === "Director de Centro") {
+              navigate("/dashboard/director-centro");
+            } else if (data.rol === "Coordinación Académica") {
+              navigate("/dashboard/coordinacion-academica");
+            }
       }
     } catch (error) {
       console.error("Error al iniciar sesión:", error);

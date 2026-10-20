@@ -64,5 +64,6 @@ def login(request):
     return Response({
         'mensaje': 'Usuario encontrado',
         'nombre': usuario.nombre_p,
-        'num_doc': usuario.num_doc
+        'num_doc': usuario.num_doc,
+        'rol': usuario.rol.nombre
     })
