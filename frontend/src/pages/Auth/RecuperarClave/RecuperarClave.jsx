@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import fondoSica from "../../assets/imagenes/fondo_sica.png";
-import logoSica from "../../assets/imagenes/Logo-Login.png";
+import fondoSica from "../../../assets/imagenes/fondo_sica.png";
+import logoSica from "../../../assets/imagenes/Logo-Login.png";
 
 import "./RecuperarClave.css";
 
@@ -27,7 +27,10 @@ function RecuperarClave() {
       return;
     }
 
-    if (documentoLimpio.length < 6 || documentoLimpio.length > 12) {
+    if (
+      documentoLimpio.length < 6 ||
+      documentoLimpio.length > 12
+    ) {
       alert("Ingresa un documento de entre 6 y 12 dígitos.");
       return;
     }
@@ -51,16 +54,29 @@ function RecuperarClave() {
       const data = await respuesta.json();
 
       if (!respuesta.ok) {
-        alert(data.mensaje || "No fue posible consultar el documento.");
+        alert(
+          data.mensaje ||
+            "No fue posible consultar el documento."
+        );
         return;
       }
 
-      localStorage.setItem("documentoRecuperacion", documentoLimpio);
-      localStorage.setItem("correoRecuperacion", data.correo);
+      localStorage.setItem(
+        "documentoRecuperacion",
+        documentoLimpio
+      );
+
+      if (data.correo) {
+        localStorage.setItem(
+          "correoRecuperacion",
+          data.correo
+        );
+      }
 
       navigate("/confirmacion");
     } catch (error) {
       console.error("Error al consultar el correo:", error);
+
       alert(
         "No se pudo conectar con el servidor. Comprueba que Django esté ejecutándose."
       );
@@ -92,10 +108,14 @@ function RecuperarClave() {
         </h1>
 
         <p className="recuperarMensaje">
-          Ingresa tu documento de identidad para recuperar el acceso a tu cuenta.
+          Ingresa tu documento de identidad para recuperar el acceso
+          a tu cuenta.
         </p>
 
-        <form className="recuperarFormulario" onSubmit={enviarEnlace}>
+        <form
+          className="recuperarFormulario"
+          onSubmit={enviarEnlace}
+        >
           <label
             className="recuperarEtiqueta"
             htmlFor="documentoRecuperacion"
@@ -113,7 +133,9 @@ function RecuperarClave() {
             placeholder="Ej. 12345678"
             className="recuperarInput"
             value={documento}
-            onChange={(evento) => setDocumento(evento.target.value)}
+            onChange={function (evento) {
+              setDocumento(evento.target.value);
+            }}
             required
           />
 
