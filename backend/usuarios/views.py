@@ -67,3 +67,25 @@ def login(request):
         'num_doc': usuario.num_doc,
         'rol': usuario.rol.nombre
     })
+
+
+
+@api_view(['POST'])
+def consultar_correo_recuperacion(request):
+    num_doc = request.data.get('num_doc')
+
+    if not num_doc:
+        return Response({
+            'mensaje': 'El documento es obligatorio'
+        }, status=400)
+
+    usuario = Usuario.objects.filter(num_doc=num_doc).first()
+
+    if not usuario:
+        return Response({
+            'mensaje': 'Usuario no encontrado'
+        }, status=404)
+
+    return Response({
+        'correo': usuario.email
+    })

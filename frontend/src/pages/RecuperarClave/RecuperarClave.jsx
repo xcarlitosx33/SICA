@@ -10,32 +10,64 @@ function RecuperarClave() {
   const navigate = useNavigate();
 
   const [documento, setDocumento] = useState("");
+  const [cargando, setCargando] = useState(false);
 
-function enviarEnlace(evento) {
-  evento.preventDefault();
+  async function enviarEnlace(evento) {
+    evento.preventDefault();
 
-  const documentoLimpio = documento.trim();
+    const documentoLimpio = documento.trim();
 
-  if (!documentoLimpio) {
-    alert("Por favor ingresa tu documento de identidad.");
-    return;
+    if (!documentoLimpio) {
+      alert("Por favor ingresa tu documento de identidad.");
+      return;
+    }
+
+    if (!/^\d+$/.test(documentoLimpio)) {
+      alert("El documento debe contener únicamente números.");
+      return;
+    }
+
+    if (documentoLimpio.length < 6 || documentoLimpio.length > 12) {
+      alert("Ingresa un documento de entre 6 y 12 dígitos.");
+      return;
+    }
+
+    setCargando(true);
+
+    try {
+      const respuesta = await fetch(
+        "http://127.0.0.1:8000/api/recuperar/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            num_doc: documentoLimpio,
+          }),
+        }
+      );
+
+      const data = await respuesta.json();
+
+      if (!respuesta.ok) {
+        alert(data.mensaje || "No fue posible consultar el documento.");
+        return;
+      }
+
+      localStorage.setItem("documentoRecuperacion", documentoLimpio);
+      localStorage.setItem("correoRecuperacion", data.correo);
+
+      navigate("/confirmacion");
+    } catch (error) {
+      console.error("Error al consultar el correo:", error);
+      alert(
+        "No se pudo conectar con el servidor. Comprueba que Django esté ejecutándose."
+      );
+    } finally {
+      setCargando(false);
+    }
   }
-
-  if (!/^\d+$/.test(documentoLimpio)) {
-    alert("El documento debe contener únicamente números.");
-    return;
-  }
-
-  if (documentoLimpio.length < 6 || documentoLimpio.length > 12) {
-    alert("Ingresa un documento de entre 6 y 12 dígitos.");
-    return;
-  }
-
-  localStorage.setItem("documentoRecuperacion", documentoLimpio);
-
-  navigate("/confirmacion");
-}
-
 
   function volverLogin() {
     navigate("/");
@@ -88,8 +120,9 @@ function enviarEnlace(evento) {
           <button
             className="recuperarBotonPrincipal"
             type="submit"
+            disabled={cargando}
           >
-            Continuar →
+            {cargando ? "Consultando..." : "Continuar →"}
           </button>
         </form>
 

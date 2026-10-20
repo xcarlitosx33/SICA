@@ -138,3 +138,21 @@ class Programacion(models.Model):
 
     def __str__(self):
         return f"{self.programa_formacion} - Grupo {self.grupo}"
+
+
+class RecuperacionClave(models.Model):
+    usuario = models.ForeignKey(
+        Usuario,
+        on_delete=models.CASCADE,
+        related_name='recuperaciones_clave'
+    )
+    token_hash = models.CharField(max_length=64, unique=True)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+    fecha_expiracion = models.DateTimeField()
+    usado = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = 'recuperacion_clave'
+
+    def __str__(self):
+        return f"Recuperación de {self.usuario.num_doc}"
