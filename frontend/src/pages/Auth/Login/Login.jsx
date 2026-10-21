@@ -216,7 +216,7 @@ function Login() {
                   <button
                     className="loginForgotLink"
                     type="button"
-                    onClick={() => navigate("/recuperar")}
+                    onClick={() => navigate("/recuperar-clave")}
                   >
                     ¿Olvidaste tu contraseña?
                   </button>
