@@ -1,8 +1,10 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "../pages/Login/Login";
-import RecuperarClave from "../pages/RecuperarClave/RecuperarClave";
-import EnlaceEnviado from "../pages/EnlaceEnviado/EnlaceEnviado";
+import Login from "../pages/Auth/Login/Login";
+import RecuperarClave from "../pages/Auth/RecuperarClave/RecuperarClave";
+import EnlaceEnviado from "../pages/Auth/EnlaceEnviado/EnlaceEnviado";
+import CambiarClave from "../pages/Auth/CambiarClave/CambiarClave";
 
 import Instructor from "../pages/Dashboard/Roles/Instructor/Instructor";
 import AdminEdificio from "../pages/Dashboard/Roles/AdminEdificio/AdminEdificio";
@@ -16,6 +18,7 @@ function AppRoutes() {
         <Route path="/" element={<Login />} />
         <Route path="/recuperar" element={<RecuperarClave />} />
         <Route path="/confirmacion" element={<EnlaceEnviado />} />
+        <Route path="/cambiar-clave" element={<CambiarClave />} />
 
         <Route path="/dashboard/instructor" element={<Instructor />} />
         <Route path="/dashboard/admin-edificio" element={<AdminEdificio />} />
