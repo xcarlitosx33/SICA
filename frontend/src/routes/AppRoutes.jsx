@@ -16,7 +16,7 @@ function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/recuperar" element={<RecuperarClave />} />
+        <Route path="/recuperar-clave" element={<RecuperarClave />} />
         <Route path="/confirmacion" element={<EnlaceEnviado />} />
         <Route path="/cambiar-clave" element={<CambiarClave />} />
 
