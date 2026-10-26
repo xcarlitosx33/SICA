@@ -98,3 +98,22 @@ body {
 .linkNo:hover {
   text-decoration: underline;    /* opcional, subrayado al pasar el mouse */
 }
+
+/* Base global de SICA */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  background-color: #F6F6F6;
+}

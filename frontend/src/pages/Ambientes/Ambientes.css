@@ -1,0 +1,108 @@
+/*
+   LAYOUT GENERAL
+ */
+
+.ambientes-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: #f6f6f6;
+}
+
+
+/*
+   CONTENIDO PRINCIPAL
+ */
+
+.ambientes-main {
+    flex: 1;
+    min-width: 0;
+    margin-left: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+/*
+   CONTENEDOR DEL CONTENIDO
+ */
+
+.ambientes-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+
+/*
+   ENCABEZADO
+ */
+
+.ambientes-header {
+    margin-bottom: 24px;
+}
+
+.ambientes-header h1 {
+    margin: 0;
+
+    font-family: "Work Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #18312a;
+}
+
+.ambientes-header p {
+    margin: 6px 0 0;
+
+    font-family: "Work Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    color: #65756d;
+}
+
+
+/*
+   RESPONSIVE
+ */
+
+/* Pantallas medianas */
+@media (max-width: 1200px) {
+
+    .ambientes-content {
+        max-width: 100%;
+        padding: 24px;
+    }
+
+}
+
+
+/* Pantallas pequeñas */
+@media (max-width: 900px) {
+
+    .ambientes-content {
+        padding: 20px;
+    }
+
+}
+
+
+/* Pantallas muy pequeñas */
+@media (max-width: 600px) {
+
+    .ambientes-content {
+        padding: 16px;
+    }
+
+    .ambientes-header h1 {
+        font-size: 26px;
+    }
+
+    .ambientes-header p {
+        font-size: 14px;
+    }
+
+}
