@@ -11,6 +11,8 @@ import AdminEdificio from "./pages/Dashboard/Roles/AdminEdificio/AdminEdificio.j
 import CoordinacionAcademica from "./pages/Dashboard/Roles/CoordinacionAcademica/CoordinacionAcademica.jsx";
 import DirectorCentro from "./pages/Dashboard/Roles/DirectorCentro/DirectorCentro.jsx";
 
+import Ambientes from "./pages/Ambientes/Ambientes.jsx";
+
 function App() {
   return (
     <BrowserRouter>
@@ -30,6 +32,8 @@ function App() {
           element={<CoordinacionAcademica />}
         />
         <Route path="/director-centro" element={<DirectorCentro />} />
+
+        <Route path="/ambientes" element={<Ambientes />} />
 
         {/* Rutas inexistentes */}
         <Route path="*" element={<Navigate to="/" replace />} />

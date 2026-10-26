@@ -1,0 +1,48 @@
+.ambiente-summary {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+.summary-card {
+    min-height: 120px;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.summary-card-content {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.summary-card-label {
+    font-family: "Work Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #65756D;
+}
+
+.summary-card-value {
+    margin-top: 12px;
+
+    font-family: "Work Sans", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #18312A;
+}

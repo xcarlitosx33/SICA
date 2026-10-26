@@ -1,0 +1,72 @@
+.ambiente-filters {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-group label {
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #18312A;
+}
+
+.filter-group input,
+.filter-group select {
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.filter-group input {
+    width: 280px;
+}
+
+.filter-group select {
+    width: 180px;
+}
+
+.filter-group input::placeholder {
+    color: #65756D;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    outline: none;
+    border-color: #007832;
+}
+
+.filter-button {
+    height: 42px;
+    padding: 0 20px;
+    border: 1px solid #007832;
+    border-radius: 8px;
+    background-color: #007832;
+    color: #FFFFFF;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: #006b2c;
+}

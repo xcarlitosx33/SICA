@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Login from "../pages/Auth/Login/Login";
@@ -10,6 +9,8 @@ import Instructor from "../pages/Dashboard/Roles/Instructor/Instructor";
 import AdminEdificio from "../pages/Dashboard/Roles/AdminEdificio/AdminEdificio";
 import DirectorCentro from "../pages/Dashboard/Roles/DirectorCentro/DirectorCentro";
 import CoordinacionAcademica from "../pages/Dashboard/Roles/CoordinacionAcademica/CoordinacionAcademica";
+
+import Ambientes from "../pages/Ambientes/Ambientes";
 
 function AppRoutes() {
   return (
@@ -23,7 +24,12 @@ function AppRoutes() {
         <Route path="/dashboard/instructor" element={<Instructor />} />
         <Route path="/dashboard/admin-edificio" element={<AdminEdificio />} />
         <Route path="/dashboard/director-centro" element={<DirectorCentro />} />
-        <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />} />
+        <Route
+          path="/dashboard/coordinacion-academica"
+          element={<CoordinacionAcademica />}
+        />
+
+        <Route path="/ambientes" element={<Ambientes />} />
       </Routes>
     </BrowserRouter>
   );
