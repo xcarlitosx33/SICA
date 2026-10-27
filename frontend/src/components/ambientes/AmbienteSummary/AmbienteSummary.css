@@ -46,3 +46,26 @@
 
     color: #18312A;
 }
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .ambiente-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .ambiente-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card {
+        min-height: 100px;
+    }
+
+}

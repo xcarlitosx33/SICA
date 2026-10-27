@@ -1,4 +1,7 @@
 .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 260px;
     height: 100vh;
     background-color: #FFFFFF;
@@ -8,6 +11,7 @@
     box-sizing: border-box;
     padding: 24px 16px;
     font-family: "Work Sans", sans-serif;
+    z-index: 1000;
 }
 
 /* Logo */
