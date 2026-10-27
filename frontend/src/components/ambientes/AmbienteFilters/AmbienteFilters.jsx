@@ -1,9 +1,9 @@
+
 import "./AmbienteFilters.css";
 
 function AmbienteFilters() {
     return (
         <section className="ambiente-filters">
-
             <div className="filter-group">
                 <label htmlFor="buscar-ambiente">
                     Buscar ambiente
@@ -12,7 +12,7 @@ function AmbienteFilters() {
                 <input
                     id="buscar-ambiente"
                     type="text"
-                    placeholder="Numero del ambiente"
+                    placeholder="Número del ambiente"
                 />
             </div>
 
@@ -21,7 +21,7 @@ function AmbienteFilters() {
                     Estado
                 </label>
 
-                <select id="estado-ambiente">
+                <select id="estado-ambiente" defaultValue="">
                     <option value="">Todos</option>
                     <option value="disponible">Disponible</option>
                     <option value="mantenimiento">En mantenimiento</option>
@@ -33,17 +33,30 @@ function AmbienteFilters() {
                     Sede
                 </label>
 
-                <select id="sede-ambiente">
+                <select id="sede-ambiente" defaultValue="">
                     <option value="">Todas</option>
-                    <option value="principal">Sede Cdad. verde</option>
-                    <option value="principal">Sede Sibate</option>
+                    <option value="principal">Sede Ciudad Verde</option>
+                    <option value="sibate">Sede Sibaté</option>
+                </select>
+            </div>
+
+            <div className="filter-group">
+                <label htmlFor="piso-ambiente">
+                    Piso
+                </label>
+
+                <select id="piso-ambiente" defaultValue="">
+                    <option value="">Todos los pisos</option>
+                    <option value="1">Piso 1</option>
+                    <option value="2">Piso 2</option>
+                    <option value="3">Piso 3</option>
+                    <option value="4">Piso 4</option>
                 </select>
             </div>
 
             <button type="button" className="filter-button">
                 Buscar
             </button>
-
         </section>
     );
 }
