@@ -12,6 +12,7 @@ import CoordinacionAcademica from "./pages/Dashboard/Roles/CoordinacionAcademica
 import DirectorCentro from "./pages/Dashboard/Roles/DirectorCentro/DirectorCentro.jsx";
 
 import Ambientes from "./pages/Ambientes/Ambientes.jsx";
+import Movimientos from "./pages/Movimientos/Movimientos.jsx";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/director-centro" element={<DirectorCentro />} />
 
         <Route path="/ambientes" element={<Ambientes />} />
+        <Route path="/Movimientos" element={<Movimientos/>}/>
 
         {/* Rutas inexistentes */}
         <Route path="*" element={<Navigate to="/" replace />} />
