@@ -1,48 +1,55 @@
+/*FILTROS*/
+
 .ambiente-filters {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns:
+        minmax(180px, 1.5fr)
+        minmax(130px, 1fr)
+        minmax(130px, 1fr)
+        auto;
+
+    align-items: end;
     gap: 16px;
+
+    width: 100%;
     padding: 20px;
+    box-sizing: border-box;
+
     background-color: #FFFFFF;
     border: 1px solid #E2E7E4;
     border-radius: 12px;
-    box-sizing: border-box;
-    padding: 16px 20px;
 }
 
 .filter-group {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    min-width: 0;
 }
 
 .filter-group label {
+    color: #18312A;
     font-family: "Work Sans", sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: #18312A;
 }
 
 .filter-group input,
 .filter-group select {
+    width: 100%;
+    min-width: 0;
     height: 42px;
     padding: 0 12px;
+    box-sizing: border-box;
+
     border: 1px solid #E2E7E4;
     border-radius: 8px;
+
     background-color: #FFFFFF;
     color: #18312A;
+
     font-family: "Work Sans", sans-serif;
     font-size: 14px;
-    box-sizing: border-box;
-}
-
-.filter-group input {
-    width: 280px;
-}
-
-.filter-group select {
-    width: 180px;
 }
 
 .filter-group input::placeholder {
@@ -51,76 +58,46 @@
 
 .filter-group input:focus,
 .filter-group select:focus {
-    outline: none;
+    outline: 2px solid #007832;
+    outline-offset: 1px;
     border-color: #007832;
 }
 
 .filter-button {
-    height: 42px;
-    padding: 0 20px;
-    border: 1px solid #007832;
+    width: 160px;
+    min-height: 42px;
+    padding: 10px 20px;
+
+    border: none;
     border-radius: 8px;
+
     background-color: #007832;
     color: #FFFFFF;
-    font-family: "Work Sans", sans-serif;
+
     font-size: 14px;
     font-weight: 600;
+
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .filter-button:hover {
-    background-color: #006b2c;
+    background-color: #00652A;
 }
 
+.filter-button:focus-visible {
+    outline: 2px solid #007832;
+    outline-offset: 3px;
+}
 
-/*RESPONSIVE*/
-
-@media (min-width: 901px) and (max-width: 1200px) {
-
-    .ambiente-filters {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 14px;
-        align-items: end;
-    }
-
-    .filter-group {
-        width: 100%;
-        flex: none;
-    }
-
-    .filter-group input,
-    .filter-group select {
-        width: 100%;
-    }
-
+@media (max-width: 600px) {
     .filter-button {
         width: 100%;
     }
-
 }
 
-@media (max-width: 950px) {
-
-    .ambiente-filters {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 14px;
-    }
-
-    .filter-group {
-        width: 100%;
-        flex: none;
-    }
-
-    .filter-group input,
-    .filter-group select {
-        width: 100%;
-    }
-
+@media (prefers-reduced-motion: reduce) {
     .filter-button {
-        width: 100%;
+        transition: none;
     }
-
 }
