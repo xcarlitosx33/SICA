@@ -3,29 +3,21 @@
  */
 
 .ambientes-layout {
-    display: flex;
+    display: block;
     width: 100%;
     min-height: 100vh;
     background: #f6f6f6;
 }
 
 
-/*
-   CONTENIDO PRINCIPAL
- */
-
+/*CONTENIDO PRINCIPAL */
 .ambientes-main {
-    flex: 1;
-    min-width: 0;
-    margin-left: 0;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    margin-left: 260px;
     box-sizing: border-box;
     overflow-x: hidden;
 }
-
-
-/*
-   CONTENEDOR DEL CONTENIDO
- */
 
 .ambientes-content {
     width: 100%;
@@ -64,24 +56,14 @@
     color: #65756d;
 }
 
+/*RESPONSIVE  */
 
-/*
-   RESPONSIVE
- */
-
-/* Pantallas medianas */
-@media (max-width: 1200px) {
-
-    .ambientes-content {
-        max-width: 100%;
-        padding: 24px;
-    }
-
-}
-
-
-/* Pantallas pequeñas */
 @media (max-width: 900px) {
+
+    .ambientes-main {
+        width: calc(100% - 220px);
+        margin-left: 220px;
+    }
 
     .ambientes-content {
         padding: 20px;
@@ -89,12 +71,19 @@
 
 }
 
-
-/* Pantallas muy pequeñas */
 @media (max-width: 600px) {
+
+    .ambientes-main {
+        width: 100%;
+        margin-left: 0;
+    }
 
     .ambientes-content {
         padding: 16px;
+    }
+
+    .ambientes-header {
+        margin-bottom: 20px;
     }
 
     .ambientes-header h1 {
