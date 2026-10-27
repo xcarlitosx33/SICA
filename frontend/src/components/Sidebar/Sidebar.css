@@ -1,35 +1,51 @@
+/* 
+   SIDEBAR PRINCIPAL
+ */
+
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     width: 260px;
+    min-width: 260px;
+    max-width: 260px;
     height: 100vh;
-    background-color: #FFFFFF;
-    border-right: 1px solid #E2E7E4;
+    flex: 0 0 260px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     padding: 24px 16px;
+    background-color: #FFFFFF;
+    border-right: 1px solid #E2E7E4;
     font-family: "Work Sans", sans-serif;
     z-index: 1000;
 }
 
-/* Logo */
+/* 
+   LOGO SICA
+ */
+
 .sidebar-logo {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     height: 72px;
     margin-bottom: 24px;
+    flex-shrink: 0;
 }
 
-.sidebar-logo-placeholder {
-    font-size: 24px;
-    font-weight: 700;
-    color: #007832;
+.sidebar-logo-image {
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    max-height: 64px;
+    object-fit: contain;
 }
 
-/* Menú */
+/* 
+   MENÚ PRINCIPAL
+ */
 
 .sidebar-menu {
     display: flex;
@@ -45,9 +61,11 @@
     letter-spacing: 0.5px;
 }
 
+/* Elementos del menú */
+
 .sidebar-item {
     width: 100%;
-    height: 44px;
+    min-height: 44px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -61,6 +79,7 @@
     font-weight: 500;
     text-align: left;
     cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .sidebar-item:hover {
@@ -68,15 +87,20 @@
 }
 
 .sidebar-item.active {
+    padding-left: 9px;
     background-color: #E3F4E8;
     color: #007832;
     font-weight: 600;
     border-left: 3px solid #39A900;
 }
 
+/* Iconos */
+
 .sidebar-icon {
     width: 24px;
+    min-width: 24px;
     display: flex;
+    align-items: center;
     justify-content: center;
     color: #00304D;
     font-size: 19px;
@@ -86,9 +110,13 @@
     color: #007832;
 }
 
-/* Parte inferior */
+/* 
+   INFORMACIÓN DEL USUARIO
+ */
+
 .sidebar-bottom {
     margin-top: auto;
+    flex-shrink: 0;
 }
 
 .sidebar-user {
@@ -100,8 +128,11 @@
     margin-bottom: 8px;
 }
 
+/* Avatar */
+
 .sidebar-avatar {
     width: 36px;
+    min-width: 36px;
     height: 36px;
     display: flex;
     align-items: center;
@@ -113,6 +144,8 @@
     font-weight: 600;
 }
 
+/* Nombre y estado de sesión */
+
 .sidebar-user-info {
     display: flex;
     flex-direction: column;
@@ -120,19 +153,26 @@
 }
 
 .sidebar-user-info strong {
-    font-size: 14px;
+    overflow: hidden;
     color: #18312A;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .sidebar-user-info span {
     margin-top: 2px;
-    font-size: 12px;
     color: #65756D;
+    font-size: 12px;
 }
+
+/* 
+   CERRAR SESIÓN
+ */
 
 .sidebar-logout {
     width: 100%;
-    height: 42px;
+    min-height: 42px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -143,20 +183,35 @@
     color: #18312A;
     font-family: "Work Sans", sans-serif;
     font-size: 14px;
+    text-align: left;
     cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .sidebar-logout:hover {
     background-color: #F6F6F6;
 }
 
+/* 
+   ACCESIBILIDAD
+ */
 
+.sidebar-item:focus-visible,
+.sidebar-logout:focus-visible {
+    outline: 2px solid #007832;
+    outline-offset: 2px;
+}
 
-.sidebar {
-    width: 260px;
-    min-width: 260px;
-    max-width: 260px;
-    height: 100vh;
-    flex: 0 0 260px;
-    box-sizing: border-box;
+/* 
+   RESPONSIVE
+ */
+
+@media (max-height: 550px) {
+    .sidebar {
+        overflow-y: auto;
+    }
+
+    .sidebar-bottom {
+        margin-top: 24px;
+    }
 }

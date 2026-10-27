@@ -1,58 +1,58 @@
 import "./Sidebar.css";
+import logoSICA from "../../assets/imagenes/Logo-SICA.png";
 
 function Sidebar() {
     return (
         <aside className="sidebar">
 
-            {/* Logo */}
+            {/* Logo SICA */}
             <div className="sidebar-logo">
-                <div className="sidebar-logo-placeholder">
-                    SICA
-                </div>
+                <img
+                    src={logoSICA}
+                    alt="Logo SICA"
+                    className="sidebar-logo-image"
+                />
             </div>
 
-            {/* Menú */}
-            <div className="sidebar-menu">
-
+            {/* Menú principal */}
+            <nav className="sidebar-menu">
                 <p className="sidebar-section-title">
                     MENÚ PRINCIPAL
                 </p>
 
-                <button className="sidebar-item active">
+                <button type="button" className="sidebar-item active">
                     <span className="sidebar-icon">⌂</span>
                     <span>Inicio</span>
                 </button>
 
-                <button className="sidebar-item">
+                <button type="button" className="sidebar-item">
                     <span className="sidebar-icon">▦</span>
                     <span>Ambientes</span>
                 </button>
 
-                <button className="sidebar-item">
+                <button type="button" className="sidebar-item">
                     <span className="sidebar-icon">□</span>
                     <span>Inventario</span>
                 </button>
 
-                <button className="sidebar-item">
+                <button type="button" className="sidebar-item">
                     <span className="sidebar-icon">◷</span>
                     <span>Programación</span>
                 </button>
 
-                <button className="sidebar-item">
+                <button type="button" className="sidebar-item">
                     <span className="sidebar-icon">→</span>
-                    <span>movimientos</span>
+                    <span>Movimientos</span>
                 </button>
 
-                <button className="sidebar-item">
+                <button type="button" className="sidebar-item">
                     <span className="sidebar-icon">!</span>
-                    <span>novedades</span>
+                    <span>Novedades</span>
                 </button>
+            </nav>
 
-            </div>
-
-            {/* Usuario */}
+            {/* Información del usuario */}
             <div className="sidebar-bottom">
-
                 <div className="sidebar-user">
                     <div className="sidebar-avatar">
                         U
@@ -64,11 +64,10 @@ function Sidebar() {
                     </div>
                 </div>
 
-                <button className="sidebar-logout">
+                <button type="button" className="sidebar-logout">
                     <span className="sidebar-icon">↪</span>
                     <span>Cerrar sesión</span>
                 </button>
-
             </div>
 
         </aside>
