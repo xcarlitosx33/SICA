@@ -1,0 +1,293 @@
+.movimiento-table-container {
+    width: 100%;
+}
+
+.movimiento-table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.movimiento-table-header > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.movimiento-table-header h2 {
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #18312A;
+}
+
+.movimiento-table-header > div:first-child span {
+    padding-left: 10px;
+    border-left: 1px solid #E2E7E4;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    color: #8A9891;
+}
+
+.movimiento-table-updated {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    color: #65756D;
+}
+
+.movimiento-table-updated span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10B981;
+}
+
+.movimiento-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.movimiento-table {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+    font-family: "Work Sans", sans-serif;
+    color: #18312A;
+}
+
+.movimiento-table thead {
+    background-color: #F6F6F6;
+}
+
+.movimiento-table th {
+    padding: 12px 16px;
+    border-bottom: 1px solid #E2E7E4;
+    font-size: 12px;
+    font-weight: 600;
+    color: #65756D;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.movimiento-table td {
+    padding: 16px;
+    border-bottom: 1px solid #E2E7E4;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.movimiento-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.movimiento-table tbody tr:hover {
+    background-color: #FAFCFB;
+}
+
+.movimiento-table td strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #18312A;
+}
+
+.movimiento-table td span {
+    display: block;
+    margin-top: 3px;
+    font-size: 11px;
+    color: #8A9891;
+}
+
+.movimiento-table td .destination {
+    color: #007832;
+}
+
+.movimiento-table td .destination.danger {
+    color: #DC2626;
+}
+
+/* Responsable */
+
+.movement-responsible {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.movement-responsible > div {
+    min-width: 0;
+}
+
+.movement-avatar {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.movement-avatar.green {
+    background-color: #DCFCE7;
+    color: #15803D;
+}
+
+.movement-avatar.blue {
+    background-color: #DBEAFE;
+    color: #2563EB;
+}
+
+.movement-avatar.gray {
+    background-color: #F1F5F9;
+    color: #475569;
+}
+
+.movement-avatar.pink {
+    background-color: #FCE7F3;
+    color: #DB2777;
+}
+
+/* Estados */
+.movement-status {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 86px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 11px !important;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.movement-status.completed {
+    color: #15803D;
+    background-color: #DCFCE7;
+}
+
+.movement-status.process {
+    color: #2563EB;
+    background-color: #DBEAFE;
+}
+
+.movement-status.pending {
+    color: #D97706;
+    background-color: #FEF3C7;
+}
+
+.movement-status.registered {
+    color: #DC2626;
+    background-color: #FEE2E2;
+}
+
+/* Botón */
+.movement-detail-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 78px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #D8E0DC;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.movement-detail-button:hover {
+    border-color: #E3F4E8;
+    background-color: #E3F4E8;
+    color: #007832;
+}
+
+.movement-detail-button:hover span {
+    color: #007832;
+}
+.movement-detail-button.selected {
+    border-color: #007832;
+    background-color: #007832;
+    color: #FFFFFF;
+}
+
+.movement-detail-button.selected span {
+    color: #FFFFFF;
+}
+
+.movement-detail-button span {
+    margin: 0;
+    font-size: 18px;
+    color: #007832;
+}
+
+/* Paginación */
+
+.movimiento-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 52px;
+    padding: 0 16px;
+    border-top: 1px solid #E2E7E4;
+    box-sizing: border-box;
+}
+
+.movimiento-pagination > span {
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+
+    color: #65756D;
+}
+
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pagination-buttons button {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid #D8E0DC;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.pagination-buttons button:hover:not(:disabled) {
+    background-color: #F6F6F6;
+}
+
+.pagination-buttons button.active {
+    border-color: #007832;
+    background-color: #007832;
+    color: #FFFFFF;
+}
+
+.pagination-buttons button:disabled {
+    color: #9AA7A1;
+    cursor: not-allowed;
+}
+
+.pagination-buttons > span {
+    color: #65756D;
+}

@@ -1,0 +1,118 @@
+.movimiento-filters {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+}
+
+/* Grupos */
+
+.movimiento-filter-search,
+.movimiento-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.movimiento-filter-search label,
+.movimiento-filter-group label {
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #18312A;
+}
+
+.movimiento-filter-search input,
+.movimiento-filter-group select {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #D8E0DC;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.movimiento-filter-search {
+    flex: 1 1 230px;
+}
+
+.movimiento-filter-search input {
+    width: 100%;
+}
+
+.movimiento-filter-group {
+    flex: 0 1 130px;
+}
+
+.movimiento-filter-group select {
+    width: 100%;
+}
+
+.movimiento-filter-search input::placeholder {
+    color: #8A9891;
+}
+
+/* Focus */
+
+.movimiento-filter-search input:focus,
+.movimiento-filter-group select:focus {
+    outline: none;
+    border-color: #007832;
+}
+
+/* Limpiar filtros */
+
+.movimiento-clear-button {
+    height: 40px;
+    padding: 0 12px;
+    border: none;
+    background-color: transparent;
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.movimiento-clear-button:hover {
+    color: #007832;
+}
+
+/* Contador */
+.movimiento-filter-count {
+    width: 100%;
+    text-align: right;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #65756D;
+}
+
+.clear-filters-button {
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.clear-filters-button:hover {
+    border-color: #E3F4E8;
+    background-color: #E3F4E8;
+    color: #007832;
+}
