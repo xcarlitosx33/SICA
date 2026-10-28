@@ -76,68 +76,78 @@
 }
 
 
-
-/*TABLET*/
+/* TABLET */
 
 @media (min-width: 769px) and (max-width: 1100px) {
-    .ambientes-content {
-        padding: 24px;
+
+    .movimientos-main {
+        width: calc(100% - 260px);
+        margin-left: 260px;
     }
 
-    .ambientes-header h1 {
+    .movimientos-content {
+        width: 100%;
+        max-width: none;
+        padding: 24px 20px;
+    }
+
+    .movimientos-header {
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .movimientos-header h1 {
         font-size: 28px;
+    }
+
+    .movimientos-header p {
+        font-size: 14px;
     }
 }
 
-/*MÓVIL*/
+
+/* MÓVIL */
 
 @media (max-width: 768px) {
-    .ambientes-main {
+
+    .movimientos-main {
         width: 100%;
         margin-left: 0;
     }
 
-    .ambientes-content {
+    .movimientos-content {
         padding: 76px 20px 24px;
     }
 
-    .ambientes-header {
+    .movimientos-header {
         align-items: flex-start;
         gap: 12px;
         margin-bottom: 20px;
     }
 
-    .ambientes-header h1 {
+    .movimientos-header h1 {
         font-size: 26px;
     }
 
-    .ambientes-header p {
+    .movimientos-header p {
         font-size: 14px;
-    }
-
-    .ambientes-notifications {
-        width: 38px;
-        height: 38px;
     }
 }
 
-/*CELULARES PEQUEÑOS*/
+
+/* CELULARES PEQUEÑOS */
 
 @media (max-width: 400px) {
-    .ambientes-content {
+
+    .movimientos-content {
         padding: 72px 14px 20px;
     }
 
-    .ambientes-header h1 {
+    .movimientos-header h1 {
         font-size: 23px;
     }
 
-    .ambientes-header p {
+    .movimientos-header p {
         font-size: 13px;
-    }
-
-    .ambientes-notifications {
-        width: 36px;
-        height: 36px;
     }
 }
