@@ -1,0 +1,101 @@
+.movimiento-observaciones {
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+/* Encabezado */
+
+.movimiento-observaciones-header {
+    margin-bottom: 18px;
+}
+
+.movimiento-observaciones-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #18312A;
+}
+
+.movimiento-observaciones-header span {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #65756D;
+}
+
+/* Contenido */
+
+.movimiento-observaciones-content {
+    width: 100%;
+    padding: 16px;
+    background-color: #F6F6F6;
+    border: 1px solid #E2E7E4;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.movimiento-observaciones-content p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #18312A;
+}
+
+/* Tablet */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    .movimiento-observaciones {
+        padding: 18px;
+    }
+
+    .movimiento-observaciones-content {
+        padding: 14px;
+    }
+}
+
+/* Móvil */
+
+@media (max-width: 768px) {
+    .movimiento-observaciones {
+        padding: 18px;
+    }
+
+    .movimiento-observaciones-content {
+        padding: 14px;
+    }
+
+    .movimiento-observaciones-content p {
+        font-size: 13px;
+    }
+}
+
+/* Móvil pequeño */
+
+@media (max-width: 400px) {
+    .movimiento-observaciones {
+        padding: 16px;
+    }
+
+    .movimiento-observaciones-header h2 {
+        font-size: 17px;
+    }
+
+    .movimiento-observaciones-header span {
+        font-size: 12px;
+    }
+
+    .movimiento-observaciones-content {
+        padding: 13px;
+    }
+
+    .movimiento-observaciones-content p {
+        font-size: 12px;
+    }
+}

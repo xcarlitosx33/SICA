@@ -12,6 +12,7 @@ import CoordinacionAcademica from "../pages/Dashboard/Roles/CoordinacionAcademic
 
 import Ambientes from "../pages/Ambientes/Ambientes";
 import Movimientos from "../pages/Movimientos/Movimientos";
+import MovimientoDetalle from "../pages/MovimientoDetalle/MovimientoDetalle";
 
 function AppRoutes() {
   return (
@@ -25,12 +26,11 @@ function AppRoutes() {
         <Route path="/dashboard/instructor" element={<Instructor />} />
         <Route path="/dashboard/admin-edificio" element={<AdminEdificio />} />
         <Route path="/dashboard/director-centro" element={<DirectorCentro />} />
-        <Route
-          path="/dashboard/coordinacion-academica"
-          element={<CoordinacionAcademica />}/>
+        <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />}/>
 
         <Route path="/ambientes" element={<Ambientes />} />
         <Route path="/movimientos" element={<Movimientos />} />
+        <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
       </Routes>
     </BrowserRouter>
   );

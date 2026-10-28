@@ -1,0 +1,141 @@
+.movimiento-informacion {
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+/* Encabezado */
+
+.movimiento-informacion-header {
+    margin-bottom: 18px;
+}
+
+.movimiento-informacion-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #18312A;
+}
+
+.movimiento-informacion-header span {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #65756D;
+}
+
+/* Contenido */
+
+.movimiento-informacion-content {
+    width: 100%;
+}
+
+/* Responsable */
+
+.movimiento-responsable {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 16px;
+    background-color: #F6F6F6;
+    border: 1px solid #E2E7E4;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.movimiento-responsable-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #E3F4E8;
+    color: #007832;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.movimiento-responsable-data {
+    min-width: 0;
+}
+
+.movimiento-responsable-data span {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #65756D;
+}
+
+.movimiento-responsable-data h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #18312A;
+}
+
+.movimiento-responsable-data p {
+    margin: 3px 0 0;
+    font-size: 13px;
+    color: #65756D;
+}
+
+/* Tablet */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    .movimiento-informacion {
+        padding: 18px;
+    }
+
+    .movimiento-responsable {
+        padding: 14px;
+    }
+}
+
+/* Móvil */
+
+@media (max-width: 768px) {
+    .movimiento-informacion {
+        padding: 18px;
+    }
+
+    .movimiento-responsable {
+        padding: 14px;
+    }
+}
+
+/* Móviles pequeños */
+
+@media (max-width: 400px) {
+    .movimiento-informacion {
+        padding: 16px;
+    }
+
+    .movimiento-responsable {
+        gap: 12px;
+        padding: 13px;
+    }
+
+    .movimiento-responsable-avatar {
+        width: 44px;
+        height: 44px;
+        font-size: 13px;
+    }
+
+    .movimiento-responsable-data h3 {
+        font-size: 15px;
+    }
+
+    .movimiento-responsable-data p {
+        font-size: 12px;
+    }
+}

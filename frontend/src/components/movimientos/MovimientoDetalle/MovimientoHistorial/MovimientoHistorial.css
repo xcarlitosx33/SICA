@@ -1,0 +1,200 @@
+.movimiento-historial {
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+/* Encabezado */
+
+.movimiento-historial-header {
+    margin-bottom: 20px;
+}
+
+.movimiento-historial-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #18312A;
+}
+
+.movimiento-historial-header span {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #65756D;
+}
+
+/* Contenedor */
+
+.movimiento-historial-content {
+    width: 100%;
+}
+
+/* Evento */
+
+.movimiento-historial-item {
+    display: flex;
+    width: 100%;
+    min-height: 88px;
+}
+
+/* Línea y punto */
+
+.movimiento-historial-linea {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+}
+
+.movimiento-historial-linea::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    bottom: -1px;
+    width: 2px;
+    background-color: #E2E7E4;
+}
+
+.movimiento-historial-punto {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin-top: 5px;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    background-color: #39A900;
+    box-shadow: 0 0 0 1px #39A900;
+    box-sizing: content-box;
+}
+
+/* Último evento */
+
+.movimiento-historial-item.ultimo .movimiento-historial-linea::after {
+    display: none;
+}
+
+.movimiento-historial-item.ultimo .movimiento-historial-punto {
+    background-color: #007832;
+    box-shadow: 0 0 0 1px #007832;
+}
+
+/* Información del evento */
+
+.movimiento-historial-evento {
+    flex: 1;
+    min-width: 0;
+    padding: 0 0 24px 14px;
+}
+
+.movimiento-historial-evento-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.movimiento-historial-evento h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #18312A;
+}
+
+.movimiento-historial-estado {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 0 9px;
+    border-radius: 999px;
+    background-color: #E3F4E8;
+    color: #007832;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.movimiento-historial-evento p {
+    max-width: 800px;
+    margin: 5px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #65756D;
+}
+
+.movimiento-historial-fecha {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #65756D;
+}
+
+/* Tablet */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    .movimiento-historial {
+        padding: 18px;
+    }
+
+    .movimiento-historial-evento {
+        padding-left: 12px;
+    }
+}
+
+/* Móvil */
+
+@media (max-width: 768px) {
+    .movimiento-historial {
+        padding: 18px;
+    }
+
+    .movimiento-historial-evento-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .movimiento-historial-evento {
+        padding-left: 12px;
+    }
+}
+
+/* Móviles pequeños */
+
+@media (max-width: 400px) {
+    .movimiento-historial {
+        padding: 16px;
+    }
+
+    .movimiento-historial-linea {
+        width: 24px;
+    }
+
+    .movimiento-historial-evento {
+        padding-left: 10px;
+        padding-bottom: 20px;
+    }
+
+    .movimiento-historial-evento h3 {
+        font-size: 14px;
+    }
+
+    .movimiento-historial-evento p {
+        font-size: 12px;
+    }
+
+    .movimiento-historial-fecha {
+        font-size: 10px;
+    }
+}
