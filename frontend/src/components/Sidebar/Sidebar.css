@@ -1,7 +1,6 @@
 
-/* ========================================
-   SIDEBAR PRINCIPAL
-======================================== */
+/*
+   SIDEBAR PRINCIPAL */
 
 .sidebar {
     position: fixed;
@@ -31,9 +30,8 @@
     transition: transform 0.25s ease;
 }
 
-/* ========================================
-   LOGO SICA
-======================================== */
+/*
+   LOGO SICA */
 
 .sidebar-logo {
     display: flex;
@@ -60,9 +58,8 @@
     object-fit: contain;
 }
 
-/* ========================================
-   MENÚ PRINCIPAL
-======================================== */
+/*
+   MENÚ PRINCIPAL */
 
 .sidebar-menu {
     display: flex;
@@ -160,9 +157,8 @@
     overflow-wrap: anywhere;
 }
 
-/* ========================================
-   INFORMACIÓN DEL USUARIO
-======================================== */
+/*
+   INFORMACIÓN DEL USUARIO */
 
 .sidebar-bottom {
     display: flex;
@@ -234,9 +230,8 @@
     font-size: 10px;
 }
 
-/* ========================================
-   CERRAR SESIÓN
-======================================== */
+/*
+   CERRAR SESIÓN */
 
 .sidebar-logout {
     display: flex;
@@ -288,9 +283,8 @@
     opacity: 0.6;
 }
 
-/* ========================================
-   BOTÓN HAMBURGUESA
-======================================== */
+/*
+   BOTÓN HAMBURGUESA */
 
 .sidebar-mobile-toggle {
     display: none;
@@ -336,9 +330,8 @@
     outline-offset: 3px;
 }
 
-/* ========================================
-   FONDO OSCURO MÓVIL
-======================================== */
+/*
+   FONDO OSCURO MÓVIL */
 
 .sidebar-backdrop {
     display: none;
@@ -367,9 +360,8 @@
     opacity: 1;
 }
 
-/* ========================================
-   TABLET Y CELULAR
-======================================== */
+/*
+   TABLET Y CELULAR */
 
 @media (max-width: 768px) {
     .sidebar-mobile-toggle {
@@ -418,9 +410,8 @@
     }
 }
 
-/* ========================================
-   CELULARES PEQUEÑOS
-======================================== */
+/*
+   CELULARES PEQUEÑOS */
 
 @media (max-width: 360px) {
     .sidebar {
@@ -442,9 +433,8 @@
     }
 }
 
-/* ========================================
-   PANTALLAS BAJAS
-======================================== */
+/*
+   PANTALLAS BAJAS */
 
 @media (max-height: 520px) {
     .sidebar {
@@ -471,9 +461,8 @@
     }
 }
 
-/* ========================================
-   ACCESIBILIDAD
-======================================== */
+/*
+   ACCESIBILIDAD */
 
 .sidebar-item:focus-visible {
     outline: 2px solid #007832;
