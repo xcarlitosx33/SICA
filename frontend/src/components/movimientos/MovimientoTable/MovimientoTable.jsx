@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./MovimientoTable.css";
 
 function MovimientoTable() {
 
-    const [selectedMovement, setSelectedMovement] = useState(null);
+    const navigate = useNavigate();
 
     return (
         <section className="movimiento-table-container">
@@ -92,13 +93,9 @@ function MovimientoTable() {
 
                             <td>
                                 <button
-                                    className={`movement-detail-button ${
-                                        selectedMovement === "MOV-2026-0186"
-                                            ? "selected"
-                                            : ""
-                                    }`}
+                                    className="movement-detail-button"
                                     onClick={() =>
-                                        setSelectedMovement("MOV-2026-0186")
+                                        navigate("/movimientos/Detalle/MOV-2026-0186")
                                     }
                                 >
                                     Ver detalle
@@ -157,13 +154,9 @@ function MovimientoTable() {
 
                             <td>
                                 <button
-                                    className={`movement-detail-button ${
-                                        selectedMovement === "MOV-2026-0185"
-                                            ? "selected"
-                                            : ""
-                                    }`}
+                                    className="movement-detail-button"
                                     onClick={() =>
-                                        setSelectedMovement("MOV-2026-0185")
+                                        navigate("/movimientos/Detalle/MOV-2026-0185")
                                     }
                                 >
                                     Ver detalle
@@ -222,13 +215,9 @@ function MovimientoTable() {
 
                             <td>
                                 <button
-                                    className={`movement-detail-button ${
-                                        selectedMovement === "MOV-2026-0184"
-                                            ? "selected"
-                                            : ""
-                                    }`}
+                                    className="movement-detail-button"
                                     onClick={() =>
-                                        setSelectedMovement("MOV-2026-0184")
+                                        navigate("/movimientos/Detalle/MOV-2026-0184")
                                     }
                                 >
                                     Ver detalle
@@ -287,13 +276,9 @@ function MovimientoTable() {
 
                             <td>
                                 <button
-                                    className={`movement-detail-button ${
-                                        selectedMovement === "MOV-2026-0183"
-                                            ? "selected"
-                                            : ""
-                                    }`}
+                                    className="movement-detail-button"
                                     onClick={() =>
-                                        setSelectedMovement("MOV-2026-0183")
+                                        navigate("/movimientos/Detalle/MOV-2026-0183")
                                     }
                                 >
                                     Ver detalle
@@ -352,17 +337,13 @@ function MovimientoTable() {
 
                             <td>
                                 <button
-                                    className={`movement-detail-button ${
-                                        selectedMovement === "MOV-2026-0181"
-                                            ? "selected"
-                                            : ""
-                                    }`}
+                                    className="movement-detail-button"
                                     onClick={() =>
-                                        setSelectedMovement("MOV-2026-0181")
+                                        navigate("/movimientos/Detalle/MOV-2026-0181")
                                     }
                                 >
                                     Ver detalle
-                                    <span >›</span>
+                                    <span>›</span>
                                 </button>
                             </td>
                         </tr>

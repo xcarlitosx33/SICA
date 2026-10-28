@@ -13,11 +13,13 @@ import DirectorCentro from "./pages/Dashboard/Roles/DirectorCentro/DirectorCentr
 
 import Ambientes from "./pages/Ambientes/Ambientes.jsx";
 import Movimientos from "./pages/Movimientos/Movimientos.jsx";
+import MovimientoDetalle from "./pages/Movimientos/MovimientoDetalle/MovimientoDetalle.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+
         {/* Autenticación */}
         <Route path="/" element={<Login />} />
         <Route path="/recuperar-clave" element={<RecuperarClave />} />
@@ -28,17 +30,21 @@ function App() {
         <Route path="/instructor" element={<Home />} />
         <Route path="/instructor/inicio" element={<Instructor />} />
         <Route path="/admin-edificio" element={<AdminEdificio />} />
+
         <Route
           path="/coordinacion-academica"
           element={<CoordinacionAcademica />}
         />
+
         <Route path="/director-centro" element={<DirectorCentro />} />
 
+        {/* Gestión */}
         <Route path="/ambientes" element={<Ambientes />} />
-        <Route path="/Movimientos" element={<Movimientos/>}/>
-
+        <Route path="/movimientos" element={<Movimientos />} />
+        <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
         {/* Rutas inexistentes */}
         <Route path="*" element={<Navigate to="/" replace />} />
+
       </Routes>
     </BrowserRouter>
   );

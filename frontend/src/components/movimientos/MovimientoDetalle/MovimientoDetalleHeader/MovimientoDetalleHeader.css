@@ -1,0 +1,211 @@
+/* CONTENEDOR PRINCIPAL */
+
+.movimiento-detalle-header {
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+
+/* BLOQUE PRINCIPAL */
+
+.movimiento-detalle-header-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+
+/* INFORMACIÓN DEL MOVIMIENTO */
+
+.movimiento-detalle-header-info {
+    min-width: 0;
+}
+
+.movimiento-detalle-id {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #65756D;
+}
+
+.movimiento-detalle-header-info h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #18312A;
+}
+
+.movimiento-detalle-header-info p {
+    max-width: 700px;
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #65756D;
+}
+
+
+/* ESTADO */
+
+.movimiento-detalle-header-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.movimiento-detalle-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+
+/* ESTADOS */
+
+.movimiento-detalle-status.completado {
+    color: #15803D;
+    background-color: #DCFCE7;
+}
+
+.movimiento-detalle-status.en-proceso {
+    color: #2563EB;
+    background-color: #DBEAFE;
+}
+
+.movimiento-detalle-status.pendiente {
+    color: #D97706;
+    background-color: #FEF3C7;
+}
+
+.movimiento-detalle-status.baja-registrada {
+    color: #DC2626;
+    background-color: #FEE2E2;
+}
+
+.movimiento-detalle-status-description {
+    font-size: 12px;
+    color: #65756D;
+    text-align: right;
+}
+
+
+/* INFORMACIÓN DE FECHA Y HORA */
+
+.movimiento-detalle-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #E2E7E4;
+}
+
+.movimiento-detalle-header-meta div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.movimiento-detalle-header-meta span {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #65756D;
+}
+
+.movimiento-detalle-header-meta strong {
+    font-size: 13px;
+    font-weight: 600;
+    color: #18312A;
+}
+
+
+/* TABLET */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .movimiento-detalle-header {
+        padding: 20px;
+    }
+
+    .movimiento-detalle-header-main {
+        gap: 20px;
+    }
+
+    .movimiento-detalle-header-info h2 {
+        font-size: 20px;
+    }
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 768px) {
+
+    .movimiento-detalle-header {
+        padding: 20px;
+    }
+
+    .movimiento-detalle-header-main {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .movimiento-detalle-header-status {
+        align-items: flex-start;
+    }
+
+    .movimiento-detalle-status-description {
+        text-align: left;
+    }
+
+    .movimiento-detalle-header-info h2 {
+        font-size: 20px;
+    }
+
+    .movimiento-detalle-header-info p {
+        font-size: 13px;
+    }
+
+    .movimiento-detalle-header-meta {
+        gap: 24px;
+    }
+}
+
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 400px) {
+
+    .movimiento-detalle-header {
+        padding: 16px;
+    }
+
+    .movimiento-detalle-header-info h2 {
+        font-size: 18px;
+    }
+
+    .movimiento-detalle-header-meta {
+        gap: 20px;
+    }
+
+    .movimiento-detalle-header-meta strong {
+        font-size: 12px;
+    }
+}
