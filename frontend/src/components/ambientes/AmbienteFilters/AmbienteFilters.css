@@ -1,48 +1,43 @@
-/*FILTROS*/
+/* FILTROS */
 
 .ambiente-filters {
-    display: grid;
-    grid-template-columns:
-        minmax(180px, 1.5fr)
-        minmax(130px, 1fr)
-        minmax(130px, 1fr)
-        auto;
-
-    align-items: end;
-    gap: 16px;
-
     width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
 
+    padding: 16px;
     background-color: #FFFFFF;
     border: 1px solid #E2E7E4;
     border-radius: 12px;
+
+    box-sizing: border-box;
+    margin-bottom: 24px;
 }
 
-.filter-group {
+/* GRUPOS */
+
+.ambiente-filters .filter-group {
     display: flex;
     flex-direction: column;
     gap: 6px;
     min-width: 0;
 }
 
-.filter-group label {
-    color: #18312A;
+.ambiente-filters .filter-group label {
     font-family: "Work Sans", sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
+    color: #18312A;
 }
 
-.filter-group input,
-.filter-group select {
-    width: 100%;
-    min-width: 0;
-    height: 42px;
+.ambiente-filters .filter-group input,
+.ambiente-filters .filter-group select {
+    height: 40px;
     padding: 0 12px;
-    box-sizing: border-box;
-
-    border: 1px solid #E2E7E4;
+    width: 100%;
+    border: 1px solid #D8E0DC;
     border-radius: 8px;
 
     background-color: #FFFFFF;
@@ -50,36 +45,73 @@
 
     font-family: "Work Sans", sans-serif;
     font-size: 14px;
+
+    box-sizing: border-box;
 }
 
-.filter-group input::placeholder {
-    color: #65756D;
+.ambiente-filters .filter-group input::placeholder {
+    color: #8A9891;
 }
 
-.filter-group input:focus,
-.filter-group select:focus {
-    outline: 2px solid #007832;
-    outline-offset: 1px;
+
+.ambiente-filters .filter-group:first-child input {
+    width: 100%;
+}
+
+/* SELECTS */
+
+.ambiente-filters > * {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.ambiente-filters .filter-group select {
+    width: 100%;
+}
+
+/* FOCUS */
+
+.ambiente-filters .filter-group input:focus,
+.ambiente-filters .filter-group select:focus {
+    outline: none;
     border-color: #007832;
 }
 
-.filter-button {
-    width: 160px;
-    min-height: 42px;
-    padding: 10px 20px;
+/* BOTÓN LIMPIAR FILTROS*/
+.clear-filters-button {
+    height: 40px;
+    padding: 0 14px;
 
-    border: none;
+    border: 1px solid #E2E7E4;
     border-radius: 8px;
 
-    background-color: #007832;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #65756D;
 
-    font-size: 14px;
-    font-weight: 600;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
 
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
+
+.clear-filters-button:hover {
+    border-color: #E3F4E8;
+    background-color: #E3F4E8;
+    color: #007832;
+}
+
+.clear-filters-button:focus-visible {
+    outline: 2px solid #007832;
+    outline-offset: 3px;
+}
+
 
 .filter-button:hover {
     background-color: #00652A;
@@ -90,14 +122,61 @@
     outline-offset: 3px;
 }
 
-@media (max-width: 600px) {
+/* TABLET */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    .ambiente-filters {
+        gap: 12px;
+    }
+
+    .ambiente-filters .filter-group:first-child {
+        flex: 1 1 200px;
+    }
+
+    .ambiente-filters .filter-group:not(:first-child) {
+        flex: 1 1 120px;
+    }
+}
+
+/* MÓVIL */
+
+@media (max-width: 768px) {
+    .ambiente-filters {
+        align-items: stretch;
+    }
     .filter-button {
         width: 100%;
     }
 }
 
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 400px) {
+    .ambiente-filters {
+        padding: 14px;
+        gap: 10px;
+    }
+}
+
+/* REDUCIR ANIMACIONES */
+
 @media (prefers-reduced-motion: reduce) {
     .filter-button {
         transition: none;
+    }
+}
+@media (max-width: 768px) {
+    .ambiente-filters {
+        align-items: stretch;
+    }
+
+    .ambiente-filters > * {
+        flex: 1 1 100%;
+    }
+
+    .ambiente-filters .filter-group input,
+    .ambiente-filters .filter-group select,
+    .clear-filters-button {
+        width: 100%;
     }
 }

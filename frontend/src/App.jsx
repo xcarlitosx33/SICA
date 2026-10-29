@@ -14,6 +14,7 @@ import DirectorCentro from "./pages/Dashboard/Roles/DirectorCentro/DirectorCentr
 import Ambientes from "./pages/Ambientes/Ambientes.jsx";
 import Movimientos from "./pages/Movimientos/Movimientos.jsx";
 import MovimientoDetalle from "./pages/Movimientos/MovimientoDetalle/MovimientoDetalle.jsx";
+import AmbienteDetalle from "./pages/Ambientes/AmbienteDetalle/AmbienteDetalle.jsx";
 
 function App() {
   return (
@@ -40,8 +41,10 @@ function App() {
 
         {/* Gestión */}
         <Route path="/ambientes" element={<Ambientes />} />
+        <Route path="/ambientes/Detalle/:id" element={<AmbienteDetalle />}/>
         <Route path="/movimientos" element={<Movimientos />} />
         <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
+
         {/* Rutas inexistentes */}
         <Route path="*" element={<Navigate to="/" replace />} />
 

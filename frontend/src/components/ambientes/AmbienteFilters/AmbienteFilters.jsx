@@ -54,8 +54,8 @@ function AmbienteFilters() {
                 </select>
             </div>
 
-            <button type="button" className="filter-button">
-                Buscar
+            <button type="button" className="clear-filters-button">
+                Limpiar filtros
             </button>
         </section>
     );

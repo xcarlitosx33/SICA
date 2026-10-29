@@ -131,6 +131,49 @@
     color: #2563EB;
     background-color: #DBEAFE;
 }
+.ambiente-detail-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 36px;
+    padding: 0 12px;
+
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+
+    background-color: #FFFFFF;
+    color: #18312A;
+
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.ambiente-detail-button:hover {
+    background-color: #E3F4E8;
+    border-color: #E3F4E8;
+    color: #007832;
+}
+
+.ambiente-detail-button:focus-visible {
+    outline: 2px solid #007832;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ambiente-detail-button {
+        transition: none;
+    }
+}
 
 /* Celular */
 
