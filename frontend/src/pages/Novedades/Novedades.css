@@ -1,0 +1,26 @@
+.novedades-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #F6F6F6;
+}
+
+.novedades-main {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    margin-left: 260px;
+    padding: 32px;
+}
+
+.novedades-content {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .novedades-main {
+        margin-left: 0;
+        padding: 80px 16px 24px;
+    }
+}
