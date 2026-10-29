@@ -11,7 +11,7 @@ function AmbienteSummary() {
                     </span>
 
                     <strong className="summary-card-value">
-                        14
+                        16
                     </strong>
                 </div>
             </div>

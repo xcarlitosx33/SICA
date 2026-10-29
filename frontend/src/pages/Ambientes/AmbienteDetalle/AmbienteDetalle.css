@@ -1,0 +1,86 @@
+.ambiente-detalle-page {
+    min-height: 100vh;
+    display: flex;
+    background-color: #F6F6F6;
+    font-family: "Work Sans", sans-serif;
+}
+
+.ambiente-detalle-content {
+    flex: 1;
+    min-width: 0;
+    margin-left: 260px;
+    padding: 24px 32px 40px;
+    box-sizing: border-box;
+}
+
+/* PageHeader de esta página */
+.ambiente-detalle-content > .page-header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 24px;
+}
+
+/* Contenedor general del detalle */
+.ambiente-detalle-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 16px 16px;
+}
+.ambiente-detalle-container > .ambiente-informacion,
+.ambiente-detalle-container > .ambiente-caracteristicas {
+    min-width: 0;
+    height: 100%;
+}
+
+/*
+    El encabezado del ambiente ocupa
+    las dos columnas.
+*/
+.ambiente-detalle-container > .ambiente-detalle-header {
+    grid-column: 1 / -1;
+}
+
+/*
+    Las secciones generales quedan
+    una al lado de la otra.
+*/
+.ambiente-detalle-container > .ambiente-informacion,
+.ambiente-detalle-container > .ambiente-caracteristicas {
+    min-width: 0;
+}
+
+/* Ajuste del espacio interno de las secciones */
+.ambiente-detalle-container
+.ambiente-detalle-header {
+    gap: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ambiente-detalle-container {
+        grid-template-columns: 1fr;
+    }
+
+    .ambiente-detalle-container > .ambiente-detalle-header {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .ambiente-detalle-content {
+        margin-left: 0;
+        padding: 16px;
+    }
+
+    .ambiente-detalle-content > .page-header {
+        margin-bottom: 20px;
+    }
+
+    .ambiente-detalle-container {
+        gap: 16px;
+    }
+}
