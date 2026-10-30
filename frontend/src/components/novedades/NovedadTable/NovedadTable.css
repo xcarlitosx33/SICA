@@ -1,0 +1,116 @@
+.novedad-table-section {
+    width: 100%;
+    margin: 20px 0 32px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+}
+
+.novedad-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.novedad-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+.novedad-table thead {
+    background-color: #F3F7F4;
+}
+
+.novedad-table th {
+    padding: 16px;
+    color: #65756D;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    border-bottom: 1px solid #E2E7E4;
+}
+
+.novedad-table td {
+    padding: 16px;
+    color: #34463D;
+    vertical-align: middle;
+    border-bottom: 1px solid #EEF1EF;
+}
+
+.novedad-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.novedad-table tbody tr:hover {
+    background-color: #FAFCFA;
+}
+
+.novedad-table-id {
+    color: #007832 !important;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.novedad-table-description {
+    min-width: 210px;
+    max-width: 280px;
+    line-height: 1.5;
+}
+
+.novedad-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.novedad-status.pendiente {
+    color: #946200;
+    background-color: #FFF3CD;
+}
+
+.novedad-status.en-proceso {
+    color: #185ABC;
+    background-color: #E5EFFF;
+}
+
+.novedad-status.cerrada {
+    color: #176B35;
+    background-color: #DDF5E5;
+}
+
+
+
+.novedad-table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    color: #65756D;
+    font-size: 12px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E2E7E4;
+}
+
+.novedad-table-empty {
+    padding: 32px 16px !important;
+    color: #65756D !important;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .novedad-table th,
+    .novedad-table td {
+        padding: 12px;
+    }
+
+    .novedad-table-footer {
+        padding: 14px;
+    }
+}

@@ -1,0 +1,67 @@
+/* Estilo base */
+.sica-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 40px;
+    padding: 0 12px;
+
+    border: 1px solid #D8E0DC;
+    border-radius: 8px;
+
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+/* Botón secundario */
+.sica-button--secondary {
+    background-color: #FFFFFF;
+    border-color: #D8E0DC;
+    color: #18312A;
+}
+
+.sica-button--secondary:hover:not(:disabled) {
+    background-color: #E3F4E8;
+    border-color: #007832;
+    color: #007832;
+}
+
+/* Botón de peligro */
+.sica-button--danger {
+    background-color: #FFFFFF;
+    border-color: #FECACA;
+    color: #B91C1C;
+}
+
+.sica-button--danger:hover:not(:disabled) {
+    background-color: #FEF2F2;
+    border-color: #DC2626;
+    color: #DC2626;
+}
+
+/* Iconos y flechas */
+.sica-button span {
+    color: inherit;
+}
+
+/* Accesibilidad */
+.sica-button:focus-visible {
+    outline: 2px solid #007832;
+    outline-offset: 2px;
+}
+
+/* Botones deshabilitados */
+.sica-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}

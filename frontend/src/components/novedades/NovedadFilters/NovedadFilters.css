@@ -1,0 +1,114 @@
+.novedad-filters {
+    margin: 28px 0 20px;
+    padding: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+}
+
+.novedad-filters-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.novedad-filters-header h2 {
+    margin: 0 0 6px;
+    color: #18312A;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.novedad-filters-header p {
+    margin: 0;
+    color: #65756D;
+    font-size: 13px;
+}
+
+.novedad-filters-clear {
+    flex-shrink: 0;
+    padding: 10px 14px;
+    color: #007832;
+    background: #FFFFFF;
+    border: 1px solid #007832;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.novedad-filters-clear:hover {
+    background-color: #E3F4E8;
+}
+
+.novedad-filters-controls {
+    display: grid;
+    grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.novedad-filter-search,
+.novedad-filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.novedad-filter-search label,
+.novedad-filter-field label {
+    color: #18312A;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.novedad-filter-search input,
+.novedad-filter-field select {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    color: #18312A;
+    background-color: #FFFFFF;
+    border: 1px solid #D5DDD8;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.novedad-filter-search input:focus,
+.novedad-filter-field select:focus {
+    border-color: #007832;
+    box-shadow: 0 0 0 3px rgb(0 120 50 / 10%);
+}
+
+.novedad-filter-search input::placeholder {
+    color: #8A9690;
+}
+
+@media (max-width: 1100px) {
+    .novedad-filters-controls {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .novedad-filters {
+        padding: 18px;
+    }
+
+    .novedad-filters-header {
+        flex-direction: column;
+    }
+
+    .novedad-filters-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .novedad-filters-clear {
+        width: 100%;
+    }
+}
