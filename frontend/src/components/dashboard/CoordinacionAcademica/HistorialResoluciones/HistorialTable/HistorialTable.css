@@ -1,0 +1,154 @@
+
+/*SECCIÓN DE TABLA */
+.historial-table-section {
+    width: 100%;
+    margin-top: 24px;
+    font-family: "Work Sans", sans-serif;
+}
+
+/* ENCABEZADO */
+.historial-table-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.historial-table-heading h2 {
+    margin: 0;
+    color: #18312A;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.historial-table-heading span {
+    color: #65756D;
+    font-size: 12px;
+}
+
+/* CONTENEDOR */
+.historial-table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 10px;
+}
+
+/* TABLA */
+.historial-table {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.historial-table thead {
+    background-color: #F6F6F6;
+}
+
+.historial-table th {
+    padding: 13px 12px;
+    color: #65756D;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    border-bottom: 1px solid #E2E7E4;
+}
+
+.historial-table td {
+    padding: 14px 12px;
+    color: #475569;
+    font-size: 12px;
+    border-bottom: 1px solid #E2E7E4;
+    white-space: nowrap;
+}
+
+.historial-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.historial-table tbody tr:hover {
+    background-color: #F9FBF9;
+}
+
+.historial-table td:first-child {
+    min-width: 190px;
+    white-space: normal;
+}
+
+.historial-table td:first-child strong {
+    display: block;
+    color: #18312A;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* IDENTIFICADOR */
+.historial-request-id {
+    display: block;
+    margin-top: 4px;
+    color: #94A3B8;
+    font-size: 10px;
+}
+
+/* ESTADOS */
+.historial-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.historial-status.aprobada {
+    background-color: #DCFCE7;
+    color: #15803D;
+}
+
+.historial-status.rechazada {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+/* BOTÓN DETALLE */
+.historial-detail-button {
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.historial-detail-button:hover {
+    border-color: #E3F4E8;
+    background-color: #E3F4E8;
+    color: #007832;
+}
+
+.historial-detail-button:focus-visible {
+    outline: 2px solid #007832;
+    outline-offset: 3px;
+}
+
+/*RESPONSIVE */
+@media (max-width: 768px) {
+    .historial-table-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .historial-table {
+        min-width: 1050px;
+    }
+}

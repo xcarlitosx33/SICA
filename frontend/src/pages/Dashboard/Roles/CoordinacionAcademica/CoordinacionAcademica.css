@@ -1,0 +1,129 @@
+
+/*LAYOUT GENERAL */
+
+.coordinacion-layout {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background: #F6F6F6;
+}
+
+/*
+   CONTENIDO PRINCIPAL */
+
+.coordinacion-main {
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    margin-left: 260px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/*
+   CONTENEDOR DEL CONTENIDO */
+
+.coordinacion-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/*
+   VALIDACIONES PENDIENTES */
+
+.coordinacion-validaciones {
+    width: 100%;
+    margin-top: 28px;
+}
+
+
+
+
+.coordinacion-history-button:focus-visible {
+    outline: 2px solid #007832;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+
+
+/*TABLET */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .coordinacion-main {
+        width: calc(100% - 260px);
+        margin-left: 260px;
+    }
+
+    .coordinacion-content {
+        width: 100%;
+        max-width: none;
+        padding: 24px 20px;
+    }
+
+    .coordinacion-section-header {
+        gap: 12px;
+    }
+
+}
+
+/*MÓVIL */
+
+@media (max-width: 768px) {
+
+    .coordinacion-main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .coordinacion-content {
+        padding: 76px 20px 24px;
+    }
+
+    .coordinacion-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .coordinacion-section-actions {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+}
+
+/*CELULARES PEQUEÑOS */
+
+@media (max-width: 400px) {
+
+    .coordinacion-content {
+        padding: 72px 14px 20px;
+    }
+
+    .coordinacion-section-header h2 {
+        font-size: 17px;
+    }
+
+    .coordinacion-section-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .coordinacion-history-button {
+        transition: none;
+    }
+
+}

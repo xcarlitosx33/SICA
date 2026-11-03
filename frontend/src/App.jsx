@@ -6,10 +6,13 @@ import RecuperarClave from "./pages/Auth/RecuperarClave/RecuperarClave.jsx";
 import CambiarClave from "./pages/Auth/CambiarClave/CambiarClave.jsx";
 import EnlaceEnviado from "./pages/Auth/EnlaceEnviado/EnlaceEnviado.jsx";
 
+import CoordinacionAcademica from "./pages/Dashboard/Roles/CoordinacionAcademica/CoordinacionAcademica";
+import HistorialResoluciones from "./pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/HistorialResoluciones";
+import ResolucionDetalle from "./pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/ResolucionDetalle/ResolucionDetalle";
+
 import Home from "./pages/Dashboard/Roles/Instructor/home.jsx";
 import Instructor from "./pages/Dashboard/Roles/Instructor/Instructor.jsx";
 import AdminEdificio from "./pages/Dashboard/Roles/AdminEdificio/AdminEdificio.jsx";
-import CoordinacionAcademica from "./pages/Dashboard/Roles/CoordinacionAcademica/CoordinacionAcademica.jsx";
 import DirectorCentro from "./pages/Dashboard/Roles/DirectorCentro/DirectorCentro.jsx";
 
 import Ambientes from "./pages/Ambientes/Ambientes.jsx";
@@ -28,28 +31,23 @@ function App() {
                 <Route path="/cambiar-clave" element={<CambiarClave />} />
                 <Route path="/confirmacion" element={<EnlaceEnviado />} />
 
+                <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />} />
+                <Route path="/dashboard/coordinacion-academica/historial-resoluciones"element={<HistorialResoluciones />} />
+                <Route path="/dashboard/coordinacion-academica/historial-resoluciones/detalle/:id"element={<ResolucionDetalle />} />
+                
                 {/* Dashboard y roles */}
                 <Route path="/instructor" element={<Home />} />
                 <Route path="/instructor/inicio" element={<Instructor />} />
                 <Route path="/admin-edificio" element={<AdminEdificio />} />
-                <Route
-                    path="/coordinacion-academica"
-                    element={<CoordinacionAcademica />}
-                />
+                <Route path="/coordinacion-academica" element={<CoordinacionAcademica />} />
                 <Route path="/director-centro" element={<DirectorCentro />} />
 
                 {/* Gestión */}
                 <Route path="/ambientes" element={<Ambientes />} />
-                <Route
-                    path="/ambientes/Detalle/:id"
-                    element={<AmbienteDetalle />}
-                />
+                <Route path="/ambientes/Detalle/:id" element={<AmbienteDetalle />} />
                 <Route path="/novedades" element={<Novedades />} />
                 <Route path="/movimientos" element={<Movimientos />} />
-                <Route
-                    path="/movimientos/Detalle/:id"
-                    element={<MovimientoDetalle />}
-                />
+                <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
 
                 {/* Rutas inexistentes */}
                 <Route path="*" element={<Navigate to="/" replace />} />
