@@ -1,0 +1,40 @@
+
+import "./HistorialResoluciones.css";
+
+import Sidebar from "../../../../../components/Sidebar/Sidebar";
+import PageHeader from "../../../../../components/PageHeader/PageHeader";
+
+import HistorialSummary from "../../../../../components/dashboard/CoordinacionAcademica/HistorialResoluciones/HistorialSummary/HistorialSummary";
+import HistorialFilters from "../../../../../components/dashboard/CoordinacionAcademica/HistorialResoluciones/HistorialFilters/HistorialFilters";
+import HistorialTable from "../../../../../components/dashboard/CoordinacionAcademica/HistorialResoluciones/HistorialTable/HistorialTable";
+
+function HistorialResoluciones() {
+    return (
+        <div className="historial-layout">
+
+            <Sidebar />
+
+            <main className="historial-main">
+                <div className="historial-content">
+
+                    <PageHeader
+                        title="Historial de resoluciones"
+                        description="Consulta y revisa el historial de solicitudes gestionadas por Coordinación Académica."
+                    />
+
+                    {/* Aquí incorporaremos los componentes del historial */}
+
+                    <section className="historial-container">
+                        <HistorialSummary />
+                        <HistorialFilters />
+                        <HistorialTable />
+                    </section>
+
+                </div>
+            </main>
+
+        </div>
+    );
+}
+
+export default HistorialResoluciones;

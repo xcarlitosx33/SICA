@@ -1,0 +1,202 @@
+
+/*TARJETA */
+
+.validacion-card {
+    width: 100%;
+    padding: 18px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    font-family: "Work Sans", sans-serif;
+}
+
+/*ENCABEZADO */
+.validacion-card-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #E2E7E4;
+}
+
+.validacion-type {
+    padding: 5px 9px;
+    border-radius: 4px;
+    background-color: #F1F5F9;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.validacion-type.urgente {
+    background-color: #FEF2F2;
+    color: #DC2626;
+}
+
+.validacion-type.especializado {
+    background-color: #EFF6FF;
+    color: #2563EB;
+}
+
+.validacion-type.reasignación {
+    background-color: #F1F5F9;
+    color: #475569;
+}
+
+.validacion-card-header h3 {
+    flex: 1;
+    min-width: 180px;
+    margin: 0;
+    color: #18312A;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.validacion-ficha,
+.validacion-recibido {
+    color: #65756D;
+    font-size: 12px;
+}
+
+/*INFORMACIÓN */
+
+.validacion-card-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.validacion-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.validacion-detail-item span {
+    color: #65756D;
+    font-size: 12px;
+}
+
+.validacion-detail-item strong {
+    color: #18312A;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/*JUSTIFICACIÓN */
+
+.validacion-justificacion {
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #F6F8FA;
+    color: #475569;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.validacion-justificacion strong {
+    color: #18312A;
+}
+
+/*ACCIONES */
+
+.validacion-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+/* REVISAR DETALLE: ESTILO DE MOVIMIENTOS */
+
+.validacion-review-button {
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.validacion-review-button:hover {
+    border-color: #E3F4E8;
+    background-color: #E3F4E8;
+    color: #007832;
+}
+
+/* APROBAR */
+
+.validacion-approve-button {
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid #005F28;
+    border-radius: 8px;
+    background-color: #005F28;
+    color: #FFFFFF;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.validacion-approve-button:hover {
+    border-color: #007832;
+    background-color: #007832;
+}
+
+.validacion-card-actions button:focus-visible {
+    outline: 2px solid #007832;
+    outline-offset: 3px;
+}
+
+/*RESPONSIVE */
+
+@media (max-width: 900px) {
+    .validacion-card-header {
+        align-items: flex-start;
+    }
+
+    .validacion-card-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .validacion-card-details {
+        grid-template-columns: 1fr;
+    }
+
+    .validacion-card-header {
+        flex-direction: column;
+    }
+
+    .validacion-card-header h3 {
+        min-width: 0;
+    }
+
+    .validacion-card-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .validacion-card-actions button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .validacion-card-actions button {
+        transition: none;
+    }
+}
