@@ -1,15 +1,4 @@
 
-<<<<<<< HEAD
-import { BrowserRouter } from "react-router-dom";
-import AppRoutes from "./routes/AppRoutes";
-
-function App() {
-  return (
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
-  );
-=======
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Login from "./pages/Auth/Login/Login.jsx";
@@ -65,7 +54,6 @@ function App() {
             </Routes>
         </BrowserRouter>
     );
->>>>>>> 211b8e6c492978af0554b0e67d12b767c5ad696d
 }
 
 export default App;
