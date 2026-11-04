@@ -1,0 +1,67 @@
+
+.inventario-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.inventario-summary-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 94px;
+  padding: 14px;
+  box-sizing: border-box;
+  border: 1px solid #E2E7E4;
+  border-radius: 11px;
+  background: #FFFFFF;
+}
+
+.inventario-summary-label {
+  display: block;
+  color: #526B75;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.inventario-summary-number {
+  display: block;
+  margin-top: 6px;
+  color: #18312A;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.inventario-summary-card p {
+  margin: 4px 0 0;
+  color: #718096;
+  font-size: 10px;
+}
+
+.inventario-summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.inventario-summary-icon.maintenance {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.inventario-summary-icon.baja {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+@media (max-width: 600px) {
+  .inventario-summary {
+    grid-template-columns: 1fr;
+  }
+}
