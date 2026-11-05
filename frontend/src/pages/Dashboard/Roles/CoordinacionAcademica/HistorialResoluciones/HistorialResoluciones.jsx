@@ -1,4 +1,6 @@
 
+import { useNavigate } from "react-router-dom";
+
 import "./HistorialResoluciones.css";
 
 import Sidebar from "../../../../../components/Sidebar/Sidebar";
@@ -9,6 +11,9 @@ import HistorialFilters from "../../../../../components/dashboard/CoordinacionAc
 import HistorialTable from "../../../../../components/dashboard/CoordinacionAcademica/HistorialResoluciones/HistorialTable/HistorialTable";
 
 function HistorialResoluciones() {
+
+    const navigate = useNavigate();
+
     return (
         <div className="historial-layout">
 
@@ -22,9 +27,16 @@ function HistorialResoluciones() {
                         description="Consulta y revisa el historial de solicitudes gestionadas por Coordinación Académica."
                     />
 
-                    {/* Aquí incorporaremos los componentes del historial */}
 
                     <section className="historial-container">
+                        <button
+                            type="button"
+                            className="historial-back-button"
+                            onClick={() => navigate("/dashboard/coordinacion-academica")}
+                        >
+                            ← Volver al dashboard
+                        </button>
+
                         <HistorialSummary />
                         <HistorialFilters />
                         <HistorialTable />

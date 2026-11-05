@@ -16,6 +16,7 @@ import CoordinacionAcademica from "../pages/Dashboard/Roles/CoordinacionAcademic
 
 import Ambientes from "../pages/Ambientes/Ambientes";
 import AmbienteDetalle from "../pages/Ambientes/AmbienteDetalle/AmbienteDetalle";
+import Programacion from "../pages/Programacion/Programacion";
 import Movimientos from "../pages/Movimientos/Movimientos";
 import MovimientoDetalle from "../pages/MovimientoDetalle/MovimientoDetalle";
 
@@ -39,6 +40,7 @@ function AppRoutes() {
 
         <Route path="/ambientes" element={<Ambientes />} />
         <Route path="/ambientes/Detalle/:id" element={<AmbienteDetalle />} />
+        <Route path="/programacion" element={<Programacion />} />
         <Route path="/movimientos" element={<Movimientos />} />
         <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
       </Routes>
