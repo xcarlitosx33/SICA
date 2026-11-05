@@ -1,0 +1,243 @@
+
+/*CONTENEDOR GENERAL */
+.vista-diaria {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* ENCABEZADO Y NAVEGACIÓN */
+.vista-diaria-header {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border-bottom: 1px solid #E2E7E4;
+}
+
+.vista-diaria-date {
+    text-align: center;
+}
+
+.vista-diaria-date h3 {
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #18312A;
+    text-transform: capitalize;
+}
+
+.vista-diaria-date p {
+    margin: 5px 0 0;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #65756D;
+}
+
+
+/*BOTONES DE NAVEGACIÓN */
+.vista-diaria-navigation {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #18312A;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.vista-diaria-navigation:hover {
+    background: #E3F4E8;
+    border-color: #E3F4E8;
+    color: #007832;
+}
+
+.vista-diaria-navigation svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/*DESPLAZAMIENTO HORIZONTAL */
+.vista-diaria-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/*LÍNEA DE TIEMPO */
+.vista-diaria-timeline {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    min-width: 780px;
+    padding: 16px 16px 16px 0;
+    box-sizing: border-box;
+}
+
+
+/*HORARIOS */
+.vista-diaria-hours {
+    display: flex;
+    flex-direction: column;
+}
+
+.vista-diaria-hour {
+    height: 64px;
+    padding: 0 12px 0 0;
+    box-sizing: border-box;
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: right;
+    transform: translateY(-7px);
+}
+
+
+/*ÁREA DE SESIONES */
+.vista-diaria-schedule {
+    position: relative;
+    min-width: 680px;
+    height: 1024px;
+    border-left: 1px solid #E2E7E4;
+}
+
+
+/*LÍNEAS HORARIAS */
+.vista-diaria-grid {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.vista-diaria-grid-line {
+    height: 64px;
+    flex-shrink: 0;
+    border-top: 1px solid #E2E7E4;
+    box-sizing: border-box;
+}
+
+.vista-diaria-grid-line:last-child {
+    border-bottom: 1px solid #E2E7E4;
+}
+
+
+/*BLOQUES DE SESIONES */
+.vista-diaria-session {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border-left: 4px solid;
+    border-radius: 7px;
+    box-sizing: border-box;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+
+.vista-diaria-session strong {
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #18312A;
+}
+
+.vista-diaria-session span {
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #65756D;
+}
+
+
+/*COLORES POR RAMA O ÁREA */
+
+/* INDUSTRIA */
+.vista-diaria-session.industria {
+    background: #EAF2FF;
+    border-color: #2563EB;
+}
+
+/* COMERCIO Y SERVICIOS */
+.vista-diaria-session.comercio {
+    background: #FFF1E5;
+    border-color: #EA580C;
+}
+
+/* TIC */
+.vista-diaria-session.tic {
+    background: #E3F4E8;
+    border-color: #39A900;
+}
+
+/* AGROPECUARIO */
+.vista-diaria-session.agropecuario {
+    background: #EDF5E8;
+    border-color: #558B2F;
+}
+
+/* TRANSVERSAL */
+.vista-diaria-session.transversal {
+    background: #F1EAFE;
+    border-color: #7C3AED;
+}
+
+
+/*MENSAJE SIN SESIONES */
+.vista-diaria-no-sessions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max-content;
+    max-width: 90%;
+    transform: translate(-50%, -50%);
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #65756D;
+    text-align: center;
+}
+
+
+/*MÓVIL */
+@media (max-width: 768px) {
+
+    .vista-diaria-header {
+        padding: 14px 16px;
+        gap: 10px;
+    }
+
+    .vista-diaria-date h3 {
+        font-size: 16px;
+    }
+
+    .vista-diaria-date p {
+        font-size: 12px;
+    }
+
+    .vista-diaria-timeline {
+        min-width: 780px;
+    }
+
+}
