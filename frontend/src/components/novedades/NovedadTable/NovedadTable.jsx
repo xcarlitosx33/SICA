@@ -1,48 +1,7 @@
 import "./NovedadTable.css";
+import { novedades as NOVEDADES } from "../../../data/novedades";
 import Button from "../../Button/Button";
 
-const NOVEDADES = [
-    {
-        id: "NOV-001",
-        fecha: "28/10/2026",
-        ambiente: "Ambiente 101",
-        tipo: "Mantenimiento",
-        descripcion: "Aire acondicionado presenta fallas.",
-        estado: "Pendiente",
-    },
-    {
-        id: "NOV-002",
-        fecha: "27/10/2026",
-        ambiente: "Ambiente 102",
-        tipo: "Equipamiento",
-        descripcion: "Proyector no enciende.",
-        estado: "En proceso",
-    },
-    {
-        id: "NOV-003",
-        fecha: "26/10/2026",
-        ambiente: "Ambiente 103",
-        tipo: "Infraestructura",
-        descripcion: "Filtración de agua en el techo.",
-        estado: "Cerrada",
-    },
-    {
-        id: "NOV-004",
-        fecha: "25/10/2026",
-        ambiente: "Ambiente 104",
-        tipo: "Mantenimiento",
-        descripcion: "Revisión de tomacorrientes.",
-        estado: "Pendiente",
-    },
-    {
-        id: "NOV-005",
-        fecha: "24/10/2026",
-        ambiente: "Ambiente 101",
-        tipo: "Equipamiento",
-        descripcion: "Teclado presenta fallas.",
-        estado: "En proceso",
-    },
-];
 
 function NovedadTable({ filters }) {
     const normalizedSearch = filters.search.trim().toLowerCase();

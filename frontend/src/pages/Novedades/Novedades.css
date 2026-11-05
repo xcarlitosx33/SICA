@@ -1,15 +1,18 @@
 .novedades-layout {
     display: flex;
     min-height: 100vh;
-    background-color: #F6F6F6;
+    min-height: 100dvh;
+    background: #F6F6F6;
 }
 
 .novedades-main {
     flex: 1;
     min-width: 0;
     min-height: 100vh;
+    min-height: 100dvh;
     margin-left: 260px;
-    padding: 32px;
+    padding: 24px;
+    box-sizing: border-box;
 }
 
 .novedades-content {
@@ -18,9 +21,21 @@
     margin: 0 auto;
 }
 
+@media (max-width: 1100px) {
+    .novedades-main {
+        padding: 24px 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .novedades-main {
         margin-left: 0;
         padding: 80px 16px 24px;
+    }
+}
+
+@media (max-width: 400px) {
+    .novedades-main {
+        padding: 76px 14px 20px;
     }
 }

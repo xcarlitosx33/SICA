@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 
 import { ambientes } from "../../../data/ambientes";
+import { novedades } from "../../../data/novedades";
 
 import Sidebar from "../../../components/Sidebar/Sidebar";
 import PageHeader from "../../../components/PageHeader/PageHeader";
@@ -56,31 +57,7 @@ function AmbienteDetalle() {
 
                     <AmbienteObservaciones ambiente={ambiente} />
 
-                    <AmbienteNovedades
-                        novedades={[
-                            {
-                                id: "NOV-001",
-                                fecha: "2026-10-20",
-                                descripcion: "Luz del techo fundida en la zona central",
-                                estado: "abierta",
-                                estadoTexto: "Abierta",
-                            },
-                            {
-                                id: "NOV-002",
-                                fecha: "2026-09-15",
-                                descripcion: "Daño en proyector multimedia",
-                                estado: "en-proceso",
-                                estadoTexto: "En proceso",
-                            },
-                            {
-                                id: "NOV-003",
-                                fecha: "2026-08-10",
-                                descripcion: "Mantenimiento general de equipos",
-                                estado: "cerrada",
-                                estadoTexto: "Cerrada",
-                            },
-                        ]}
-                    />
+                    <AmbienteNovedades novedades={novedades.filter((item) => item.ambienteId === ambiente.id)} />
                 </div>
             </main>
         </div>

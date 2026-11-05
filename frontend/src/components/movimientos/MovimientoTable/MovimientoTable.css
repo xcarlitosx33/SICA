@@ -193,47 +193,10 @@
 }
 
 /* Botón */
-.movement-detail-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-width: 78px;
-    height: 40px;
-    padding: 0 12px;
-    border: 1px solid #D8E0DC;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-    color: #18312A;
-    font-family: "Work Sans", sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-}
 
-.movement-detail-button:hover {
-    border-color: #E3F4E8;
-    background-color: #E3F4E8;
-    color: #007832;
-}
 
-.movement-detail-button:hover span {
-    color: #007832;
-}
-.movement-detail-button.selected {
-    border-color: #007832;
-    background-color: #007832;
-    color: #FFFFFF;
-}
 
-.movement-detail-button.selected span {
-    color: #FFFFFF;
-}
 
-.movement-detail-button span {
-    margin: 0;
-    font-size: 18px;
-    color: #007832;
-}
 
 /* Paginación */
 

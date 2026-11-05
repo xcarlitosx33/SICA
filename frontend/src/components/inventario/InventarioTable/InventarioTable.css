@@ -1,0 +1,345 @@
+.inventario-table-container {
+    width: 100%;
+    min-width: 0;
+    margin-top: 24px;
+}
+
+.inventario-table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.inventario-table-header h2 {
+    margin: 0;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.inventario-table-header p {
+    margin: 4px 0 0;
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+}
+
+.inventario-results-count {
+    color: #65756D;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.inventario-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.inventario-table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+}
+
+.inventario-table thead {
+    background: #F6F6F6;
+}
+
+.inventario-table th {
+    padding: 14px 18px;
+    border-bottom: 1px solid #E2E7E4;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.inventario-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #E2E7E4;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.inventario-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.inventario-table tbody tr:hover {
+    background: #FAFCFB;
+}
+
+.inventario-table th:first-child,
+.inventario-table td:first-child {
+    font-weight: 600;
+}
+
+.inventario-table th:last-child,
+.inventario-table td:last-child {
+    text-align: center;
+}
+
+.inventario-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.inventario-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.inventario-status.completo {
+    color: #15803D;
+    background: #DCFCE7;
+}
+
+.inventario-status.revision {
+    color: #D97706;
+    background: #FEF3C7;
+}
+
+.inventario-status.incompleto {
+    color: #DC2626;
+    background: #FEE2E2;
+}
+
+.inventario-empty {
+    padding: 32px !important;
+    color: #65756D;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .inventario-table-header h2 {
+        font-size: 18px;
+    }
+
+    .inventario-table th,
+    .inventario-table td {
+        padding: 12px;
+    }
+}
+
+/* AJUSTES DE ESPACIADO */
+
+.inventario-table-container {
+    margin-top: 18px;
+}
+
+.inventario-table th {
+    padding: 11px 16px;
+}
+
+.inventario-table td {
+    padding: 11px 16px;
+}
+
+/* ENCABEZADO DE LA LISTA */
+
+.inventario-table-header {
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.inventario-results-count {
+    padding: 6px 11px;
+    border: 1px solid #E2E7E4;
+    border-radius: 20px;
+    background: #FFFFFF;
+    color: #65756D;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.inventario-table-container {
+    margin-top: 16px;
+}
+
+/* DISTRIBUCIÓN COMPACTA DE COLUMNAS */
+
+.inventario-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.inventario-table th:nth-child(1),
+.inventario-table td:nth-child(1) {
+    width: 25%;
+}
+
+.inventario-table th:nth-child(2),
+.inventario-table td:nth-child(2) {
+    width: 35%;
+}
+
+.inventario-table th:nth-child(3),
+.inventario-table td:nth-child(3) {
+    width: 40%;
+    text-align: left;
+}
+
+.inventario-table th:last-child {
+    text-align: left;
+}
+
+.inventario-table td:last-child {
+    padding-left: 18px;
+}
+
+/* DISTRIBUCIÓN DEFINITIVA DE LA TABLA */
+
+.inventario-table {
+    width: 100%;
+    min-width: 520px;
+    table-layout: fixed;
+}
+
+.inventario-table th:nth-child(1),
+.inventario-table td:nth-child(1) {
+    width: 25%;
+    text-align: left;
+}
+
+.inventario-table th:nth-child(2),
+.inventario-table td:nth-child(2) {
+    width: 45%;
+    text-align: left;
+}
+
+.inventario-table th:nth-child(3),
+.inventario-table td:nth-child(3) {
+    width: 30%;
+    text-align: center;
+}
+
+.inventario-table td:last-child {
+    padding: 10px 12px;
+}
+
+.inventario-table th {
+    padding: 12px 16px;
+}
+
+.inventario-table td {
+    padding: 12px 16px;
+}
+
+.inventario-table tbody tr {
+    height: 58px;
+}
+
+/* TABLA COMPACTA Y EQUILIBRADA */
+
+.inventario-table-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 16px 0 0;
+}
+
+.inventario-table-wrapper {
+    width: 100%;
+}
+
+.inventario-table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+}
+
+.inventario-table th:nth-child(1),
+.inventario-table td:nth-child(1) {
+    width: 20%;
+    text-align: left;
+}
+
+.inventario-table th:nth-child(2),
+.inventario-table td:nth-child(2) {
+    width: 45%;
+    text-align: left;
+}
+
+.inventario-table th:nth-child(3),
+.inventario-table td:nth-child(3) {
+    width: 35%;
+    text-align: left;
+}
+
+.inventario-table th,
+.inventario-table td {
+    padding: 11px 16px;
+}
+
+.inventario-table tbody tr {
+    height: 56px;
+}
+
+@media (max-width: 768px) {
+    .inventario-table-container {
+        max-width: 100%;
+    }
+}
+
+/* AJUSTE FINAL: APROVECHAR TODO EL ANCHO */
+
+.inventario-table-container {
+    width: 100%;
+    max-width: none;
+    margin: 16px 0 0;
+}
+
+.inventario-table-wrapper {
+    width: 100%;
+}
+
+.inventario-table {
+    width: 100%;
+    min-width: 520px;
+    table-layout: fixed;
+}
+
+.inventario-table th:nth-child(1),
+.inventario-table td:nth-child(1) {
+    width: 20%;
+    text-align: left;
+}
+
+.inventario-table th:nth-child(2),
+.inventario-table td:nth-child(2) {
+    width: 40%;
+    text-align: left;
+}
+
+.inventario-table th:nth-child(3),
+.inventario-table td:nth-child(3) {
+    width: 40%;
+    text-align: center;
+}
+
+.inventario-table th:last-child,
+.inventario-table td:last-child {
+    text-align: center;
+    padding: 10px 12px;
+}
+
+.inventario-table th:nth-child(2),
+.inventario-table td:nth-child(2) {
+    text-align: center;
+}

@@ -20,6 +20,8 @@ import AmbienteDetalle from "./pages/Ambientes/AmbienteDetalle/AmbienteDetalle.j
 import Novedades from "./pages/Novedades/Novedades.jsx";
 import Movimientos from "./pages/Movimientos/Movimientos.jsx";
 import MovimientoDetalle from "./pages/Movimientos/MovimientoDetalle/MovimientoDetalle.jsx";
+import Inventario from "./pages/Inventario/Inventario.jsx";
+import InventarioDetalle from "./pages/Inventario/InventarioDetalle/InventarioDetalle.jsx";
 
 function App() {
     return (
@@ -48,6 +50,8 @@ function App() {
                 <Route path="/novedades" element={<Novedades />} />
                 <Route path="/movimientos" element={<Movimientos />} />
                 <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
+                <Route path="/inventario" element={<Inventario />} />
+                <Route path="/inventario/detalle/:id" element={<InventarioDetalle />} />
 
                 {/* Rutas inexistentes */}
                 <Route path="*" element={<Navigate to="/" replace />} />

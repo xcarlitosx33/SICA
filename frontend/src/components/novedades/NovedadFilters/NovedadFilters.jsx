@@ -1,4 +1,5 @@
 import "./NovedadFilters.css";
+import Button from "../../Button/Button";
 
 function NovedadFilters({ filters, onFilterChange, onClear }) {
     return (
@@ -9,13 +10,13 @@ function NovedadFilters({ filters, onFilterChange, onClear }) {
                     <p>Busca y filtra las novedades registradas.</p>
                 </div>
 
-                <button
+                <Button
                     type="button"
                     className="novedad-filters-clear"
                     onClick={onClear}
                 >
                     Limpiar filtros
-                </button>
+                </Button>
             </div>
 
             <div className="novedad-filters-controls">

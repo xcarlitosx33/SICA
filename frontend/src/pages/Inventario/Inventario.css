@@ -1,0 +1,46 @@
+.inventario-layout {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #F6F6F6;
+}
+
+.inventario-main {
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin-left: 260px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.inventario-content {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1100px) {
+    .inventario-content {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .inventario-main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .inventario-content {
+        padding: 76px 16px 24px;
+    }
+}
+
+@media (max-width: 400px) {
+    .inventario-content {
+        padding: 72px 14px 20px;
+    }
+}

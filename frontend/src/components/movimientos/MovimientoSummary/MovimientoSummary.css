@@ -1,81 +1,88 @@
 .movimiento-summary {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
     margin-bottom: 24px;
 }
 
 .movimiento-summary-card {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
     min-height: 120px;
     padding: 16px;
-    background-color: #FFFFFF;
+    background: #FFFFFF;
     border: 1px solid #E2E7E4;
     border-radius: 12px;
     box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movimiento-summary-card:hover {
+    border-color: #B8DCC5;
+    box-shadow: 0 4px 14px rgba(0, 120, 50, 0.06);
 }
 
 .movimiento-summary-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 4px;
+    gap: 12px;
 }
 
 .movimiento-summary-header span:first-child {
+    color: #65756D;
     font-family: "Work Sans", sans-serif;
     font-size: 12px;
     font-weight: 600;
-    text-transform: uppercase;
-    color: #65756D;
 }
 
 .movimiento-summary-card strong {
     display: block;
     margin: 0;
+    color: #18312A;
     font-family: "Work Sans", sans-serif;
     font-size: 26px;
     font-weight: 700;
-    color: #18312A;
+    line-height: 1.2;
 }
 
 .movimiento-summary-card p {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
-    margin: 6px 0 0;
+    margin: 0;
+    color: #65756D;
     font-family: "Work Sans", sans-serif;
     font-size: 12px;
-    font-weight: 400;
-    color: #65756D;
+    line-height: 1.4;
 }
 
-/* Indicadores */
-
 .summary-indicator {
-    width: 8px;
-    height: 8px;
-
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
     border-radius: 50%;
 }
 
 .summary-indicator.neutral {
-    background-color: #94A3B8;
+    background: #64748B;
 }
 
 .summary-indicator.info {
-    background-color: #3B82F6;
+    background: #3B82F6;
 }
 
 .summary-indicator.success {
-    background-color: #10B981;
+    background: #15803D;
 }
 
 .summary-indicator.recent {
-    background-color: #A855F7;
+    background: #A855F7;
 }
-
-/* Etiquetas */
 
 .summary-status {
     padding: 3px 8px;
@@ -86,75 +93,34 @@
 
 .summary-status.active {
     color: #15803D;
-    background-color: #DCFCE7;
+    background: #DCFCE7;
 }
 
 .summary-status.recent-label {
     color: #7E22CE;
-    background-color: #F3E8FF;
+    background: #F3E8FF;
 }
 
-/* TABLET */
-
-@media (min-width: 769px) and (max-width: 1100px) {
-
+@media (max-width: 1100px) {
     .movimiento-summary {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-    .movimiento-summary .summary-card {
-        min-height: 115px;
-    }
-
 }
 
-
-/* MÓVIL */
-
-@media (max-width: 768px) {
-
+@media (max-width: 600px) {
     .movimiento-summary {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-    }
-
-    .movimiento-summary .summary-card {
-        min-height: 110px;
-        padding: 16px;
-    }
-
-    .movimiento-summary .summary-card-label {
-        font-size: 14px;
-    }
-
-    .movimiento-summary .summary-card-value {
-        font-size: 25px;
-    }
-
-}
-
-
-/* CELULARES PEQUEÑOS */
-
-@media (max-width: 400px) {
-
-    .movimiento-summary {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
 
-    .movimiento-summary .summary-card {
-        min-height: 100px;
-        padding: 16px;
+    .movimiento-summary-card {
+        min-height: 110px;
+        padding: 14px;
     }
+}
 
-    .movimiento-summary .summary-card-label {
-        font-size: 13px;
+@media (max-width: 400px) {
+    .movimiento-summary {
+        grid-template-columns: 1fr;
     }
-
-    .movimiento-summary .summary-card-value {
-        font-size: 24px;
-    }
-
 }

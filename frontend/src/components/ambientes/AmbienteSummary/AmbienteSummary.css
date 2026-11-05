@@ -1,4 +1,4 @@
-/*RESUMEN DE AMBIENTES*/
+/* RESUMEN DE AMBIENTES */
 
 .ambiente-summary {
     display: grid;
@@ -9,41 +9,61 @@
 }
 
 .summary-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
     min-width: 0;
     min-height: 120px;
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 16px;
 
+    box-sizing: border-box;
     background-color: #FFFFFF;
     border: 1px solid #E2E7E4;
     border-radius: 12px;
 }
 
-.summary-card-content {
+.summary-card-header {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    height: 100%;
     gap: 12px;
 }
 
 .summary-card-label {
     color: #65756D;
     font-family: "Work Sans", sans-serif;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 600;
-    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.summary-card-dot {
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.summary-card-dot-total {
+    background-color: #94A3B8;
+}
+
+.summary-card-dot-available {
+    background-color: #10B981;
+}
+
+.summary-card-dot-maintenance {
+    background-color: #F59E0B;
 }
 
 .summary-card-value {
-    margin-top: 4px;
     color: #18312A;
     font-family: "Work Sans", sans-serif;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
+    line-height: 1.2;
 }
-
-/* Tablet */
 
 @media (max-width: 1000px) {
     .ambiente-summary {
@@ -51,25 +71,16 @@
     }
 }
 
-/* Celular */
-
 @media (max-width: 600px) {
     .ambiente-summary {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: 1fr;
         gap: 12px;
-        margin-bottom: 20px;
     }
+}
 
-    .summary-card {
-        min-height: 100px;
-        padding: 18px;
-    }
-
-    .summary-card-label {
-        font-size: 14px;
-    }
-
-    .summary-card-value {
-        font-size: 26px;
-    }
+.summary-card-description {
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
 }

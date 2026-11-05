@@ -29,20 +29,8 @@
 
 .novedad-filters-clear {
     flex-shrink: 0;
-    padding: 10px 14px;
-    color: #007832;
-    background: #FFFFFF;
-    border: 1px solid #007832;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
-.novedad-filters-clear:hover {
-    background-color: #E3F4E8;
-}
 
 .novedad-filters-controls {
     display: grid;

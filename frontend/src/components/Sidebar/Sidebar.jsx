@@ -1,28 +1,63 @@
-
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import "./Sidebar.css";
 
 import logoSICA from "../../assets/imagenes/Logo-SICA.png";
 
-const MENU_ITEMS = [
-    { label: "Inicio", path: "/dashboard", icon: "home", end: true },
-    {
-        label: "Programación de ambientes",
-        path: "/programacion",
-        icon: "calendar",
+const ROLES = {
+    instructor: {
+        name: "Instructor",
+        path: "/instructor",
+        menu: [
+            { label: "Inicio", path: "/instructor", icon: "home", end: true },
+            { label: "Ambientes", path: "/ambientes", icon: "building" },
+            { label: "Inventario", path: "/inventario", icon: "inventory" },
+            { label: "Novedades", path: "/novedades", icon: "alert" },
+            { label: "Movimientos", path: "/movimientos", icon: "movement" },
+        ],
     },
-    { label: "Ambientes", path: "/ambientes", icon: "building" },
-    { label: "Inventario", path: "/inventario", icon: "inventory" },
-    { label: "Novedades", path: "/novedades", icon: "alert" },
-    { label: "Movimientos", path: "/movimientos", icon: "movement" },
-];
+    administrador: {
+        name: "Administrador del edificio",
+        path: "/admin-edificio",
+        menu: [
+            { label: "Inicio", path: "/admin-edificio", icon: "home", end: true },
+            { label: "Ambientes", path: "/ambientes", icon: "building" },
+            { label: "Inventario", path: "/inventario", icon: "inventory" },
+            { label: "Novedades", path: "/novedades", icon: "alert" },
+        ],
+    },
+    coordinacion: {
+        name: "Coordinación académica",
+        path: "/coordinacion-academica",
+        menu: [
+            { label: "Inicio", path: "/coordinacion-academica", icon: "home", end: true },
+            {
+                label: "Historial de resoluciones",
+                path: "/dashboard/coordinacion-academica/historial-resoluciones",
+                icon: "calendar",
+            },
+            { label: "Ambientes", path: "/ambientes", icon: "building" },
+            { label: "Inventario", path: "/inventario", icon: "inventory" },
+            { label: "Novedades", path: "/novedades", icon: "alert" },
+            { label: "Movimientos", path: "/movimientos", icon: "movement" },
+        ],
+    },
+    director: {
+        name: "Director de centro",
+        path: "/director-centro",
+        menu: [
+            { label: "Inicio", path: "/director-centro", icon: "home", end: true },
+            { label: "Ambientes", path: "/ambientes", icon: "building" },
+            { label: "Inventario", path: "/inventario", icon: "inventory" },
+            { label: "Novedades", path: "/novedades", icon: "alert" },
+            { label: "Movimientos", path: "/movimientos", icon: "movement" },
+        ],
+    },
+};
 
 const ICONS = {
-    home: (
-        <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" />
-    ),
+    home: <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" />,
     calendar: (
         <>
             <rect x="3" y="5" width="18" height="16" rx="2" />
@@ -59,95 +94,45 @@ const ICONS = {
             <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6" />
         </>
     ),
-    menu: (
-        <path d="M4 6h16M4 12h16M4 18h16" />
-    ),
-    close: (
-        <path d="m18 6-12 12M6 6l12 12" />
-    ),
+    menu: <path d="M4 6h16M4 12h16M4 18h16" />,
+    close: <path d="m18 6-12 12M6 6l12 12" />,
+    chevron: <path d="m7 10 5 5 5-5" />,
 };
 
-function Sidebar({
-    userName = "Usuario del SENA",
-    userRole = "Usuario",
-    menuItems = MENU_ITEMS,
-    onLogout,
-}) {
+function Sidebar({ userName = "Usuario del SENA", onLogout }) {
     const location = useLocation();
+    const navigate = useNavigate();
     const { logout } = useAuth();
 
+    const [role, setRole] = useState(() =>
+        localStorage.getItem("sicaRolDemo") || "director"
+    );
+    const [roleOpen, setRoleOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [loggingOut, setLoggingOut] = useState(false);
 
-    function closeMenu() {
-        setMenuOpen(false);
-    }
+    const currentRole = ROLES[role] || ROLES.director;
 
     useEffect(() => {
-        closeMenu();
+        localStorage.setItem("sicaRolDemo", role);
+    }, [role]);
+
+    useEffect(() => {
+        setMenuOpen(false);
+        setRoleOpen(false);
     }, [location.pathname]);
 
     useEffect(() => {
         function handleEscape(event) {
             if (event.key === "Escape") {
-                closeMenu();
+                setMenuOpen(false);
+                setRoleOpen(false);
             }
         }
 
         window.addEventListener("keydown", handleEscape);
-
-        return () => {
-            window.removeEventListener("keydown", handleEscape);
-        };
+        return () => window.removeEventListener("keydown", handleEscape);
     }, []);
-
-    useEffect(() => {
-        if (!menuOpen) {
-            return undefined;
-        }
-
-        const previousOverflow = document.body.style.overflow;
-        document.body.style.overflow = "hidden";
-
-        return () => {
-            document.body.style.overflow = previousOverflow;
-        };
-    }, [menuOpen]);
-
-    function isItemActive(item) {
-        if (item.path === "/dashboard") {
-            return (
-                location.pathname === "/dashboard" ||
-                location.pathname.startsWith("/dashboard/")
-            );
-        }
-
-        return (
-            location.pathname === item.path ||
-            location.pathname.startsWith(`${item.path}/`)
-        );
-    }
-
-    async function handleLogout() {
-        if (loggingOut) {
-            return;
-        }
-
-        setLoggingOut(true);
-
-        try {
-            if (typeof onLogout === "function") {
-                await onLogout();
-            }
-
-            logout();
-            closeMenu();
-        } catch (error) {
-            console.error("Error al cerrar sesión:", error);
-        } finally {
-            setLoggingOut(false);
-        }
-    }
 
     function renderIcon(name) {
         return (
@@ -166,6 +151,40 @@ function Sidebar({
         );
     }
 
+    function isItemActive(item) {
+        if (item.end) {
+            return location.pathname === item.path;
+        }
+
+        return location.pathname === item.path ||
+            location.pathname.startsWith(`${item.path}/`);
+    }
+
+    function changeRole(nextRole) {
+        setRole(nextRole);
+        setRoleOpen(false);
+        setMenuOpen(false);
+        navigate(ROLES[nextRole].path);
+    }
+
+    async function handleLogout() {
+        if (loggingOut) return;
+
+        setLoggingOut(true);
+
+        try {
+            if (typeof onLogout === "function") {
+                await onLogout();
+            }
+
+            logout();
+        } catch (error) {
+            console.error("Error al cerrar sesión:", error);
+        } finally {
+            setLoggingOut(false);
+        }
+    }
+
     return (
         <>
             <button
@@ -174,7 +193,6 @@ function Sidebar({
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
                 aria-expanded={menuOpen}
-                aria-controls="sica-sidebar"
             >
                 {renderIcon(menuOpen ? "close" : "menu")}
             </button>
@@ -182,16 +200,12 @@ function Sidebar({
             <button
                 type="button"
                 className={`sidebar-backdrop ${menuOpen ? "visible" : ""}`}
-                onClick={closeMenu}
+                onClick={() => setMenuOpen(false)}
                 aria-label="Cerrar menú"
                 tabIndex={menuOpen ? 0 : -1}
-                aria-hidden={!menuOpen}
             />
 
-            <aside
-                id="sica-sidebar"
-                className={`sidebar ${menuOpen ? "sidebar-open" : ""}`}
-            >
+            <aside className={`sidebar ${menuOpen ? "sidebar-open" : ""}`}>
                 <div className="sidebar-logo">
                     <img
                         src={logoSICA}
@@ -201,48 +215,63 @@ function Sidebar({
                 </div>
 
                 <nav className="sidebar-menu" aria-label="Menú principal">
-                    <p className="sidebar-section-title">
-                        MENÚ PRINCIPAL
-                    </p>
+                    <p className="sidebar-section-title">MENÚ PRINCIPAL</p>
 
                     <div className="sidebar-menu-items">
-                        {menuItems.map((item) => (
+                        {currentRole.menu.map((item) => (
                             <NavLink
                                 key={item.path}
                                 to={item.path}
                                 end={item.end}
-                                onClick={closeMenu}
+                                onClick={() => setMenuOpen(false)}
                                 className={() =>
-                                    `sidebar-item ${
-                                        isItemActive(item) ? "active" : ""
-                                    }`
+                                    `sidebar-item ${isItemActive(item) ? "active" : ""}`
                                 }
                             >
                                 {renderIcon(item.icon)}
-
-                                <span className="sidebar-item-label">
-                                    {item.label}
-                                </span>
+                                <span className="sidebar-item-label">{item.label}</span>
                             </NavLink>
                         ))}
                     </div>
                 </nav>
 
                 <div className="sidebar-bottom">
-                    <div className="sidebar-user">
-                        <div className="sidebar-avatar" aria-hidden="true">
-                            {userName.trim().charAt(0).toUpperCase() || "U"}
-                        </div>
+                    <div className="sidebar-role-wrapper">
+                        <button
+                            type="button"
+                            className={`sidebar-user ${roleOpen ? "role-open" : ""}`}
+                            onClick={() => setRoleOpen(!roleOpen)}
+                            aria-expanded={roleOpen}
+                        >
+                            <div className="sidebar-avatar">
+                                {userName.trim().charAt(0).toUpperCase() || "U"}
+                            </div>
 
-                        <div className="sidebar-user-info">
-                            <strong title={userName}>
-                                {userName}
-                            </strong>
+                            <div className="sidebar-user-info">
+                                <strong>{userName}</strong>
+                                <span>{currentRole.name}</span>
+                            </div>
 
-                            <span title={userRole}>
-                                {userRole}
-                            </span>
-                        </div>
+                            {renderIcon("chevron")}
+                        </button>
+
+                        {roleOpen && (
+                            <div className="sidebar-role-menu">
+                                <p>CAMBIAR DE ROL</p>
+
+                                {Object.entries(ROLES).map(([key, item]) => (
+                                    <button
+                                        type="button"
+                                        key={key}
+                                        className={role === key ? "selected" : ""}
+                                        onClick={() => changeRole(key)}
+                                    >
+                                        <span>{item.name}</span>
+                                        {role === key && <span>✓</span>}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </div>
 
                     <button
@@ -252,12 +281,7 @@ function Sidebar({
                         disabled={loggingOut}
                     >
                         {renderIcon("logout")}
-
-                        <span>
-                            {loggingOut
-                                ? "Cerrando sesión..."
-                                : "Cerrar sesión"}
-                        </span>
+                        <span>{loggingOut ? "Cerrando sesión..." : "Cerrar sesión"}</span>
                     </button>
                 </div>
             </aside>

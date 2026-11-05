@@ -12,12 +12,13 @@ import ResolucionDetalle from "../pages/Dashboard/Roles/CoordinacionAcademica/Hi
 import Instructor from "../pages/Dashboard/Roles/Instructor/Instructor";
 import AdminEdificio from "../pages/Dashboard/Roles/AdminEdificio/AdminEdificio";
 import DirectorCentro from "../pages/Dashboard/Roles/DirectorCentro/DirectorCentro";
-import CoordinacionAcademica from "../pages/Dashboard/Roles/CoordinacionAcademica/CoordinacionAcademica";
 
 import Ambientes from "../pages/Ambientes/Ambientes";
 import AmbienteDetalle from "../pages/Ambientes/AmbienteDetalle/AmbienteDetalle";
 import Movimientos from "../pages/Movimientos/Movimientos";
-import MovimientoDetalle from "../pages/MovimientoDetalle/MovimientoDetalle";
+import MovimientoDetalle from "../pages/Movimientos/MovimientoDetalle/MovimientoDetalle";
+import Inventario from "../pages/Inventario/Inventario";
+import InventarioDetalle from "../pages/Inventario/InventarioDetalle/InventarioDetalle";
 
 function AppRoutes() {
   return (
@@ -35,12 +36,13 @@ function AppRoutes() {
         <Route path="/dashboard/instructor" element={<Instructor />} />
         <Route path="/dashboard/admin-edificio" element={<AdminEdificio />} />
         <Route path="/dashboard/director-centro" element={<DirectorCentro />} />
-        <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />}/>
 
         <Route path="/ambientes" element={<Ambientes />} />
         <Route path="/ambientes/Detalle/:id" element={<AmbienteDetalle />} />
         <Route path="/movimientos" element={<Movimientos />} />
         <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
+        <Route path="/inventario" element={<Inventario />} />
+        <Route path="/inventario/detalle/:id" element={<InventarioDetalle />} />
       </Routes>
     </BrowserRouter>
   );

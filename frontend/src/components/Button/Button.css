@@ -32,24 +32,24 @@
 
 .sica-button--secondary:hover:not(:disabled) {
     background-color: #E3F4E8;
-    border-color: #007832;
+    border-color: #D8E0DC;
     color: #007832;
 }
 
 /* Botón de peligro */
 .sica-button--danger {
     background-color: #FFFFFF;
-    border-color: #FECACA;
+    border-color: #D8E0DC;
     color: #B91C1C;
 }
 
 .sica-button--danger:hover:not(:disabled) {
     background-color: #FEF2F2;
-    border-color: #DC2626;
+    border-color: #D8E0DC;
     color: #DC2626;
 }
 
-/* Iconos y flechas */
+/* Iconos */
 .sica-button span {
     color: inherit;
 }
@@ -60,8 +60,14 @@
     outline-offset: 2px;
 }
 
-/* Botones deshabilitados */
+/* Deshabilitado */
 .sica-button:disabled {
     opacity: 0.55;
     cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sica-button {
+        transition: none;
+    }
 }

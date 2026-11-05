@@ -1,4 +1,5 @@
 import "./MovimientoFilters.css";
+import Button from "../../Button/Button";
 
 function MovimientoFilters() {
     return (
@@ -83,9 +84,9 @@ function MovimientoFilters() {
                 </select>
             </div>
 
-            <button className="clear-filters-button">
+            <Button type="button" className="clear-filters-button">
                 Limpiar filtros
-            </button>
+            </Button>
 
 
         </section>
