@@ -84,3 +84,8 @@ Desktop.ini
 *.swp
 *.swo
 *.bak
+
+# Respaldos locales
+/respaldo-botones/
+/respaldo-inventario/
+/respaldo-tarjetas/
