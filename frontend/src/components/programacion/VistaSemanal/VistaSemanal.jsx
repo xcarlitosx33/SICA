@@ -2,7 +2,8 @@
 import "./VistaSemanal.css";
 import sesionesProgramacion from "../../../data/programacion";
 
-function VistaSemanal() {
+function VistaSemanal({ sesionSeleccionada, onSeleccionarSesion }) {
+
     const dias = [
         { numero: 1, nombre: "Lunes" },
         { numero: 2, nombre: "Martes" },
@@ -47,7 +48,6 @@ function VistaSemanal() {
     return (
         <section className="vista-semanal">
 
-            {/* ENCABEZADO */}
             <div className="vista-semanal-header">
                 <div>
                     <h3>Programación semanal</h3>
@@ -58,12 +58,10 @@ function VistaSemanal() {
                 </div>
             </div>
 
-            {/* TABLA SEMANAL */}
             <div className="vista-semanal-scroll">
 
                 <div className="vista-semanal-grid">
 
-                    {/* CABECERA DE DÍAS */}
                     <div className="vista-semanal-corner">
                         Jornada
                     </div>
@@ -77,14 +75,12 @@ function VistaSemanal() {
                         </div>
                     ))}
 
-                    {/* JORNADAS */}
                     {jornadas.map((jornada) => (
                         <div
                             className="vista-semanal-row"
                             key={jornada.id}
                         >
 
-                            {/* COLUMNA DE JORNADA */}
                             <div
                                 className={`vista-semanal-shift ${jornada.clase}`}
                             >
@@ -92,7 +88,6 @@ function VistaSemanal() {
                                 <span>{jornada.horario}</span>
                             </div>
 
-                            {/* DÍAS DE LA SEMANA */}
                             {dias.map((dia) => {
                                 const sesiones = obtenerSesiones(
                                     dia.numero,
@@ -107,20 +102,40 @@ function VistaSemanal() {
                                         {sesiones.length > 0 ? (
                                             <div className="vista-semanal-sessions">
 
-                                                {sesiones.map((sesion) => (
-                                                    <article
-                                                        className={`vista-semanal-session ${sesion.sector}`}
-                                                        key={sesion.id}
-                                                    >
-                                                        <strong>
-                                                            {sesion.ficha}
-                                                        </strong>
+                                                {sesiones.map((sesion) => {
+                                                    const seleccionada =
+                                                        sesionSeleccionada?.id === sesion.id;
 
-                                                        <span>
-                                                            {sesion.ambiente}
-                                                        </span>
-                                                    </article>
-                                                ))}
+                                                    return (
+                                                        <article
+                                                            className={`vista-semanal-session ${sesion.sector} ${
+                                                                seleccionada ? "selected" : ""
+                                                            }`}
+                                                            key={sesion.id}
+                                                            role="button"
+                                                            tabIndex={0}
+                                                            aria-pressed={seleccionada}
+                                                            onClick={() => onSeleccionarSesion(sesion)}
+                                                            onKeyDown={(event) => {
+                                                                if (
+                                                                    event.key === "Enter" ||
+                                                                    event.key === " "
+                                                                ) {
+                                                                    event.preventDefault();
+                                                                    onSeleccionarSesion(sesion);
+                                                                }
+                                                            }}
+                                                        >
+                                                            <strong>
+                                                                {sesion.ficha}
+                                                            </strong>
+
+                                                            <span>
+                                                                {sesion.ambiente}
+                                                            </span>
+                                                        </article>
+                                                    );
+                                                })}
 
                                             </div>
                                         ) : (
@@ -136,7 +151,6 @@ function VistaSemanal() {
                 </div>
             </div>
 
-            {/* PIE */}
             <div className="vista-semanal-footer">
                 <span>
                     Las sesiones se organizan según el día y la jornada
@@ -149,3 +163,4 @@ function VistaSemanal() {
 }
 
 export default VistaSemanal;
+

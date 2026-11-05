@@ -3,7 +3,11 @@ import { useState } from "react";
 import "./VistaMensual.css";
 import sesionesProgramacion from "../../../data/programacion";
 
-function VistaMensual() {
+function VistaMensual({
+    sesionSeleccionada,
+    onSeleccionarSesion,
+    onSeleccionarDia
+}) {
     const periodos = [
         { id: "2026-1", nombre: "2026 - Periodo 1", inicio: 0 },
         { id: "2026-2", nombre: "2026 - Periodo 2", inicio: 3 },
@@ -25,12 +29,12 @@ function VistaMensual() {
 
     const [periodoSeleccionado, setPeriodoSeleccionado] = useState("2026-4");
 
-    const [mesSeleccionado, setMesSeleccionado] =useState(10);
+    const [mesSeleccionado, setMesSeleccionado] = useState(10);
 
-    const [fechaSeleccionada, setFechaSeleccionada] = useState(4);
+    const [fechaSeleccionada, setFechaSeleccionada] = useState(null);
 
     const periodoActual = periodos.find(
-        (periodo) => periodo.id === periodoSeleccionado );
+        (periodo) => periodo.id === periodoSeleccionado);
 
     const primerMes = periodoActual.inicio;
     const ultimoMes = primerMes + 2;
@@ -109,6 +113,17 @@ function VistaMensual() {
         return sectores;
     };
 
+    const obtenerSesionesDelDia = (dia) => {
+        if (!dia) return [];
+
+        const fecha = new Date(anio, mesSeleccionado, dia);
+        const diaSemana = fecha.getDay();
+
+        return sesionesProgramacion.filter(
+            (sesion) => sesion.diaSemana === diaSemana
+        );
+    };
+
     return (
         <section className="vista-mensual">
 
@@ -125,7 +140,7 @@ function VistaMensual() {
 
                 <select className="vista-mensual-period-select"
                     value={periodoSeleccionado} onChange={(event) =>
-                        cambiarPeriodo(event.target.value) }
+                        cambiarPeriodo(event.target.value)}
                 >
                     {periodos.map((periodo) => (
                         <option
@@ -187,13 +202,13 @@ function VistaMensual() {
 
                     {diasCalendario.map((dia, index) => {
 
-                        const indicadores =
-                            obtenerIndicadores(dia);
+                        const indicadores = obtenerIndicadores(dia);
+
+                        const sesionesDelDia = obtenerSesionesDelDia(dia);
 
                         const tieneProgramacion = indicadores.length > 0;
 
-                        const seleccionado =
-                            tieneProgramacion && dia === fechaSeleccionada;
+                        const seleccionado = tieneProgramacion && dia === fechaSeleccionada;
 
 
                         return (
@@ -203,69 +218,71 @@ function VistaMensual() {
                                 className={`vista-mensual-day ${dia ? "" : "empty"
                                     } ${seleccionado ? "selected" : ""}`}
                                 disabled={!dia || !tieneProgramacion}
-                                onClick={() =>
-                                    setFechaSeleccionada(dia)
-                                }
+                                onClick={() => {
+                                    setFechaSeleccionada(dia);
+                                    onSeleccionarDia(sesionesDelDia);
+                                
+                    }}
                             >
 
-                                {dia && (
-                                    <>
-                                        <span className="vista-mensual-day-number">
-                                            {dia}
-                                        </span>
+                    {dia && (
+                        <>
+                            <span className="vista-mensual-day-number">
+                                {dia}
+                            </span>
 
-                                        <div className="vista-mensual-indicators">
+                            <div className="vista-mensual-indicators">
 
-                                            {indicadores.map((sector) => (
-                                                <span
-                                                    key={sector}
-                                                    className={`vista-mensual-indicator ${sector}`}
-                                                />
-                                            ))}
+                                {indicadores.map((sector) => (
+                                    <span
+                                        key={sector}
+                                        className={`vista-mensual-indicator ${sector}`}
+                                    />
+                                ))}
 
-                                        </div>
-                                    </>
-                                )}
+                            </div>
+                        </>
+                    )}
 
-                            </button>
-                        );
+                </button>
+                );
                     })}
 
-                </div>
-
             </div>
 
-            {/* LEYENDA */}
-            <div className="vista-mensual-legend">
+        </div>
 
-                <span>
-                    <i className="industria" />
-                    Industria
-                </span>
+            {/* LEYENDA */ }
+    <div className="vista-mensual-legend">
 
-                <span>
-                    <i className="comercio" />
-                    Comercio y Servicios
-                </span>
+        <span>
+            <i className="industria" />
+            Industria
+        </span>
 
-                <span>
-                    <i className="tic" />
-                    TIC
-                </span>
+        <span>
+            <i className="comercio" />
+            Comercio y Servicios
+        </span>
 
-                <span>
-                    <i className="agropecuario" />
-                    Agropecuario
-                </span>
+        <span>
+            <i className="tic" />
+            TIC
+        </span>
 
-                <span>
-                    <i className="transversal" />
-                    Transversal
-                </span>
+        <span>
+            <i className="agropecuario" />
+            Agropecuario
+        </span>
 
-            </div>
+        <span>
+            <i className="transversal" />
+            Transversal
+        </span>
 
-        </section>
+    </div>
+
+        </section >
     );
 }
 

@@ -54,73 +54,85 @@ const ambientes = Array.from(
 // FICHAS DE DEMOSTRACIÓN
 // --------------------------------------------------------------------------
 
+
 const programas = [
+    { nombre: "ADSO", sector: "tic" },
+    { nombre: "Producción Multimedia", sector: "tic" },
+    { nombre: "Producción Audiovisual", sector: "tic" },
+    { nombre: "Automatización Industrial", sector: "industria" },
+    { nombre: "Mecánica Industrial", sector: "industria" },
+    { nombre: "Seguridad y Salud en el Trabajo", sector: "industria" },
+    { nombre: "Logística y Mercados", sector: "comercio" },
+    { nombre: "Administración y Finanzas", sector: "comercio" },
+    { nombre: "Estética y Cuidado Personal", sector: "comercio" },
+    { nombre: "Turismo", sector: "comercio" },
+    { nombre: "Procesamiento de Alimentos", sector: "agropecuario" },
+    { nombre: "Investigación Aplicada", sector: "agropecuario" },
+    { nombre: "Estrategia AgroSENA", sector: "agropecuario" }
+];
+
+const instructores = [
+    "Carlos Rodríguez",
+    "María Fernanda López",
+    "Andrés Martínez",
+    "Laura Gómez",
+    "Daniel Ramírez"
+];
+
+const facilitadores = [
+    "Jorge Herrera",
+    "Paula Sánchez",
+    "Miguel Torres",
+    "Diana Castillo",
+    "Sebastián Moreno"
+];
+
+const competencias = [
     {
-        nombre: "ADSO",
-        sector: "tic"
+        nombre: "Desarrollar aplicaciones de software",
+        rap: "Construir soluciones de software según requisitos técnicos."
     },
     {
-        nombre: "Producción Multimedia",
-        sector: "tic"
+        nombre: "Gestionar procesos tecnológicos",
+        rap: "Aplicar procedimientos técnicos en el entorno de formación."
     },
     {
-        nombre: "Producción Audiovisual",
-        sector: "tic"
+        nombre: "Implementar soluciones digitales",
+        rap: "Desarrollar actividades prácticas de acuerdo con los requerimientos."
     },
     {
-        nombre: "Automatización Industrial",
-        sector: "industria"
-    },
-    {
-        nombre: "Mecánica Industrial",
-        sector: "industria"
-    },
-    {
-        nombre: "Seguridad y Salud en el Trabajo",
-        sector: "industria"
-    },
-    {
-        nombre: "Logística y Mercados",
-        sector: "comercio"
-    },
-    {
-        nombre: "Administración y Finanzas",
-        sector: "comercio"
-    },
-    {
-        nombre: "Estética y Cuidado Personal",
-        sector: "comercio"
-    },
-    {
-        nombre: "Turismo",
-        sector: "comercio"
-    },
-    {
-        nombre: "Procesamiento de Alimentos",
-        sector: "agropecuario"
-    },
-    {
-        nombre: "Investigación Aplicada",
-        sector: "agropecuario"
-    },
-    {
-        nombre: "Estrategia AgroSENA",
-        sector: "agropecuario"
+        nombre: "Ejecutar procesos de producción",
+        rap: "Aplicar técnicas y procedimientos propios del sector productivo."
     }
 ];
+
+
+
+
 
 const fichas = Array.from(
     { length: 45 },
     (_, index) => {
         const programa = programas[index % programas.length];
+        const competencia = competencias[index % competencias.length];
 
         return {
             codigo: String(299001 + index),
+            numero: String(299001 + index),
+
             programa: programa.nombre,
-            sector: programa.sector
+            sector: programa.sector,
+            tipo: "tecnologica",
+
+            instructor: instructores[index % instructores.length],
+            facilitador: facilitadores[index % facilitadores.length],
+
+            competencia: competencia.nombre,
+            rap: competencia.rap
         };
     }
 );
+
 
 // --------------------------------------------------------------------------
 // GENERADOR DE SESIONES
@@ -155,25 +167,36 @@ function agregarSesiones(diaSemana, jornada, desplazamiento) {
          */
         const ambiente = ambientes[columna];
 
-        sesionesProgramacion.push({
-            id: siguienteId++,
+       sesionesProgramacion.push({
+    id: siguienteId++,
 
-            ficha: ficha.codigo,
-            programa: ficha.programa,
+    // Identificación de ficha
+    ficha: ficha.codigo,
+    numeroFicha: ficha.numero,
 
-            sector: ficha.sector,
-            tipo: "tecnologica",
+    // Información académica
+    programa: ficha.programa,
+    sector: ficha.sector,
+    tipo: ficha.tipo,
 
-            diaSemana,
+    // Responsables
+    instructor: ficha.instructor,
+    facilitador: ficha.facilitador,
 
-            jornada,
-            ambiente,
+    // Competencia y resultado de aprendizaje
+    competencia: ficha.competencia,
+    rap: ficha.rap,
 
-            inicio: horario.inicio,
-            fin: horario.fin,
+    // Programación
+    diaSemana,
+    jornada,
+    ambiente,
 
-            columna
-        });
+    inicio: horario.inicio,
+    fin: horario.fin,
+
+    columna
+});
     }
 }
 

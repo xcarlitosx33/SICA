@@ -5,21 +5,37 @@ import VistaDiaria from "../VistaDiaria/VistaDiaria";
 import VistaSemanal from "../VistaSemanal/VistaSemanal";
 import VistaMensual from "../VistaMensual/VistaMensual";
 
-function Calendario({ vistaActiva }) {
+function Calendario({
+    vistaActiva,
+    sesionSeleccionada,
+    onSeleccionarSesion,
+    onSeleccionarDia
+}) {
+    const propsCalendario = {
+        sesionSeleccionada,
+        onSeleccionarSesion
+    };
 
     return (
         <section className="programacion-calendar">
-
             <div className="programacion-calendar-content">
 
-                {vistaActiva === "diaria" && ( <VistaDiaria />)}
+                {vistaActiva === "diaria" && (
+                    <VistaDiaria {...propsCalendario} />
+                )}
 
-                {vistaActiva === "semanal" && (<VistaSemanal /> )}
+                {vistaActiva === "semanal" && (
+                    <VistaSemanal {...propsCalendario} />
+                )}
 
-                {vistaActiva === "mensual" && ( <VistaMensual /> )}
+                {vistaActiva === "mensual" && (
+                    <VistaMensual
+                        {...propsCalendario}
+                        onSeleccionarDia={onSeleccionarDia}
+                    />
+                )}
 
             </div>
-
         </section>
     );
 }

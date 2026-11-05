@@ -3,7 +3,10 @@ import { useState } from "react";
 import "./VistaDiaria.css";
 import sesionesProgramacion from "../../../data/programacion";
 
-function VistaDiaria() {
+function VistaDiaria({
+    sesionSeleccionada,
+    onSeleccionarSesion
+}) {
     const [fechaSeleccionada, setFechaSeleccionada] = useState(
         new Date(2026, 10, 4)
     );
@@ -141,21 +144,29 @@ function VistaDiaria() {
                             return (
                                 <article
                                     key={sesion.id}
-                                    className={`vista-diaria-session ${sesion.sector}`}
+                                    role="button"
+                                    tabIndex={0}
+                                    aria-pressed={sesionSeleccionada?.id === sesion.id}
+                                    className={`vista-diaria-session ${sesion.sector} ${sesionSeleccionada?.id === sesion.id ? "selected" : ""
+                                        }`}
+                                    onClick={() => onSeleccionarSesion(sesion)}
+                                    onKeyDown={(event) => {
+                                        if (event.key === "Enter" || event.key === " ") {
+                                            event.preventDefault();
+                                            onSeleccionarSesion(sesion);
+                                        }
+                                    }}
                                     style={{
-                                        top: `${
-                                            (sesion.inicio - 6) *
+                                        top: `${(sesion.inicio - 6) *
                                             alturaHora
-                                        }px`,
+                                            }px`,
 
-                                        height: `${
-                                            duracion * alturaHora - 6
-                                        }px`,
+                                        height: `${duracion * alturaHora - 6
+                                            }px`,
 
-                                        left: `${
-                                            sesion.columna *
+                                        left: `${sesion.columna *
                                             anchoColumna + 8
-                                        }px`,
+                                            }px`,
 
                                         width: `${anchoColumna - 16}px`
                                     }}
