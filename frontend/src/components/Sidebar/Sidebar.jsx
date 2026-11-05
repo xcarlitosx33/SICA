@@ -29,7 +29,7 @@ const ROLES = {
     },
     coordinacion: {
         name: "Coordinación académica",
-        path: "/coordinacion-academica",
+        path: "/dashboard/coordinacion-academica",
         menu: [
             { label: "Inicio", path: "/coordinacion-academica", icon: "home", end: true },
             {
@@ -37,6 +37,7 @@ const ROLES = {
                 path: "/dashboard/coordinacion-academica/historial-resoluciones",
                 icon: "calendar",
             },
+	    { label: "Programación", path: "/programacion", icon: "calendar" },
             { label: "Ambientes", path: "/ambientes", icon: "building" },
             { label: "Inventario", path: "/inventario", icon: "inventory" },
             { label: "Novedades", path: "/novedades", icon: "alert" },

@@ -57,6 +57,9 @@ function CoordinacionAcademica() {
                             <Button onClick={() => window.location.assign("/dashboard/coordinacion-academica/historial-resoluciones")}>
                                 Historial de resoluciones
                             </Button>
+                            <Button onClick={() => window.location.assign("/programacion")}>
+                                Programación
+                            </Button>
                             <Button onClick={() => window.location.assign("/ambientes")}>
                                 Consultar ambientes
                             </Button>
