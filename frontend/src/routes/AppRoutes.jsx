@@ -8,6 +8,7 @@ import CambiarClave from "../pages/Auth/CambiarClave/CambiarClave";
 import CoordinacionAcademica from "../pages/Dashboard/Roles/CoordinacionAcademica/CoordinacionAcademica";
 import HistorialResoluciones from "../pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/HistorialResoluciones";
 import ResolucionDetalle from "../pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/ResolucionDetalle/ResolucionDetalle";
+import GestionRoles from "../pages/GestionRoles/GestionRoles";
 
 import Instructor from "../pages/Dashboard/Roles/Instructor/Instructor";
 import AdminEdificio from "../pages/Dashboard/Roles/AdminEdificio/AdminEdificio";
@@ -33,7 +34,8 @@ function AppRoutes() {
         <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />}/>
         <Route path="/dashboard/coordinacion-academica/historial-resoluciones" element={<HistorialResoluciones />}/>
         <Route path="/dashboard/coordinacion-academica/historial-resoluciones/detalle/:id" element={<ResolucionDetalle />} />
-        
+        <Route path="/gestion-roles" element={<GestionRoles />} />
+
         <Route path="/dashboard/instructor" element={<Instructor />} />
         <Route path="/dashboard/admin-edificio" element={<AdminEdificio />} />
         <Route path="/dashboard/director-centro" element={<DirectorCentro />} />
