@@ -1,0 +1,705 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL SICA
+========================================= */
+
+.sica-form-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 20px;
+  padding: 24px;
+  background: #f5f6f5;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #172c28;
+  box-sizing: border-box;
+}
+
+.sica-form-layout * {
+  box-sizing: border-box;
+}
+
+.sica-form-main-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =========================================
+   CONTENEDOR DEL FORMULARIO
+========================================= */
+
+.sica-report-section {
+  background: #ffffff;
+  border: 1px solid #e0e5e2;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* ENCABEZADO */
+
+.sica-section-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e5e9e7;
+}
+
+.sica-section-badge h2 {
+  font-size: 21px;
+  font-weight: 650;
+  color: #172c28;
+  margin: 0 0 6px;
+}
+
+.sica-section-badge p {
+  font-size: 13px;
+  color: #718078;
+  margin: 0;
+}
+
+.system-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #6b7b74;
+  font-size: 12px;
+  white-space: nowrap;
+  padding-top: 5px;
+}
+
+.date-dot {
+  width: 8px;
+  height: 8px;
+  background: #168447;
+  border-radius: 50%;
+}
+
+/* DESCRIPCIÓN */
+
+.sica-section-intro {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #687871;
+  margin: 18px 0 24px;
+}
+
+/* =========================================
+   CAMPOS DEL FORMULARIO
+========================================= */
+
+.sica-form-fields {
+  width: 100%;
+}
+
+.sica-grid-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.sica-grid-row.trio {
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+.sica-grid-row.duo-small {
+  grid-template-columns: 1fr 1fr;
+  max-width: 50%;
+}
+
+.sica-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.sica-input-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #263b34;
+}
+
+.sica-input-group input,
+.sica-input-group select,
+.sica-input-group textarea {
+  width: 100%;
+  border: 1px solid #d9e1dc;
+  border-radius: 8px;
+  padding: 11px 13px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #263b34;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sica-input-group input,
+.sica-input-group select {
+  height: 43px;
+}
+
+.sica-input-group input:read-only {
+  background: #f8faf9;
+  color: #63746c;
+  cursor: default;
+}
+
+.sica-input-group input:focus,
+.sica-input-group select:focus,
+.sica-input-group textarea:focus {
+  border-color: #24805c;
+  box-shadow: 0 0 0 3px rgba(36, 128, 92, 0.09);
+}
+
+.sica-input-group textarea {
+  resize: vertical;
+  min-height: 115px;
+  line-height: 1.6;
+}
+
+.sica-input-group input::placeholder,
+.sica-input-group textarea::placeholder {
+  color: #a0aaa5;
+}
+
+/* DESCRIPCIÓN DEL DAÑO */
+
+.sica-input-group.full-width {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.sica-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.optional-label {
+  font-size: 11px;
+  color: #87938d;
+}
+
+.char-counter {
+  text-align: right;
+  font-size: 11px;
+  color: #87938d;
+  margin-top: -3px;
+}
+
+/* NOTA INFORMATIVA */
+
+.helper-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f5f8f6;
+  border: 1px solid #e5ebe7;
+  border-radius: 8px;
+  padding: 13px;
+  margin-top: 20px;
+}
+
+.helper-note p {
+  margin: 0;
+  font-size: 12px;
+  color: #63746c;
+  line-height: 1.5;
+}
+
+.helper-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #e1eee7;
+  color: #24734f;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* =========================================
+   BARRA LATERAL
+========================================= */
+
+.sica-form-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+/* HISTORIAL */
+
+.sidebar-history-box {
+  background: #ffffff;
+  border: 1px solid #e0e5e2;
+  border-radius: 12px;
+  padding: 19px;
+}
+
+.history-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #edf0ee;
+}
+
+.history-header h3 {
+  font-size: 15px;
+  color: #1b332c;
+  margin: 0;
+}
+
+.history-header p {
+  font-size: 11px;
+  color: #89958e;
+  margin: 0;
+}
+
+.history-pill {
+  align-self: flex-start;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #f1f5f2;
+  color: #63766b;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px 0;
+  border-bottom: 1px solid #edf0ee;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.status-dot.closed {
+  background: #168747;
+}
+
+.status-dot.pending {
+  background: #e38b13;
+}
+
+.history-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.history-info strong {
+  font-size: 12px;
+  color: #293e35;
+  line-height: 1.4;
+}
+
+.history-info small {
+  font-size: 10px;
+  color: #89958e;
+  line-height: 1.4;
+}
+
+.status-text-pill {
+  font-size: 9px;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 5px 8px;
+  white-space: nowrap;
+}
+
+.status-text-pill.closed {
+  background: #dcfce8;
+  color: #168747;
+}
+
+.status-text-pill.pending {
+  background: #fff0cf;
+  color: #b66a00;
+}
+
+/* =========================================
+   SECCIÓN DE ACCIONES
+========================================= */
+
+.sica-actions-section {
+  background: #ffffff;
+  border: 1px solid #e0e5e2;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.sica-actions-heading {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e8ece9;
+  margin-bottom: 20px;
+}
+
+.sica-actions-heading h2 {
+  font-size: 18px;
+  color: #1b332c;
+  margin: 0 0 6px;
+}
+
+.sica-actions-heading p {
+  font-size: 12px;
+  color: #89958e;
+  margin: 0;
+}
+
+/* GRID DE TARJETAS */
+
+.sica-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.sica-card-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 17px;
+  background: #ffffff;
+  border: 1px solid #e0e5e2;
+  border-radius: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sica-card-box:hover {
+  border-color: #c5d8cc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+}
+
+.card-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-box-header h3 {
+  font-size: 13px;
+  color: #253c32;
+  margin: 0;
+}
+
+.badge-count,
+.badge-pdf,
+.badge-pending {
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.badge-count {
+  background: #edf4ef;
+  color: #27804e;
+}
+
+.badge-pdf {
+  background: #feecec;
+  color: #d43d3d;
+}
+
+.badge-pending {
+  background: #fff2d5;
+  color: #b8780b;
+}
+
+.card-box-desc {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #829087;
+  min-height: 53px;
+  margin: 14px 0;
+}
+
+/* EVIDENCIA */
+
+.evidence-preview-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f8faf9;
+  border: 1px solid #e9eeeb;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.mock-image-thumb {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5eee8;
+  border-radius: 7px;
+  color: #3b7655;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.evidence-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.evidence-info strong {
+  font-size: 10px;
+  color: #344a3e;
+  overflow-wrap: anywhere;
+}
+
+.evidence-info span {
+  font-size: 10px;
+  color: #89958e;
+}
+
+/* PDF */
+
+.pdf-mock-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f8faf9;
+  border: 1px solid #e9eeeb;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.pdf-icon {
+  width: 42px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #fee9e9;
+  color: #d83c3c;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.pdf-mock-card strong {
+  font-size: 10px;
+  color: #344a3e;
+}
+
+.pdf-mock-card small {
+  display: block;
+  font-size: 10px;
+  color: #89958e;
+  margin-top: 4px;
+}
+
+.pdf-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  color: #168747;
+  margin-top: 6px;
+}
+
+.pdf-status span {
+  width: 6px;
+  height: 6px;
+  background: #168747;
+  border-radius: 50%;
+}
+
+/* RADICACIÓN */
+
+.radicacion-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 13px;
+  background: #f8faf9;
+  border: 1px solid #e9eeeb;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.radicacion-meta span {
+  font-size: 10px;
+  color: #728078;
+}
+
+.radicacion-meta strong {
+  color: #344a3e;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.sica-btn-secondary,
+.sica-btn-primary {
+  width: 100%;
+  min-height: 39px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: auto;
+}
+
+.sica-btn-secondary {
+  background: #ffffff;
+  border: 1px solid #d7e1da;
+  color: #315541;
+}
+
+.sica-btn-secondary:hover {
+  background: #f0f6f2;
+  border-color: #24805c;
+}
+
+.sica-btn-secondary span {
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.sica-btn-primary {
+  background: #1c6847;
+  border: 1px solid #1c6847;
+  color: #ffffff;
+}
+
+.sica-btn-primary:hover {
+  background: #155338;
+  border-color: #155338;
+}
+
+.pdf-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.sica-btn-text {
+  background: transparent;
+  border: none;
+  color: #23744e;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.sica-btn-text:hover {
+  color: #124a31;
+  text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .sica-form-layout {
+    grid-template-columns: 1fr;
+  }
+  .sica-form-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+@media (max-width: 800px) {
+  .sica-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sica-grid-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sica-grid-row.trio {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sica-grid-row.duo-small {
+    max-width: 100%;
+  }
+  .span-2 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 550px) {
+  .sica-form-layout {
+    padding: 12px;
+    gap: 14px;
+  }
+  .sica-report-section,
+  .sica-actions-section {
+    padding: 17px;
+  }
+  .sica-section-badge {
+    flex-direction: column;
+  }
+  .system-date {
+    white-space: normal;
+  }
+  .sica-grid-row,
+  .sica-grid-row.trio,
+  .sica-grid-row.duo-small {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 15px;
+  }
+  .sica-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .sica-form-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  .sica-label-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .history-item {
+    flex-wrap: wrap;
+  }
+}

@@ -22,8 +22,10 @@ import Ambientes from "./pages/Ambientes/Ambientes.jsx";
 import AmbienteDetalle from "./pages/Ambientes/AmbienteDetalle/AmbienteDetalle.jsx";
 import Programacion from "./pages/Programacion/Programacion";
 import Novedades from "./pages/Novedades/Novedades.jsx";
+import AgregarNovedadPage from "./pages/AgregarNovedad/AgregarNovedadPage.jsx";
 import Movimientos from "./pages/Movimientos/Movimientos.jsx";
 import MovimientoDetalle from "./pages/Movimientos/MovimientoDetalle/MovimientoDetalle.jsx";
+import AgregarMovimientoPage from "./pages/Movimientos/AgregarMovimiento/AgregarMovimientoPage.jsx";
 import Inventario from "./pages/Inventario/Inventario.jsx";
 import InventarioDetalle from "./pages/Inventario/InventarioDetalle/InventarioDetalle.jsx";
 
@@ -37,6 +39,7 @@ function App() {
                 <Route path="/cambiar-clave" element={<CambiarClave />} />
                 <Route path="/confirmacion" element={<EnlaceEnviado />} />
 
+<<<<<<< HEAD
                 {/* Dashboards oficiales */}
                 <Route
                     path="/dashboard/instructor"
@@ -79,6 +82,15 @@ function App() {
 
                 <Route path="/instructor" element={<Navigate to="/dashboard/instructor" replace />} />
                 <Route path="/instructor/inicio" element={<Navigate to="/dashboard/instructor" replace />} />
+=======
+                <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />} />
+                <Route path="/dashboard/coordinacion-academica/historial-resoluciones" element={<HistorialResoluciones />} />
+                <Route path="/dashboard/coordinacion-academica/historial-resoluciones/detalle/:id" element={<ResolucionDetalle />} />
+                
+                {/* Dashboard y roles */}
+                <Route path="/instructor" element={<Home />} />
+                <Route path="/instructor/inicio" element={<Instructor />} />
+>>>>>>> 2a346c6 (feat:vistas de movimiento y novedades)
                 <Route path="/admin-edificio" element={<AdminEdificio />} />
                 <Route path="/coordinacion-academica" element={<CoordinacionAcademica />} />
                 <Route path="/director-centro" element={<DirectorCentro />} />
@@ -86,14 +98,26 @@ function App() {
                 {/* Módulos generales */}
                 <Route path="/ambientes" element={<Ambientes />} />
                 <Route path="/ambientes/Detalle/:id" element={<AmbienteDetalle />} />
+<<<<<<< HEAD
 
                 <Route path="/programacion" element={<Programacion />} />
 
                 <Route path="/novedades" element={<Novedades />} />
 
+=======
+                
+                <Route path="/novedades" element={<Novedades />} />
+                <Route path="/novedades/nueva" element={<AgregarNovedadPage />} />
+                
+>>>>>>> 2a346c6 (feat:vistas de movimiento y novedades)
                 <Route path="/movimientos" element={<Movimientos />} />
+                <Route path="/movimientos/nuevo" element={<AgregarMovimientoPage />} />
                 <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 2a346c6 (feat:vistas de movimiento y novedades)
                 <Route path="/inventario" element={<Inventario />} />
                 <Route path="/inventario/detalle/:id" element={<InventarioDetalle />} />
 
