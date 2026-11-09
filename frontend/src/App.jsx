@@ -1,11 +1,12 @@
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+// Autenticación
 import Login from "./pages/Auth/Login/Login.jsx";
 import RecuperarClave from "./pages/Auth/RecuperarClave/RecuperarClave.jsx";
 import CambiarClave from "./pages/Auth/CambiarClave/CambiarClave.jsx";
 import EnlaceEnviado from "./pages/Auth/EnlaceEnviado/EnlaceEnviado.jsx";
 
+// Dashboards
 import CoordinacionAcademica from "./pages/Dashboard/Roles/CoordinacionAcademica/CoordinacionAcademica";
 import HistorialResoluciones from "./pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/HistorialResoluciones";
 import ResolucionDetalle from "./pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/ResolucionDetalle/ResolucionDetalle";
@@ -15,6 +16,8 @@ import Instructor from "./pages/Dashboard/Roles/Instructor/Instructor.jsx";
 import AdminEdificio from "./pages/Dashboard/Roles/AdminEdificio/AdminEdificio.jsx";
 import DirectorCentro from "./pages/Dashboard/Roles/DirectorCentro/DirectorCentro.jsx";
 
+// Módulos
+import GestionRoles from "./pages/GestionRoles/GestionRoles";
 import Ambientes from "./pages/Ambientes/Ambientes.jsx";
 import AmbienteDetalle from "./pages/Ambientes/AmbienteDetalle/AmbienteDetalle.jsx";
 import Programacion from "./pages/Programacion/Programacion";
@@ -34,29 +37,70 @@ function App() {
                 <Route path="/cambiar-clave" element={<CambiarClave />} />
                 <Route path="/confirmacion" element={<EnlaceEnviado />} />
 
-                <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />} />
-                <Route path="/dashboard/coordinacion-academica/historial-resoluciones"element={<HistorialResoluciones />} />
-                <Route path="/dashboard/coordinacion-academica/historial-resoluciones/detalle/:id"element={<ResolucionDetalle />} />
-                
-                {/* Dashboard y roles */}
+                {/* Dashboards oficiales */}
+                <Route
+                    path="/dashboard/instructor"
+                    element={<Instructor />}
+                />
+
+                <Route
+                    path="/dashboard/admin-edificio"
+                    element={<AdminEdificio />}
+                />
+
+                <Route
+                    path="/dashboard/coordinacion-academica"
+                    element={<CoordinacionAcademica />}
+                />
+
+                <Route
+                    path="/dashboard/director-centro"
+                    element={<DirectorCentro />}
+                />
+
+                {/* Historial de resoluciones */}
+                <Route
+                    path="/dashboard/coordinacion-academica/historial-resoluciones"
+                    element={<HistorialResoluciones />}
+                />
+
+                <Route
+                    path="/dashboard/coordinacion-academica/historial-resoluciones/detalle/:id"
+                    element={<ResolucionDetalle />}
+                />
+
+                {/* Gestión de roles */}
+                <Route
+                    path="/gestion-roles"
+                    element={<GestionRoles />}
+                />
+
+                {/* Rutas anteriores: compatibilidad */}
                 <Route path="/instructor" element={<Home />} />
                 <Route path="/instructor/inicio" element={<Instructor />} />
                 <Route path="/admin-edificio" element={<AdminEdificio />} />
                 <Route path="/coordinacion-academica" element={<CoordinacionAcademica />} />
                 <Route path="/director-centro" element={<DirectorCentro />} />
 
-                {/* Gestión */}
+                {/* Módulos generales */}
                 <Route path="/ambientes" element={<Ambientes />} />
-                <Route path="/programacion" element={<Programacion />} />
                 <Route path="/ambientes/Detalle/:id" element={<AmbienteDetalle />} />
+
+                <Route path="/programacion" element={<Programacion />} />
+
                 <Route path="/novedades" element={<Novedades />} />
+
                 <Route path="/movimientos" element={<Movimientos />} />
                 <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
+
                 <Route path="/inventario" element={<Inventario />} />
                 <Route path="/inventario/detalle/:id" element={<InventarioDetalle />} />
 
-                {/* Rutas inexistentes */}
-                <Route path="*" element={<Navigate to="/" replace />} />
+                {/* Ruta no encontrada */}
+                <Route
+                    path="*"
+                    element={<Navigate to="/" replace />}
+                />
             </Routes>
         </BrowserRouter>
     );

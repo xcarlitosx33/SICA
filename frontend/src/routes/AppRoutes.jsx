@@ -10,7 +10,7 @@ import HistorialResoluciones from "../pages/Dashboard/Roles/CoordinacionAcademic
 import ResolucionDetalle from "../pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/ResolucionDetalle/ResolucionDetalle";
 import GestionRoles from "../pages/GestionRoles/GestionRoles";
 
-import Instructor from "../pages/Dashboard/Roles/Instructor/Instructor";
+import InstructorHome from "../pages/Dashboard/Roles/Instructor/home";
 import AdminEdificio from "../pages/Dashboard/Roles/AdminEdificio/AdminEdificio";
 import DirectorCentro from "../pages/Dashboard/Roles/DirectorCentro/DirectorCentro";
 
