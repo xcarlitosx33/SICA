@@ -9,9 +9,9 @@ import logoSICA from "../../assets/imagenes/Logo-SICA.png";
 const ROLES = {
     instructor: {
         name: "Instructor",
-        path: "/dashboard/instructor",
+        path: "/instructor",
         menu: [
-            { label: "Inicio", path: "/dashboard/instructor", icon: "home", end: true },
+            { label: "Panel del instructor", path: "/instructor", icon: "home", end: true },
             { label: "Ambientes", path: "/ambientes", icon: "building" },
             { label: "Inventario", path: "/inventario", icon: "inventory" },
             { label: "Novedades", path: "/novedades", icon: "alert" },
