@@ -36,7 +36,7 @@ function AppRoutes() {
         <Route path="/dashboard/coordinacion-academica/historial-resoluciones/detalle/:id" element={<ResolucionDetalle />} />
         <Route path="/gestion-roles" element={<GestionRoles />} />
 
-        <Route path="/dashboard/instructor" element={<Instructor />} />
+        <Route path="/dashboard/instructor" element={<InstructorHome />} />
         <Route path="/dashboard/admin-edificio" element={<AdminEdificio />} />
         <Route path="/dashboard/director-centro" element={<DirectorCentro />} />
 

@@ -40,7 +40,7 @@ function App() {
                 {/* Dashboards oficiales */}
                 <Route
                     path="/dashboard/instructor"
-                    element={<Instructor />}
+                    element={<Home />}
                 />
 
                 <Route
@@ -76,8 +76,9 @@ function App() {
                 />
 
                 {/* Rutas anteriores: compatibilidad */}
-                <Route path="/instructor" element={<Home />} />
-                <Route path="/instructor/inicio" element={<Instructor />} />
+
+                <Route path="/instructor" element={<Navigate to="/dashboard/instructor" replace />} />
+                <Route path="/instructor/inicio" element={<Navigate to="/dashboard/instructor" replace />} />
                 <Route path="/admin-edificio" element={<AdminEdificio />} />
                 <Route path="/coordinacion-academica" element={<CoordinacionAcademica />} />
                 <Route path="/director-centro" element={<DirectorCentro />} />
