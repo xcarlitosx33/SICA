@@ -1,24 +1,38 @@
-import "./NovedadFilters.css";
 
-function NovedadFilters({ filters, onFilterChange, onClear }) {
+import "./NovedadFilters.css";
+import Button from "../../Button/Button";
+
+function NovedadFilters({ filters, onFilterChange, onClear, onAdd }) {
     return (
         <section className="novedad-filters">
+
             <div className="novedad-filters-header">
                 <div>
                     <h2>Listado de novedades</h2>
                     <p>Busca y filtra las novedades registradas.</p>
                 </div>
 
-                <button
-                    type="button"
-                    className="novedad-filters-clear"
-                    onClick={onClear}
-                >
-                    Limpiar filtros
-                </button>
+                <div className="novedad-filters-actions">
+                    <Button
+                        type="button"
+                        className="novedad-filters-clear"
+                        onClick={onClear}
+                    >
+                        Limpiar filtros
+                    </Button>
+
+                    <Button
+                        type="button"
+                        className="novedad-add-button"
+                        onClick={onAdd}
+                    >
+                        <span>＋</span> Agregar novedad
+                    </Button>
+                </div>
             </div>
 
             <div className="novedad-filters-controls">
+
                 <div className="novedad-filter-search">
                     <label htmlFor="novedad-search">
                         Buscar novedad
@@ -87,6 +101,7 @@ function NovedadFilters({ filters, onFilterChange, onClear }) {
                         <option value="Ambiente 104">Ambiente 104</option>
                     </select>
                 </div>
+
             </div>
         </section>
     );

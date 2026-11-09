@@ -5,15 +5,22 @@ import RecuperarClave from "../pages/Auth/RecuperarClave/RecuperarClave";
 import EnlaceEnviado from "../pages/Auth/EnlaceEnviado/EnlaceEnviado";
 import CambiarClave from "../pages/Auth/CambiarClave/CambiarClave";
 
-import Instructor from "../pages/Dashboard/Roles/Instructor/Instructor";
+import CoordinacionAcademica from "../pages/Dashboard/Roles/CoordinacionAcademica/CoordinacionAcademica";
+import HistorialResoluciones from "../pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/HistorialResoluciones";
+import ResolucionDetalle from "../pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/ResolucionDetalle/ResolucionDetalle";
+import GestionRoles from "../pages/GestionRoles/GestionRoles";
+
+import InstructorHome from "../pages/Dashboard/Roles/Instructor/home";
 import AdminEdificio from "../pages/Dashboard/Roles/AdminEdificio/AdminEdificio";
 import DirectorCentro from "../pages/Dashboard/Roles/DirectorCentro/DirectorCentro";
-import CoordinacionAcademica from "../pages/Dashboard/Roles/CoordinacionAcademica/CoordinacionAcademica";
 
 import Ambientes from "../pages/Ambientes/Ambientes";
 import AmbienteDetalle from "../pages/Ambientes/AmbienteDetalle/AmbienteDetalle";
+import Programacion from "../pages/Programacion/Programacion";
 import Movimientos from "../pages/Movimientos/Movimientos";
-import MovimientoDetalle from "../pages/MovimientoDetalle/MovimientoDetalle";
+import MovimientoDetalle from "../pages/Movimientos/MovimientoDetalle/MovimientoDetalle";
+import Inventario from "../pages/Inventario/Inventario";
+import InventarioDetalle from "../pages/Inventario/InventarioDetalle/InventarioDetalle";
 
 function AppRoutes() {
   return (
@@ -24,15 +31,22 @@ function AppRoutes() {
         <Route path="/confirmacion" element={<EnlaceEnviado />} />
         <Route path="/cambiar-clave" element={<CambiarClave />} />
 
-        <Route path="/dashboard/instructor" element={<Instructor />} />
+        <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />}/>
+        <Route path="/dashboard/coordinacion-academica/historial-resoluciones" element={<HistorialResoluciones />}/>
+        <Route path="/dashboard/coordinacion-academica/historial-resoluciones/detalle/:id" element={<ResolucionDetalle />} />
+        <Route path="/gestion-roles" element={<GestionRoles />} />
+
+        <Route path="/dashboard/instructor" element={<InstructorHome />} />
         <Route path="/dashboard/admin-edificio" element={<AdminEdificio />} />
         <Route path="/dashboard/director-centro" element={<DirectorCentro />} />
-        <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />}/>
 
         <Route path="/ambientes" element={<Ambientes />} />
         <Route path="/ambientes/Detalle/:id" element={<AmbienteDetalle />} />
+        <Route path="/programacion" element={<Programacion />} />
         <Route path="/movimientos" element={<Movimientos />} />
         <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
+        <Route path="/inventario" element={<Inventario />} />
+        <Route path="/inventario/detalle/:id" element={<InventarioDetalle />} />
       </Routes>
     </BrowserRouter>
   );

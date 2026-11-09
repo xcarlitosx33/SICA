@@ -1,0 +1,90 @@
+
+/* RESUMEN DEL HISTORIAL */
+.historial-summary {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    font-family: "Work Sans", sans-serif;
+}
+
+/*TARJETAS */
+.historial-summary-card {
+    position: relative;
+    min-width: 0;
+    padding: 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+/* ENCABEZADO */
+.historial-summary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.historial-summary-header h3 {
+    margin: 0;
+    color: #65756D;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* INDICADOR */
+.historial-summary-indicator {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #64748B;
+}
+
+.historial-summary-card.aprobadas
+.historial-summary-indicator {
+    background-color: #15803D;
+}
+
+.historial-summary-card.rechazadas
+.historial-summary-indicator {
+    background-color: #DC2626;
+}
+
+/* CANTIDAD */
+.historial-summary-number {
+    display: block;
+    margin-top: 8px;
+    color: #18312A;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* DESCRIPCIÓN */
+.historial-summary-description {
+    display: block;
+    margin-top: 5px;
+    color: #65756D;
+    font-size: 12px;
+}
+
+/*TABLET */
+@media (max-width: 900px) {
+    .historial-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/*MÓVIL */
+@media (max-width: 520px) {
+    .historial-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .historial-summary-card {
+        padding: 14px;
+    }
+}

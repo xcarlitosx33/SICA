@@ -1,0 +1,259 @@
+
+.vista-semanal {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: "Work Sans", sans-serif;
+}
+
+/* ENCABEZADO */
+
+.vista-semanal-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #E2E7E4;
+}
+
+.vista-semanal-header h3 {
+    margin: 0;
+    color: #18312A;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.vista-semanal-header p {
+    margin: 6px 0 0;
+    color: #65756D;
+    font-size: 14px;
+}
+
+/* DESPLAZAMIENTO */
+
+.vista-semanal-scroll {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #AAB8AF #F6F6F6;
+}
+
+.vista-semanal-scroll::-webkit-scrollbar {
+    height: 9px;
+}
+
+.vista-semanal-scroll::-webkit-scrollbar-track {
+    background: #F6F6F6;
+}
+
+.vista-semanal-scroll::-webkit-scrollbar-thumb {
+    background: #AAB8AF;
+    border-radius: 10px;
+}
+
+/* CUADRÍCULA */
+
+.vista-semanal-grid {
+    display: grid;
+    grid-template-columns: 115px repeat(7, minmax(155px, 1fr));
+    min-width: 1250px;
+}
+
+/* ENCABEZADOS */
+
+.vista-semanal-corner,
+.vista-semanal-day-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #F6F6F6;
+    border-bottom: 1px solid #E2E7E4;
+    border-right: 1px solid #E2E7E4;
+    color: #18312A;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* FILAS */
+
+.vista-semanal-row {
+    display: contents;
+}
+
+/* COLUMNA JORNADA */
+
+.vista-semanal-shift {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    min-height: 340px;
+    padding: 12px;
+    box-sizing: border-box;
+    border-right: 1px solid #E2E7E4;
+    border-bottom: 1px solid #E2E7E4;
+}
+
+.vista-semanal-shift strong {
+    color: #18312A;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.vista-semanal-shift span {
+    color: #47564F;
+    font-size: 11px;
+}
+
+/* COLORES DE JORNADAS */
+
+.vista-semanal-shift.manana {
+    background: #DCECFB;
+}
+
+.vista-semanal-shift.tarde {
+    background: #FDE9D2;
+}
+
+.vista-semanal-shift.noche {
+    background: #EAE1FA;
+}
+
+/* CELDAS */
+
+.vista-semanal-cell {
+    min-width: 0;
+    min-height: 340px;
+    max-height: 340px;
+    padding: 9px;
+    box-sizing: border-box;
+    border-right: 1px solid #E2E7E4;
+    border-bottom: 1px solid #E2E7E4;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #AAB8AF transparent;
+}
+
+.vista-semanal-cell::-webkit-scrollbar {
+    width: 5px;
+}
+
+.vista-semanal-cell::-webkit-scrollbar-thumb {
+    background: #AAB8AF;
+    border-radius: 10px;
+}
+
+/* FONDOS POR JORNADA */
+
+.vista-semanal-cell.manana {
+    background: #F1F7FD;
+}
+
+.vista-semanal-cell.tarde {
+    background: #FFF8F0;
+}
+
+.vista-semanal-cell.noche {
+    background: #F8F5FE;
+}
+
+/* SESIONES */
+
+.vista-semanal-sessions {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+/* TARJETAS */
+.vista-semanal-session {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 9px;
+    border-left: 4px solid;
+    border-radius: 6px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(24, 49, 42, 0.06);
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.vista-semanal-session:hover {
+    background: #F0F8F2;
+    box-shadow: 0 2px 6px rgba(24, 49, 42, 0.12);
+}
+
+.vista-semanal-session.selected {
+    background: #E3F4E8;
+    outline: 2px solid #39A900;
+    outline-offset: -2px;
+    box-shadow: 0 2px 8px rgba(57, 169, 0, 0.18);
+}
+
+.vista-semanal-session strong {
+    color: #18312A;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.vista-semanal-session span {
+    color: #65756D;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* COLORES POR RAMA O ÁREA */
+
+.vista-semanal-session.industria {
+    border-left-color: #2563A6;
+}
+
+.vista-semanal-session.comercio {
+    border-left-color: #D97706;
+}
+
+.vista-semanal-session.tic {
+    border-left-color: #39A900;
+}
+
+.vista-semanal-session.agropecuario {
+    border-left-color: #668B32;
+}
+
+.vista-semanal-session.transversal {
+    border-left-color: #8055C7;
+}
+
+/* CELDAS VACÍAS */
+
+.vista-semanal-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    color: #9AA79F;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* PIE */
+
+.vista-semanal-footer {
+    padding: 14px 20px;
+    color: #65756D;
+    font-size: 12px;
+    border-top: 1px solid #E2E7E4;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .vista-semanal-header {
+        padding: 16px;
+    }
+}

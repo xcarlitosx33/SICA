@@ -1,0 +1,71 @@
+
+/* LAYOUT GENERAL */
+
+.programacion-layout {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background: #F6F6F6;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.programacion-main {
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    margin-left: 260px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* CONTENEDOR DEL CONTENIDO */
+
+.programacion-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+
+/* TABLET */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .programacion-main {
+        width: calc(100% - 260px);
+        margin-left: 260px;
+    }
+
+    .programacion-content {
+        width: 100%;
+        max-width: none;
+        padding: 24px 20px;
+    }
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 768px) {
+
+    .programacion-main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .programacion-content {
+        padding: 76px 20px 24px;
+    }
+}
+
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 400px) {
+
+    .programacion-content {
+        padding: 72px 14px 20px;
+    }
+}

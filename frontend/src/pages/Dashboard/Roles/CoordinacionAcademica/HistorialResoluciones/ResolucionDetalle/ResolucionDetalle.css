@@ -1,0 +1,159 @@
+
+/*
+   LAYOUT GENERAL */
+
+.resolucion-detalle-layout {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background: #F6F6F6;
+    font-family: "Work Sans", sans-serif;
+}
+
+/*
+   CONTENIDO PRINCIPAL */
+
+.resolucion-detalle-main {
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    margin-left: 260px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/*
+   CONTENEDOR DEL CONTENIDO */
+
+.resolucion-detalle-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/*
+   CONTENEDOR DEL DETALLE */
+
+.resolucion-detalle-container {
+    width: 100%;
+    margin-top: 24px;
+}
+
+/*
+   BOTÓN VOLVER */
+
+.resolucion-back-button {
+    height: 40px;
+    padding: 0 16px;
+
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+
+    background-color: #FFFFFF;
+    color: #18312A;
+
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.resolucion-back-button:hover {
+    border-color: #E3F4E8;
+    background-color: #E3F4E8;
+    color: #007832;
+}
+
+.resolucion-back-button:focus-visible {
+    outline: 2px solid #007832;
+    outline-offset: 3px;
+}
+
+/*
+   CONTENEDOR TEMPORAL */
+
+.resolucion-detalle-placeholder {
+    width: 100%;
+    margin-top: 20px;
+    padding: 24px;
+
+    box-sizing: border-box;
+
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+}
+
+.resolucion-detalle-placeholder span {
+    color: #65756D;
+    font-size: 13px;
+}
+
+.resolucion-detalle-placeholder h2 {
+    margin: 8px 0;
+    color: #18312A;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.resolucion-detalle-placeholder p {
+    margin: 0;
+    color: #65756D;
+    font-size: 14px;
+}
+
+/*
+   TABLET */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .resolucion-detalle-content {
+        max-width: none;
+        padding: 24px 20px;
+    }
+
+}
+
+/*
+   MÓVIL */
+
+@media (max-width: 768px) {
+
+    .resolucion-detalle-main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .resolucion-detalle-content {
+        padding: 76px 20px 24px;
+    }
+
+}
+
+/*
+   CELULARES PEQUEÑOS */
+
+@media (max-width: 400px) {
+
+    .resolucion-detalle-content {
+        padding: 72px 14px 20px;
+    }
+
+    .resolucion-detalle-placeholder {
+        padding: 16px;
+    }
+
+}
+
+/*
+   ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .resolucion-back-button {
+        transition: none;
+    }
+
+}

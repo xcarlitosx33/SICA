@@ -1,0 +1,287 @@
+
+.vista-mensual {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: "Work Sans", sans-serif;
+}
+
+/* ENCABEZADO */
+
+.vista-mensual-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px;
+    border-bottom: 1px solid #E2E7E4;
+}
+
+.vista-mensual-header h3 {
+    margin: 0;
+    color: #18312A;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.vista-mensual-header p {
+    margin: 6px 0 0;
+    color: #65756D;
+    font-size: 14px;
+}
+
+.vista-mensual-period-select {
+    height: 40px;
+    min-width: 155px;
+    padding: 0 12px;
+    background: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+    color: #18312A;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+}
+
+.vista-mensual-period-select:focus {
+    border-color: #39A900;
+}
+
+/* NAVEGACIÓN */
+
+.vista-mensual-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding: 20px;
+}
+
+.vista-mensual-navigation h4 {
+    min-width: 180px;
+    margin: 0;
+    color: #18312A;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.vista-mensual-navigation button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.vista-mensual-navigation button:hover:not(:disabled) {
+    background: #E3F4E8;
+    border-color: #39A900;
+}
+
+.vista-mensual-navigation button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.vista-mensual-navigation svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: #18312A;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* CALENDARIO */
+
+.vista-mensual-calendar {
+    margin: 0 18px;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* DÍAS DE LA SEMANA */
+
+.vista-mensual-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    background: #F6F6F6;
+}
+
+.vista-mensual-weekdays div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px;
+    border-right: 1px solid #E2E7E4;
+    color: #18312A;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.vista-mensual-weekdays div:last-child {
+    border-right: none;
+}
+
+/* CUADRÍCULA DE DÍAS */
+
+.vista-mensual-days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+/* CELDAS */
+
+.vista-mensual-day {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+    min-height: 115px;
+    padding: 12px;
+    background: #FFFFFF;
+    border: none;
+    border-top: 1px solid #E2E7E4;
+    border-right: 1px solid #E2E7E4;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.vista-mensual-day:nth-child(7n) {
+    border-right: none;
+}
+
+.vista-mensual-day:hover:not(.empty) {
+    background: #F6FBF7;
+}
+
+.vista-mensual-day.empty {
+    background: #FAFBFA;
+    cursor: default;
+}
+
+.vista-mensual-day.selected {
+    background: #E3F4E8;
+    box-shadow: inset 0 0 0 2px #39A900;
+}
+
+/* NÚMERO DEL DÍA */
+
+.vista-mensual-day-number {
+    color: #18312A;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* INDICADORES */
+
+.vista-mensual-indicators {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.vista-mensual-indicator {
+    display: block;
+    width: 100%;
+    max-width: 65px;
+    height: 5px;
+    border-radius: 4px;
+}
+
+/* COLORES POR RAMA O ÁREA */
+
+.vista-mensual-indicator.industria,
+.vista-mensual-legend i.industria {
+    background: #2563A6;
+}
+
+.vista-mensual-indicator.comercio,
+.vista-mensual-legend i.comercio {
+    background: #D97706;
+}
+
+.vista-mensual-indicator.tic,
+.vista-mensual-legend i.tic {
+    background: #39A900;
+}
+
+.vista-mensual-indicator.agropecuario,
+.vista-mensual-legend i.agropecuario {
+    background: #668B32;
+}
+
+.vista-mensual-indicator.transversal,
+.vista-mensual-legend i.transversal {
+    background: #8055C7;
+}
+
+/* LEYENDA */
+
+.vista-mensual-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 20px;
+}
+
+.vista-mensual-legend span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #65756D;
+    font-size: 12px;
+}
+
+.vista-mensual-legend i {
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 3px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .vista-mensual-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .vista-mensual-calendar {
+        margin: 0 10px;
+        overflow-x: auto;
+    }
+
+    .vista-mensual-weekdays,
+    .vista-mensual-days {
+        min-width: 700px;
+    }
+
+    .vista-mensual-day {
+        min-height: 95px;
+        padding: 8px;
+    }
+
+    .vista-mensual-legend {
+        gap: 12px;
+    }
+}

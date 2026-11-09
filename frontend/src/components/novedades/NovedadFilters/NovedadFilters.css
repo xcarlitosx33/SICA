@@ -1,3 +1,4 @@
+
 .novedad-filters {
     margin: 28px 0 20px;
     padding: 24px;
@@ -27,21 +28,44 @@
     font-size: 13px;
 }
 
-.novedad-filters-clear {
+.novedad-filters-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     flex-shrink: 0;
-    padding: 10px 14px;
-    color: #007832;
-    background: #FFFFFF;
-    border: 1px solid #007832;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
-.novedad-filters-clear:hover {
-    background-color: #E3F4E8;
+.novedad-filters-clear {
+    flex-shrink: 0;
+}
+
+.novedad-add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 9px 15px;
+    background-color: #168447;
+    border: 1px solid #168447;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.novedad-add-button:hover {
+    background-color: #116B38;
+    border-color: #116B38;
+}
+
+.novedad-add-button span {
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .novedad-filters-controls {
@@ -102,6 +126,15 @@
 
     .novedad-filters-header {
         flex-direction: column;
+    }
+
+    .novedad-filters-actions {
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .novedad-filters-actions button {
+        width: 100%;
     }
 
     .novedad-filters-controls {

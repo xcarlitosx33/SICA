@@ -1,31 +1,16 @@
 import "./AmbienteNovedades.css";
 
-function AmbienteNovedades() {
-    const novedades = [
-        {
-            id: 1,
-            fecha: "2026-10-20",
-            novedad: "Luz del techo fundida en la zona central",
-            estado: "abierta",
-        },
-        {
-            id: 2,
-            fecha: "2026-09-15",
-            novedad: "Daño en proyector multimedia",
-            estado: "en-proceso",
-        },
-        {
-            id: 3,
-            fecha: "2026-08-10",
-            novedad: "Mantenimiento general de equipos",
-            estado: "cerrada",
-        },
-    ];
-
+function AmbienteNovedades({ novedades = [] }) {
     const estadoTexto = {
-        abierta: "Abierta",
-        "en-proceso": "En proceso",
-        cerrada: "Cerrada",
+        Pendiente: "Abierta",
+        "En proceso": "En proceso",
+        Cerrada: "Cerrada",
+    };
+
+    const estadoClase = {
+        Pendiente: "abierta",
+        "En proceso": "en-proceso",
+        Cerrada: "cerrada",
     };
 
     return (
@@ -47,31 +32,41 @@ function AmbienteNovedades() {
                         </thead>
 
                         <tbody>
-                            {novedades.map((novedad) => (
-                                <tr key={novedad.id}>
-                                    <td>{novedad.fecha}</td>
-
-                                    <td>{novedad.novedad}</td>
-
-                                    <td>
-                                        <span
-                                            className={`ambiente-novedad-status ${novedad.estado}`}
-                                        >
-                                            {estadoTexto[novedad.estado]}
-                                        </span>
-                                    </td>
-
-                                    <td>
-                                        <button
-                                            type="button"
-                                            className="ambiente-novedad-detail-button"
-                                        >
-                                            Ver detalle
-                                            <span aria-hidden="true">→</span>
-                                        </button>
+                            {novedades.length > 0 ? (
+                                novedades.map((item) => (
+                                    <tr key={item.id}>
+                                        <td>{item.fecha}</td>
+                                        <td>{item.descripcion}</td>
+                                        <td>
+                                            <span
+                                                className={`ambiente-novedad-status ${estadoClase[item.estado]}`}
+                                            >
+                                                {estadoTexto[item.estado]}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                className="ambiente-novedad-detail-button"
+                                                onClick={() =>
+                                                    alert(
+                                                        `${item.id}\n${item.elemento}\n${item.descripcion}\nEstado: ${item.estado}`
+                                                    )
+                                                }
+                                            >
+                                                Ver detalle
+                                                <span aria-hidden="true">→</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="4">
+                                        No hay novedades registradas para este ambiente.
                                     </td>
                                 </tr>
-                            ))}
+                            )}
                         </tbody>
                     </table>
                 </div>

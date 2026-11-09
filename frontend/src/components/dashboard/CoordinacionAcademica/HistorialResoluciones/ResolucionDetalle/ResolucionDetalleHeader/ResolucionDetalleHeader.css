@@ -1,0 +1,145 @@
+
+/*
+   ENCABEZADO DE RESOLUCIÓN */
+
+.resolucion-header {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+
+    font-family: "Work Sans", sans-serif;
+}
+
+/*
+   INFORMACIÓN PRINCIPAL */
+
+.resolucion-header-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.resolucion-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.resolucion-header-id {
+    color: #65756D;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.resolucion-header-info h2 {
+    margin: 0;
+    color: #18312A;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.resolucion-header-description {
+    color: #65756D;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/*
+   ESTADO */
+
+.resolucion-header-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.resolucion-header-status.aprobada {
+    background-color: #DCFCE7;
+    color: #15803D;
+}
+
+.resolucion-header-status.rechazada {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+/*
+   FECHAS */
+
+.resolucion-header-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    margin-top: 20px;
+    padding-top: 16px;
+
+    border-top: 1px solid #E2E7E4;
+}
+
+.resolucion-header-date {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.resolucion-header-date span {
+    color: #65756D;
+    font-size: 12px;
+}
+
+.resolucion-header-date strong {
+    color: #18312A;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/*
+   RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .resolucion-header {
+        padding: 16px;
+    }
+
+    .resolucion-header-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .resolucion-header-info h2 {
+        font-size: 18px;
+    }
+
+    .resolucion-header-dates {
+        gap: 20px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .resolucion-header {
+        scroll-behavior: auto;
+    }
+
+}

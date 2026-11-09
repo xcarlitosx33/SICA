@@ -1,4 +1,5 @@
 
+import Button from "../../Button/Button";
 import "./AmbienteFilters.css";
 
 function AmbienteFilters() {
@@ -54,9 +55,9 @@ function AmbienteFilters() {
                 </select>
             </div>
 
-            <button type="button" className="clear-filters-button">
+            <Button type="button" className="clear-filters-button">
                 Limpiar filtros
-            </button>
+            </Button>
         </section>
     );
 }

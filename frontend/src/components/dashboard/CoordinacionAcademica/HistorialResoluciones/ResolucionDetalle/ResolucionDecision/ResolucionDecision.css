@@ -1,0 +1,138 @@
+
+/*
+   DECISIÓN DE COORDINACIÓN */
+
+.resolucion-decision {
+    width: 100%;
+    padding: 20px;
+    margin-top: 16px;
+
+    box-sizing: border-box;
+
+    background-color: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+
+    font-family: "Work Sans", sans-serif;
+}
+
+/*
+   ENCABEZADO */
+
+.resolucion-decision-heading {
+    margin-bottom: 20px;
+}
+
+.resolucion-decision-heading h2 {
+    margin: 0;
+    color: #18312A;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.resolucion-decision-heading p {
+    margin: 6px 0 0;
+    color: #65756D;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/*
+   INFORMACIÓN */
+
+.resolucion-decision-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 24px;
+}
+
+.resolucion-decision-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    min-width: 0;
+}
+
+.resolucion-decision-item > span {
+    color: #65756D;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.resolucion-decision-item > strong {
+    color: #18312A;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/*
+   ESTADO */
+
+.resolucion-decision-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 11px;
+    border-radius: 20px;
+
+    font-size: 12px !important;
+    font-weight: 600;
+}
+
+.resolucion-decision-status.aprobada {
+    background-color: #DCFCE7;
+    color: #15803D;
+}
+
+.resolucion-decision-status.rechazada {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+/*
+   JUSTIFICACIÓN */
+
+.resolucion-decision-justification {
+    margin-top: 22px;
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    background-color: #F6F8FA;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+}
+
+.resolucion-decision-justification h3 {
+    margin: 0 0 8px;
+    color: #18312A;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.resolucion-decision-justification p {
+    margin: 0;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/*
+   RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .resolucion-decision {
+        padding: 16px;
+    }
+
+    .resolucion-decision-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+}

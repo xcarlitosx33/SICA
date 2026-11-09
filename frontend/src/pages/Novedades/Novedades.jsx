@@ -1,4 +1,6 @@
+
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Novedades.css";
 
 import Sidebar from "../../components/Sidebar/Sidebar";
@@ -18,6 +20,8 @@ const INITIAL_FILTERS = {
 function Novedades() {
     const [filters, setFilters] = useState(INITIAL_FILTERS);
 
+    const navigate = useNavigate();
+
     function handleFilterChange(name, value) {
         setFilters((previousFilters) => ({
             ...previousFilters,
@@ -29,12 +33,17 @@ function Novedades() {
         setFilters(INITIAL_FILTERS);
     }
 
+    function handleAddNovedad() {
+        navigate("/novedades/nueva");
+    }
+
     return (
         <div className="novedades-layout">
             <Sidebar />
 
             <main className="novedades-main">
                 <div className="novedades-content">
+
                     <PageHeader
                         title="Novedades"
                         description="Consulta y realiza seguimiento de las novedades reportadas en los ambientes de formación."
@@ -46,9 +55,11 @@ function Novedades() {
                         filters={filters}
                         onFilterChange={handleFilterChange}
                         onClear={handleClearFilters}
+                        onAdd={handleAddNovedad}
                     />
 
                     <NovedadTable filters={filters} />
+
                 </div>
             </main>
         </div>

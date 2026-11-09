@@ -1,0 +1,11 @@
+/* Ajustes propios del dashboard de coordinación académica */
+
+.coordinacion-validaciones {
+    width: 100%;
+    margin-top: 28px;
+}
+
+.coordinacion-history-button:focus-visible {
+    outline: 2px solid #007832;
+    outline-offset: 3px;
+}

@@ -1,0 +1,404 @@
+/* LAYOUT */
+
+.inventario-detalle-layout {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #F6F6F6;
+}
+
+.inventario-detalle-main {
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin-left: 260px;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.inventario-detalle-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* ACCIONES */
+
+.inventario-detail-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -12px;
+    margin-bottom: 20px;
+}
+
+/* RESUMEN */
+
+.inventario-detail-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 26px;
+}
+
+.inventario-detail-card {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-height: 112px;
+    padding: 16px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+}
+
+.inventario-detail-card > span {
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.inventario-detail-card strong {
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.inventario-detail-card strong.has-issues {
+    color: #DC2626;
+}
+
+.inventario-detail-card small {
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+}
+
+/* CATEGORÍAS */
+
+.inventario-categories-section {
+    width: 100%;
+}
+
+.inventario-section-heading {
+    margin-bottom: 16px;
+}
+
+.inventario-section-heading h2 {
+    margin: 0;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.inventario-section-heading p {
+    margin: 5px 0 0;
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+}
+
+.inventario-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.inventario-category {
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inventario-category[open] {
+    border-color: #B8DCC5;
+    box-shadow: 0 3px 12px rgba(0, 120, 50, 0.04);
+}
+
+.inventario-category-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 17px 20px;
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.2s ease;
+}
+
+.inventario-category-summary::-webkit-details-marker {
+    display: none;
+}
+
+.inventario-category-summary:hover {
+    background: #F8FBF9;
+}
+
+.inventario-category-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.inventario-category-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: #E3F4E8;
+    color: #007832;
+    font-size: 21px;
+}
+
+.inventario-category-title div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inventario-category-title strong {
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.inventario-category-title small {
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+}
+
+.inventario-category-chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #F3F6F4;
+    color: #426153;
+    font-size: 18px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.inventario-category[open] .inventario-category-chevron {
+    transform: rotate(180deg);
+    background: #E3F4E8;
+    color: #007832;
+}
+
+.inventario-category-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 18px 16px;
+}
+
+/* ELEMENTOS */
+
+.inventario-item {
+    padding: 18px;
+    margin-top: 12px;
+    background: #FFFFFF;
+    border: 1px solid #E8EDEA;
+    border-radius: 10px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inventario-item:hover {
+    border-color: #B8DCC5;
+    box-shadow: 0 3px 12px rgba(0, 120, 50, 0.05);
+}
+
+.inventario-item-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.inventario-item-heading h3 {
+    margin: 0;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.inventario-item-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.inventario-item-status > span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.inventario-item-status.bueno { color: #15803D; background: #DCFCE7; }
+.inventario-item-status.danado { color: #DC2626; background: #FEE2E2; }
+.inventario-item-status.mantenimiento { color: #D97706; background: #FEF3C7; }
+.inventario-item-status.fuera_servicio { color: #991B1B; background: #FEE2E2; }
+
+.inventario-item-data {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.inventario-item-data span {
+    padding: 9px 12px;
+    border-radius: 7px;
+    background: #F6F8F7;
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+}
+
+.inventario-item-data strong { color: #18312A; }
+
+/* NOVEDADES */
+
+.inventario-item-issue {
+    margin-top: 15px;
+    padding: 13px 15px;
+    border: 1px solid #FECACA;
+    border-left: 4px solid #DC2626;
+    border-radius: 8px;
+    background: #FEF2F2;
+}
+
+.inventario-item-issue strong {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #B91C1C;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+}
+
+.inventario-issue-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #DC2626;
+}
+
+.inventario-item-issue p {
+    margin: 7px 0 0 16px;
+    color: #7F1D1D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.inventario-category-empty {
+    margin: 0;
+    padding: 18px 0 5px;
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+}
+
+/* SIN INFORMACIÓN */
+
+.inventario-no-data {
+    padding: 40px 24px;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.inventario-no-data > span {
+    color: #007832;
+    font-size: 32px;
+}
+
+.inventario-no-data h3 {
+    margin: 12px 0 6px;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 17px;
+}
+
+.inventario-no-data p {
+    max-width: 480px;
+    margin: 0 auto;
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .inventario-detail-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MÓVIL */
+
+@media (max-width: 768px) {
+    .inventario-detalle-main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .inventario-detalle-content {
+        padding: 76px 20px 24px;
+    }
+
+    .inventario-detail-summary {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .inventario-category-summary {
+        padding: 14px;
+    }
+
+    .inventario-category-content {
+        padding: 0 12px 12px;
+    }
+
+    .inventario-item {
+        padding: 14px 4px;
+    }
+
+    .inventario-item-data {
+        flex-direction: column;
+        gap: 7px;
+    }
+}
+
+@media (max-width: 400px) {
+    .inventario-detalle-content {
+        padding: 72px 14px 20px;
+    }
+}

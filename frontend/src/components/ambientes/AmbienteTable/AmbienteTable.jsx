@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Button from "../../Button/Button";
 
 import "./AmbienteTable.css";
 import { ambientes } from "../../../data/ambientes";
@@ -41,13 +42,13 @@ function AmbienteTable() {
                                 <td>{ambiente.capacidad}</td>
 
                                 <td>
-                                    <button
+                                    <Button
                                         type="button"
                                         className="ambiente-detail-button"
                                         onClick={() => navigate(`/ambientes/Detalle/${ambiente.id}`)}
                                     >
                                         Ver detalle ›
-                                    </button>
+                                    </Button>
                                 </td>
                             </tr>
                         ))}
