@@ -2,44 +2,16 @@
 import "./NovedadFilters.css";
 import Button from "../../Button/Button";
 
-import { useNavigate } from "react-router-dom";
-
-function NovedadFilters({ filters, onFilterChange, onClear, onAdd }) {
-
-    const navigate = useNavigate();
-
+function NovedadFilters({
+    filters,
+    onFilterChange,
+    onClear,
+    onAdd,
+    canAdd = true,
+}) {
     return (
         <section className="novedad-filters">
-
-            <div className="novedad-filters-header">
-                <div>
-                    <h2>Listado de novedades</h2>
-                    <p>Busca y filtra las novedades registradas.</p>
-                </div>
-
-                <div className="novedad-filters-actions">
-                    <Button
-                        type="button"
-                        className="novedad-filters-clear"
-                        onClick={onClear}
-                    >
-                        Limpiar filtros
-                    </Button>
-
-
-                    <Button
-                        type="button"
-                        className="novedad-add-button"
-                        onClick={() => navigate("/novedades/agregar")}
-                    >
-                        <span>＋</span> Agregar novedad
-                    </Button>
-
-                </div>
-            </div>
-
             <div className="novedad-filters-controls">
-
                 <div className="novedad-filter-search">
                     <label htmlFor="novedad-search">
                         Buscar novedad
@@ -109,6 +81,18 @@ function NovedadFilters({ filters, onFilterChange, onClear, onAdd }) {
                     </select>
                 </div>
 
+                <div className="novedad-filters-actions">
+                    <Button type="button" onClick={onClear}>
+                        Limpiar filtros
+                    </Button>
+
+                    {canAdd && (
+                        <Button type="button" onClick={onAdd}>
+                            <span aria-hidden="true">＋</span>
+                            Agregar novedad
+                        </Button>
+                    )}
+                </div>
             </div>
         </section>
     );

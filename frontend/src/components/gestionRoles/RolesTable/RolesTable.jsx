@@ -1,6 +1,8 @@
 
 import "./RolesTable.css";
 
+import Button from "../../Button/Button";
+
 function RolesTable({
     users,
     onChangeRole,
@@ -56,11 +58,10 @@ function RolesTable({
 
                             <td>
                                 <span
-                                    className={`roles-status ${
-                                        user.status === "Activo"
+                                    className={`roles-status ${user.status === "Activo"
                                             ? "active"
                                             : "inactive"
-                                    }`}
+                                        }`}
                                 >
                                     <span />
                                     {user.status}
@@ -75,31 +76,26 @@ function RolesTable({
 
                             <td className="roles-actions-cell">
                                 <div className="roles-table-actions">
-                                    <button
-                                        type="button"
-                                        className="roles-action-button"
+                                    <Button
+                                        variant="secondary"
                                         onClick={() => onChangeRole(user)}
                                     >
                                         Cambiar rol
-                                    </button>
+                                    </Button>
 
-                                    <button
-                                        type="button"
-                                        className="roles-detail-button"
+                                    <Button
+                                        variant="secondary"
                                         onClick={() => onShowDetails(user)}
                                     >
                                         Ver detalle
-                                    </button>
+                                    </Button>
 
-                                    <button
-                                        type="button"
-                                        className="roles-status-button"
+                                    <Button
+                                        variant={user.status === "Activo" ? "danger" : "secondary"}
                                         onClick={() => onToggleStatus(user.id)}
                                     >
-                                        {user.status === "Activo"
-                                            ? "Desactivar"
-                                            : "Activar"}
-                                    </button>
+                                        {user.status === "Activo" ? "Desactivar" : "Activar"}
+                                    </Button>
                                 </div>
                             </td>
                         </tr>

@@ -8,6 +8,7 @@ import CambiarClave from "../pages/Auth/CambiarClave/CambiarClave";
 import CoordinacionAcademica from "../pages/Dashboard/Roles/CoordinacionAcademica/CoordinacionAcademica";
 import HistorialResoluciones from "../pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/HistorialResoluciones";
 import ResolucionDetalle from "../pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/ResolucionDetalle/ResolucionDetalle";
+import Nuevaprogramacion from "./pages/Dashboard/Roles/CoordinacionAcademica/Nuevaprogramacion/Nuevaprogramacion.jsx";
 import GestionRoles from "../pages/GestionRoles/GestionRoles";
 
 import InstructorHome from "../pages/Dashboard/Roles/Instructor/home";
@@ -31,9 +32,10 @@ function AppRoutes() {
         <Route path="/confirmacion" element={<EnlaceEnviado />} />
         <Route path="/cambiar-clave" element={<CambiarClave />} />
 
-        <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />}/>
-        <Route path="/dashboard/coordinacion-academica/historial-resoluciones" element={<HistorialResoluciones />}/>
+        <Route path="/dashboard/coordinacion-academica" element={<CoordinacionAcademica />} />
+        <Route path="/dashboard/coordinacion-academica/historial-resoluciones" element={<HistorialResoluciones />} />
         <Route path="/dashboard/coordinacion-academica/historial-resoluciones/detalle/:id" element={<ResolucionDetalle />} />
+        <Route path="/coordinacion/programacion/nueva" element={<Nuevaprogramacion />}/>
         <Route path="/gestion-roles" element={<GestionRoles />} />
 
         <Route path="/dashboard/instructor" element={<InstructorHome />} />

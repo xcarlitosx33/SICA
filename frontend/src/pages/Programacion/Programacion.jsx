@@ -1,5 +1,6 @@
 
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Programacion.css";
 import sesionesProgramacion from "../../data/programacion";
 
@@ -13,6 +14,8 @@ import Calendario from "../../components/programacion/Calendario/Calendario";
 import PanelProgramacion from "../../components/programacion/PanelProgramacion/PanelProgramacion";
 
 function Programacion() {
+
+    const navigate = useNavigate();
 
     const [vistaActiva, setVistaActiva] = useState("semanal");
     const [sesionSeleccionada, setSesionSeleccionada] = useState(null);
@@ -69,6 +72,9 @@ function Programacion() {
                     <ProgramacionToolbar
                         vistaActiva={vistaActiva}
                         onCambiarVista={cambiarVista}
+                        onNuevaProgramacion={() =>
+                            navigate("/coordinacion/programacion/nueva")
+                        }
                     />
 
                     <Calendario

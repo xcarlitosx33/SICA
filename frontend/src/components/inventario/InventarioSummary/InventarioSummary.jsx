@@ -1,10 +1,22 @@
+
+import StatCard from "../../StatCard/StatCard";
+import StatCardGrid from "../../StatCard/StatCardGrid";
 import "./InventarioSummary.css";
 
 function InventarioSummary({ inventarios }) {
     const total = inventarios.length;
-    const completos = inventarios.filter((item) => item.estado === "completo").length;
-    const revision = inventarios.filter((item) => item.estado === "revision").length;
-    const incompletos = inventarios.filter((item) => item.estado === "incompleto").length;
+
+    const completos = inventarios.filter(
+        (item) => item.estado === "completo"
+    ).length;
+
+    const revision = inventarios.filter(
+        (item) => item.estado === "revision"
+    ).length;
+
+    const incompletos = inventarios.filter(
+        (item) => item.estado === "incompleto"
+    ).length;
 
     const items = [
         {
@@ -12,49 +24,44 @@ function InventarioSummary({ inventarios }) {
             title: "Total de inventarios",
             value: total,
             description: "Ambientes registrados",
-            type: "total",
+            status: "neutral",
         },
         {
             id: 2,
             title: "Completos",
             value: completos,
             description: "Inventarios verificados",
-            type: "complete",
+            status: "positive",
         },
         {
             id: 3,
             title: "En revisión",
             value: revision,
             description: "Requieren verificación",
-            type: "review",
+            status: "warning",
         },
         {
             id: 4,
             title: "Incompletos",
             value: incompletos,
             description: "Presentan faltantes",
-            type: "incomplete",
+            status: "negative",
         },
     ];
 
     return (
         <section className="inventario-summary">
-            {items.map((item) => (
-                <article className="inventario-summary-card" key={item.id}>
-                    <div className="inventario-summary-header">
-                        <span>{item.title}</span>
-                        <span
-                            className={`inventario-summary-dot ${item.type}`}
-                            aria-hidden="true"
-                        />
-                    </div>
-
-                    <strong>{item.value}</strong>
-                    <span className="inventario-summary-description">
-                        {item.description}
-                    </span>
-                </article>
-            ))}
+            <StatCardGrid minCardWidth={240}>
+                {items.map((item) => (
+                    <StatCard
+                        key={item.id}
+                        title={item.title}
+                        value={item.value}
+                        description={item.description}
+                        status={item.status}
+                    />
+                ))}
+            </StatCardGrid>
         </section>
     );
 }

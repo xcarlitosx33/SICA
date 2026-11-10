@@ -1,0 +1,143 @@
+
+.icon-stat-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    min-width: 0;
+    padding: 22px;
+
+    background: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+
+    font-family: "Work Sans", sans-serif;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Efecto de elevación */
+.icon-stat-card:hover {
+    transform: translateY(-3px);
+    border-color: #C8D8CE;
+    box-shadow: 0 5px 14px rgba(24, 49, 42, 0.07);
+}
+
+/* Indicador superior */
+.icon-stat-dot {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+/* Icono lateral */
+.icon-stat-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* Información */
+.icon-stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.icon-stat-info p {
+    margin: 0;
+    color: #65756D;
+    font-size: 13px;
+}
+
+.icon-stat-info strong {
+    color: #18312A;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.icon-stat-info small {
+    color: #87958D;
+    font-size: 11px;
+}
+
+/* Colores semánticos */
+
+/* Neutral */
+.icon-stat-dot.neutral {
+    background: #64748B;
+}
+
+.icon-stat-symbol.neutral {
+    color: #64748B;
+    background: #F1F5F9;
+}
+
+/* Positive */
+.icon-stat-dot.positive {
+    background: #007832;
+}
+
+.icon-stat-symbol.positive {
+    color: #007832;
+    background: #E8F5EC;
+}
+
+/* Negative */
+.icon-stat-dot.negative {
+    background: #DC2626;
+}
+
+.icon-stat-symbol.negative {
+    color: #DC2626;
+    background: #FEECEC;
+}
+
+/* Warning */
+.icon-stat-dot.warning {
+    background: #D97706;
+}
+
+.icon-stat-symbol.warning {
+    color: #D97706;
+    background: #FEF3C7;
+}
+
+/* Info */
+.icon-stat-dot.info {
+    background: #2563EB;
+}
+
+.icon-stat-symbol.info {
+    color: #2563EB;
+    background: #DBEAFE;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .icon-stat-card {
+        transition: none;
+    }
+
+    .icon-stat-card:hover {
+        transform: none;
+    }
+}

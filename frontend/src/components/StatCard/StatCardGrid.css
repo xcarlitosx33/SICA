@@ -1,0 +1,11 @@
+
+.stat-card-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, var(--stat-card-min-width)), 1fr)
+    );
+
+    gap: 16px;
+    width: 100%;
+}
