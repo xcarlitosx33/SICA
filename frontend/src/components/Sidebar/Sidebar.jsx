@@ -23,10 +23,17 @@ const ROLES = {
         name: "Administrador del edificio",
         path: "/dashboard/admin-edificio",
         menu: [
-            { label: "Inicio", path: "/dashboard/admin-edificio", icon: "home", end: true },
-            { label: "Ambientes", path: "/ambientes", icon: "building" },
-            { label: "Inventario", path: "/inventario", icon: "inventory" },
-            { label: "Novedades", path: "/novedades", icon: "alert" },
+            {
+                label: "Inicio",
+                path: "/dashboard/admin-edificio",
+                icon: "home",
+                end: true
+            },
+            {
+                label: "Novedades",
+                path: "/novedades",
+                icon: "alert"
+            },
         ],
     },
 

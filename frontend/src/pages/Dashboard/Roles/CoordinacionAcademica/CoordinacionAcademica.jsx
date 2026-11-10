@@ -1,5 +1,5 @@
 import "./CoordinacionAcademica.css";
-import "../role-dashboard.css";
+import "../../../../styles/role-dashboard.css";
 
 import Sidebar from "../../../../components/Sidebar/Sidebar";
 import PageHeader from "../../../../components/PageHeader/PageHeader";
