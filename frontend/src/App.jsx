@@ -22,6 +22,7 @@ import Ambientes from "./pages/Ambientes/Ambientes.jsx";
 import AmbienteDetalle from "./pages/Ambientes/AmbienteDetalle/AmbienteDetalle.jsx";
 import Programacion from "./pages/Programacion/Programacion";
 import Novedades from "./pages/Novedades/Novedades.jsx";
+import DetalleNovedad from "./pages/Novedades/DetalleNovedad/DetalleNovedad.jsx";
 import Movimientos from "./pages/Movimientos/Movimientos.jsx";
 import MovimientoDetalle from "./pages/Movimientos/MovimientoDetalle/MovimientoDetalle.jsx";
 import Inventario from "./pages/Inventario/Inventario.jsx";
@@ -97,6 +98,7 @@ function App() {
                 <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
 
                 <Route path="/novedades" element={<Novedades />} />
+                <Route path="/novedades/detalle/:id" element={<DetalleNovedad />} />
                 <Route path="/novedades/agregar" element={<AgregarNovedadPage />} />
 
                 <Route path="/inventario" element={<Inventario />} />

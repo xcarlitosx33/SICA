@@ -22,6 +22,9 @@ function Novedades() {
 
     const navigate = useNavigate();
 
+    const canAdd =
+        localStorage.getItem("sicaRolDemo") !== "administrador";
+
     function handleFilterChange(name, value) {
         setFilters((previousFilters) => ({
             ...previousFilters,
@@ -34,8 +37,9 @@ function Novedades() {
     }
 
     function handleAddNovedad() {
-        navigate("/novedades/nueva");
+        navigate("/novedades/agregar");
     }
+
 
     return (
         <div className="novedades-layout">
@@ -56,6 +60,7 @@ function Novedades() {
                         onFilterChange={handleFilterChange}
                         onClear={handleClearFilters}
                         onAdd={handleAddNovedad}
+                        canAdd={canAdd}
                     />
 
                     <NovedadTable filters={filters} />

@@ -1,16 +1,30 @@
+
+import { useEffect, useState } from "react";
 import "./NovedadSummary.css";
-import { novedades } from "../../../data/novedades";
+
+import {
+    getNovedades,
+    subscribeNovedades,
+} from "../../../data/novedadesStorage";
 
 function NovedadSummary() {
-    const pendientes = novedades.filter(
+    const [novedadesActuales, setNovedadesActuales] = useState(getNovedades);
+
+    useEffect(() => {
+        return subscribeNovedades(() => {
+            setNovedadesActuales(getNovedades());
+        });
+    }, []);
+
+    const pendientes = novedadesActuales.filter(
         (item) => item.estado === "Pendiente"
     ).length;
 
-    const enProceso = novedades.filter(
+    const enProceso = novedadesActuales.filter(
         (item) => item.estado === "En proceso"
     ).length;
 
-    const cerradas = novedades.filter(
+    const cerradas = novedadesActuales.filter(
         (item) => item.estado === "Cerrada"
     ).length;
 
@@ -18,7 +32,7 @@ function NovedadSummary() {
         {
             id: 1,
             title: "Total de novedades",
-            value: novedades.length,
+            value: novedadesActuales.length,
             description: "Novedades registradas",
             type: "total",
         },
@@ -53,14 +67,17 @@ function NovedadSummary() {
                         <span className="novedad-summary-title">
                             {item.title}
                         </span>
+
                         <span
                             className={`novedad-summary-dot novedad-summary-dot-${item.type}`}
                             aria-hidden="true"
                         />
                     </div>
+
                     <strong className="novedad-summary-value">
                         {item.value}
                     </strong>
+
                     <span className="novedad-summary-description">
                         {item.description}
                     </span>
