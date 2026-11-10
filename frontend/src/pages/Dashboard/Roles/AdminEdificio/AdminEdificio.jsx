@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "../../../../components/Sidebar/Sidebar";
 import PageHeader from "../../../../components/PageHeader/PageHeader";
 import Button from "../../../../components/Button/Button";
-import "../role-dashboard.css";
+import "../../../../styles/role-dashboard.css";
 
 function AdminEdificio() {
     const navigate = useNavigate();
