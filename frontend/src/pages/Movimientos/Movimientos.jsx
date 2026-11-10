@@ -46,7 +46,7 @@ function Movimientos() {
 
                             {/* Botón principal + Agregar Movimiento */}
                             <button 
-                                onClick={() => navigate("/movimientos/nuevo")}
+                                onClick={() => navigate("/movimientos/agregar")}
                                 style={{ 
                                     backgroundColor: '#168747', 
                                     color: 'white', 

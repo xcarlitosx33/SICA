@@ -2,7 +2,12 @@
 import "./NovedadFilters.css";
 import Button from "../../Button/Button";
 
+import { useNavigate } from "react-router-dom";
+
 function NovedadFilters({ filters, onFilterChange, onClear, onAdd }) {
+
+    const navigate = useNavigate();
+
     return (
         <section className="novedad-filters">
 
@@ -21,13 +26,15 @@ function NovedadFilters({ filters, onFilterChange, onClear, onAdd }) {
                         Limpiar filtros
                     </Button>
 
+
                     <Button
                         type="button"
                         className="novedad-add-button"
-                        onClick={onAdd}
+                        onClick={() => navigate("/novedades/agregar")}
                     >
                         <span>＋</span> Agregar novedad
                     </Button>
+
                 </div>
             </div>
 

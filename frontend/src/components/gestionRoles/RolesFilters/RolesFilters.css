@@ -1,0 +1,105 @@
+
+.roles-filters {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.roles-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 180px;
+}
+
+.roles-search svg {
+    position: absolute;
+    left: 13px;
+    width: 17px;
+    height: 17px;
+    color: #87958D;
+    pointer-events: none;
+}
+
+.roles-search input,
+.roles-filters select {
+    min-height: 43px;
+    padding: 0 14px;
+    border: 1px solid #E0E7E2;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    outline: none;
+}
+
+.roles-search input {
+    width: 100%;
+    padding-left: 40px;
+}
+
+.roles-search input::placeholder {
+    color: #87958D;
+}
+
+.roles-filters select {
+    width: 190px;
+    cursor: pointer;
+}
+
+.roles-search input:focus,
+.roles-filters select:focus {
+    border-color: #007832;
+    box-shadow: 0 0 0 3px rgba(0, 120, 50, 0.08);
+}
+
+.roles-clear-button {
+    min-height: 43px;
+    padding: 0 17px;
+    border: 1px solid #DDE6DF;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.roles-clear-button:hover {
+    color: #007832;
+    background: #E8F5EC;
+    border-color: #B7DFC4;
+}
+
+@media (max-width: 900px) {
+    .roles-filters {
+        flex-wrap: wrap;
+    }
+
+    .roles-search {
+        flex-basis: 100%;
+    }
+
+    .roles-filters select {
+        flex: 1;
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .roles-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .roles-search,
+    .roles-filters select {
+        width: 100%;
+        flex: none;
+    }
+}

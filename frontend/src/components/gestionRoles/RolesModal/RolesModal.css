@@ -1,0 +1,211 @@
+
+.roles-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 35, 27, 0.48);
+}
+
+.roles-modal {
+    width: 100%;
+    max-width: 480px;
+    padding: 28px;
+    background: #FFFFFF;
+    border: 1px solid #E9EEEB;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+    font-family: "Work Sans", sans-serif;
+}
+
+.roles-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.roles-modal-header span {
+    color: #007832;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.roles-modal-header h2 {
+    margin: 8px 0 5px;
+    color: #18312A;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.roles-modal-header p {
+    margin: 0;
+    color: #65756D;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.roles-modal-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 7px;
+    background: #F6F6F6;
+    color: #65756D;
+    font-size: 23px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.roles-modal-close:hover {
+    background: #E9EEEB;
+    color: #18312A;
+}
+
+.roles-modal-user {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px;
+    margin-bottom: 24px;
+    background: #F7FAF8;
+    border: 1px solid #E9EEEB;
+    border-radius: 10px;
+}
+
+.roles-modal-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: #E8F5EC;
+    color: #007832;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.roles-modal-user div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.roles-modal-user strong {
+    color: #18312A;
+    font-size: 13px;
+}
+
+.roles-modal-user span {
+    overflow-wrap: anywhere;
+    color: #65756D;
+    font-size: 11px;
+}
+
+.roles-modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 18px;
+}
+
+.roles-modal-field label {
+    color: #18312A;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.roles-modal-field select {
+    width: 100%;
+    min-height: 45px;
+    padding: 0 12px;
+    border: 1px solid #DDE6DF;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+
+.roles-modal-field select:focus {
+    border-color: #007832;
+    box-shadow: 0 0 0 3px rgba(0, 120, 50, 0.08);
+}
+
+.roles-modal-info {
+    padding: 12px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background: #F4F8F5;
+    color: #65756D;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.roles-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.roles-modal-cancel,
+.roles-modal-save {
+    min-height: 40px;
+    padding: 0 17px;
+    border-radius: 8px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.roles-modal-cancel {
+    border: 1px solid #DDE6DF;
+    background: #FFFFFF;
+    color: #65756D;
+}
+
+.roles-modal-cancel:hover {
+    background: #F6F6F6;
+}
+
+.roles-modal-save {
+    border: 1px solid #007832;
+    background: #007832;
+    color: #FFFFFF;
+}
+
+.roles-modal-save:hover:not(:disabled) {
+    background: #005F28;
+}
+
+.roles-modal-save:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+    .roles-modal {
+        padding: 21px;
+    }
+
+    .roles-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .roles-modal-cancel,
+    .roles-modal-save {
+        width: 100%;
+    }
+}

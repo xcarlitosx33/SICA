@@ -1,0 +1,79 @@
+
+.roles-welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 26px 30px;
+    margin-bottom: 28px;
+    background: #FFFFFF;
+    border: 1px solid #E9EEEB;
+    border-radius: 12px;
+}
+
+.roles-eyebrow {
+    display: block;
+    margin-bottom: 9px;
+    color: #007832;
+    font-family: "Work Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.roles-welcome h2 {
+    margin: 0;
+    color: #18312A;
+    font-family: "Work Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.roles-welcome p {
+    margin: 8px 0 0;
+    color: #65756D;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.roles-welcome-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 58px;
+    height: 58px;
+    color: #007832;
+    background: #E8F5EC;
+    border-radius: 12px;
+}
+
+.roles-welcome-icon svg {
+    width: 29px;
+    height: 29px;
+}
+
+@media (max-width: 600px) {
+    .roles-welcome {
+        padding: 20px;
+    }
+
+    .roles-welcome h2 {
+        font-size: 19px;
+    }
+
+    .roles-welcome p {
+        font-size: 13px;
+    }
+
+    .roles-welcome-icon {
+        width: 46px;
+        height: 46px;
+    }
+
+    .roles-welcome-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+}

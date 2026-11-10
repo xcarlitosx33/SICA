@@ -1,0 +1,60 @@
+
+export const ROLES = [
+    "Instructor",
+    "Coordinación académica",
+    "Administrador de edificio",
+    "Director de centro",
+];
+
+export const INITIAL_USERS = [
+    {
+        id: 1,
+        name: "Carlos Moreno",
+        document: "1.020.435.912",
+        email: "cmoreno@sena.edu.co",
+        area: "Instructor ADSO",
+        role: "Instructor",
+        status: "Activo",
+        date: "09 nov 2026",
+    },
+    {
+        id: 2,
+        name: "Diana Arango",
+        document: "1.017.204.178",
+        email: "darango@sena.edu.co",
+        area: "Coordinación académica",
+        role: "Coordinación académica",
+        status: "Activo",
+        date: "05 nov 2026",
+    },
+    {
+        id: 3,
+        name: "Andrés Silva",
+        document: "98.654.720",
+        email: "asilva@sena.edu.co",
+        area: "Instructor ADSO",
+        role: "Instructor",
+        status: "Activo",
+        date: "02 nov 2026",
+    },
+    {
+        id: 4,
+        name: "Laura Gómez",
+        document: "70.154.390",
+        email: "lgomez@sena.edu.co",
+        area: "Administración de ambientes",
+        role: "Administrador de edificio",
+        status: "Inactivo",
+        date: "28 oct 2026",
+    },
+    {
+        id: 5,
+        name: "Jhon Castro",
+        document: "43.892.103",
+        email: "jcastro@sena.edu.co",
+        area: "Dirección del centro",
+        role: "Director de centro",
+        status: "Activo",
+        date: "20 oct 2026",
+    },
+];

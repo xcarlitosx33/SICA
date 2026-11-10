@@ -27,6 +27,9 @@ import MovimientoDetalle from "./pages/Movimientos/MovimientoDetalle/MovimientoD
 import Inventario from "./pages/Inventario/Inventario.jsx";
 import InventarioDetalle from "./pages/Inventario/InventarioDetalle/InventarioDetalle.jsx";
 
+import AgregarMovimientoPage from "./pages/Movimientos/AgregarMovimiento/AgregarMovimientoPage";
+import AgregarNovedadPage from "./pages/AgregarNovedad/AgregarNovedadPage";
+
 function App() {
     return (
         <BrowserRouter>
@@ -88,11 +91,13 @@ function App() {
                 <Route path="/ambientes/Detalle/:id" element={<AmbienteDetalle />} />
 
                 <Route path="/programacion" element={<Programacion />} />
+                
+                <Route path="/movimientos" element={<Movimientos />} />
+                <Route path="/movimientos/agregar" element={<AgregarMovimientoPage />} />
+                <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
 
                 <Route path="/novedades" element={<Novedades />} />
-
-                <Route path="/movimientos" element={<Movimientos />} />
-                <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
+                <Route path="/novedades/agregar" element={<AgregarNovedadPage />} />
 
                 <Route path="/inventario" element={<Inventario />} />
                 <Route path="/inventario/detalle/:id" element={<InventarioDetalle />} />
