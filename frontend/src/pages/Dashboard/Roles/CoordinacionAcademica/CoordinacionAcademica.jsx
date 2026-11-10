@@ -6,6 +6,9 @@ import PageHeader from "../../../../components/PageHeader/PageHeader";
 import Button from "../../../../components/Button/Button";
 import ValidacionesPendientes from "../../../../components/dashboard/CoordinacionAcademica/ValidacionesPendientes/ValidacionesPendientes";
 
+import StatCard from "../../../../components/StatCard/StatCard";
+import StatCardGrid from "../../../../components/StatCard/StatCardGrid";
+
 function CoordinacionAcademica() {
     return (
         <div className="role-dashboard-layout">
@@ -18,32 +21,36 @@ function CoordinacionAcademica() {
                         description="Gestiona las solicitudes de programación y los cambios de ambientes del centro."
                     />
 
-                    <div className="role-dashboard-welcome">
-                        <h2>Resumen de coordinación</h2>
-                        <p>Seguimiento de requerimientos académicos y disponibilidad de espacios.</p>
-                    </div>
-
                     <section className="role-dashboard-stats">
-                        <article className="role-stat-card warning">
-                            <span>Solicitudes pendientes</span>
-                            <strong>3</strong>
-                            <small>Requieren validación</small>
-                        </article>
-                        <article className="role-stat-card">
-                            <span>Ambientes registrados</span>
-                            <strong>16</strong>
-                            <small>Espacios del centro</small>
-                        </article>
-                        <article className="role-stat-card info">
-                            <span>Programación</span>
-                            <strong>Activa</strong>
-                            <small>Seguimiento académico</small>
-                        </article>
-                        <article className="role-stat-card">
-                            <span>Historial</span>
-                            <strong>Disponible</strong>
-                            <small>Consulta de resoluciones</small>
-                        </article>
+                        <StatCardGrid minCardWidth={240}>
+                            <StatCard
+                                title="Solicitudes pendientes"
+                                value={3}
+                                description="Requieren validación"
+                                status="warning"
+                            />
+
+                            <StatCard
+                                title="Ambientes registrados"
+                                value={16}
+                                description="Espacios del centro"
+                                status="neutral"
+                            />
+
+                            <StatCard
+                                title="Programación"
+                                value="Activa"
+                                description="Seguimiento académico"
+                                status="positive"
+                            />
+
+                            <StatCard
+                                title="Historial"
+                                value="Disponible"
+                                description="Consulta de resoluciones"
+                                status="info"
+                            />
+                        </StatCardGrid>
                     </section>
 
                     <section className="role-panel">

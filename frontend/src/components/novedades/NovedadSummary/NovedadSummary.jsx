@@ -7,6 +7,9 @@ import {
     subscribeNovedades,
 } from "../../../data/novedadesStorage";
 
+import StatCard from "../../StatCard/StatCard";
+import StatCardGrid from "../../StatCard/StatCardGrid";
+
 function NovedadSummary() {
     const [novedadesActuales, setNovedadesActuales] = useState(getNovedades);
 
@@ -34,55 +37,44 @@ function NovedadSummary() {
             title: "Total de novedades",
             value: novedadesActuales.length,
             description: "Novedades registradas",
-            type: "total",
+            status: "neutral",
         },
         {
             id: 2,
             title: "Pendientes",
             value: pendientes,
             description: "Requieren atención",
-            type: "pending",
+            status: "warning",
         },
         {
             id: 3,
             title: "En proceso",
             value: enProceso,
             description: "Actualmente atendidas",
-            type: "process",
+            status: "info",
         },
         {
             id: 4,
             title: "Cerradas",
             value: cerradas,
             description: "Novedades solucionadas",
-            type: "closed",
+            status: "positive",
         },
     ];
 
     return (
         <section className="novedad-summary">
-            {items.map((item) => (
-                <article className="novedad-summary-card" key={item.id}>
-                    <div className="novedad-summary-header">
-                        <span className="novedad-summary-title">
-                            {item.title}
-                        </span>
-
-                        <span
-                            className={`novedad-summary-dot novedad-summary-dot-${item.type}`}
-                            aria-hidden="true"
-                        />
-                    </div>
-
-                    <strong className="novedad-summary-value">
-                        {item.value}
-                    </strong>
-
-                    <span className="novedad-summary-description">
-                        {item.description}
-                    </span>
-                </article>
-            ))}
+            <StatCardGrid minCardWidth={240}>
+                {items.map((item) => (
+                    <StatCard
+                        key={item.id}
+                        title={item.title}
+                        value={item.value}
+                        description={item.description}
+                        status={item.status}
+                    />
+                ))}
+            </StatCardGrid>
         </section>
     );
 }

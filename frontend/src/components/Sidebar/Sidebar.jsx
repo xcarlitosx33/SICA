@@ -47,11 +47,7 @@ const ROLES = {
                 icon: "home",
                 end: true
             },
-            {
-                label: "Historial de resoluciones",
-                path: "/dashboard/coordinacion-academica/historial-resoluciones",
-                icon: "calendar",
-            },
+
             {
                 label: "Programación",
                 path: "/programacion",

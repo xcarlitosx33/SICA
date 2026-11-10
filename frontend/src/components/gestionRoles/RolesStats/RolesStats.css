@@ -6,71 +6,6 @@
     margin: 28px 0;
 }
 
-.roles-stat-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    min-width: 0;
-    padding: 22px;
-    background: #FFFFFF;
-    border: 1px solid #E9EEEB;
-    border-radius: 12px;
-}
-
-.roles-stat-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    font-size: 17px;
-    font-weight: 700;
-}
-
-.roles-stat-icon.green {
-    color: #007832;
-    background: #E8F5EC;
-}
-
-.roles-stat-icon.blue {
-    color: #2563EB;
-    background: #DBEAFE;
-}
-
-.roles-stat-icon.orange {
-    color: #D97706;
-    background: #FEF3C7;
-}
-
-.roles-stat-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    min-width: 0;
-}
-
-.roles-stat-info p {
-    margin: 0;
-    color: #65756D;
-    font-family: "Work Sans", sans-serif;
-    font-size: 13px;
-}
-
-.roles-stat-info strong {
-    color: #18312A;
-    font-family: "Work Sans", sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.roles-stat-info small {
-    color: #87958D;
-    font-family: "Work Sans", sans-serif;
-    font-size: 11px;
-}
-
 @media (max-width: 900px) {
     .roles-stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -83,7 +18,7 @@
         gap: 12px;
     }
 
-    .roles-stat-card {
+    .icon-stat-card {
         padding: 17px;
     }
 }

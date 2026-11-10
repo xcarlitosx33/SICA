@@ -9,3 +9,16 @@
     outline: 2px solid #007832;
     outline-offset: 3px;
 }
+.role-panel {
+    margin-top: 24px;
+    margin-bottom: 28px;
+}
+
+
+.coordinacion-stats {
+    width: 100%;
+    margin-bottom: 76px;
+}
+.role-dashboard-welcome {
+    margin: 28px 0 22px;
+}

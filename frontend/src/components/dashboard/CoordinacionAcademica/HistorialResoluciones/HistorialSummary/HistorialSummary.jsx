@@ -1,54 +1,46 @@
 
+import StatCard from "../../../../StatCard/StatCard";
+import StatCardGrid from "../../../../StatCard/StatCardGrid";
 import "./HistorialSummary.css";
 
 function HistorialSummary() {
     const resumen = [
         {
             id: 1,
-            titulo: "Total de resoluciones",
-            cantidad: 128,
-            descripcion: "Solicitudes gestionadas",
-            tipo: "total",
+            title: "Total de resoluciones",
+            value: 128,
+            description: "Solicitudes gestionadas",
+            status: "neutral",
         },
         {
             id: 2,
-            titulo: "Aprobadas",
-            cantidad: 96,
-            descripcion: "Solicitudes aprobadas",
-            tipo: "aprobadas",
+            title: "Aprobadas",
+            value: 96,
+            description: "Solicitudes aprobadas",
+            status: "positive",
         },
         {
             id: 3,
-            titulo: "Rechazadas",
-            cantidad: 32,
-            descripcion: "Solicitudes rechazadas",
-            tipo: "rechazadas",
+            title: "Rechazadas",
+            value: 32,
+            description: "Solicitudes rechazadas",
+            status: "negative",
         },
     ];
 
     return (
         <section className="historial-summary">
-
-            {resumen.map((item) => (
-                <article
-                    key={item.id}
-                    className={`historial-summary-card ${item.tipo}`}
-                >
-                    <div className="historial-summary-header">
-                        <h3>{item.titulo}</h3>
-                        <span className="historial-summary-indicator"></span>
-                    </div>
-
-                    <strong className="historial-summary-number">
-                        {item.cantidad}
-                    </strong>
-
-                    <span className="historial-summary-description">
-                        {item.descripcion}
-                    </span>
-                </article>
-            ))}
-
+            <StatCardGrid minCardWidth={240}>
+                {resumen.map((item) => (
+                    <StatCard
+                        key={item.id}
+                        title={item.title}
+                        value={item.value}
+                        description={item.description}
+                        status={item.status}
+                    />
+                ))}
+            </StatCardGrid>
         </section>
     );
 }

@@ -1,5 +1,6 @@
 
 import "./RolesFilters.css";
+import Button from "../../Button/Button";
 
 function RolesFilters({
     search,
@@ -55,13 +56,12 @@ function RolesFilters({
                 <option value="Inactivo">Inactivo</option>
             </select>
 
-            <button
-                className="roles-clear-button"
-                type="button"
+            <Button
+                variant="secondary"
                 onClick={onClearFilters}
             >
                 Limpiar
-            </button>
+            </Button>
 
         </div>
     );

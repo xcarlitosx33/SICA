@@ -56,19 +56,7 @@
     box-shadow: 0 0 0 3px rgba(0, 120, 50, 0.08);
 }
 
-.roles-clear-button {
-    min-height: 43px;
-    padding: 0 17px;
-    border: 1px solid #DDE6DF;
-    border-radius: 8px;
-    background: #FFFFFF;
-    color: #65756D;
-    font-family: "Work Sans", sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
+
 
 .roles-clear-button:hover {
     color: #007832;

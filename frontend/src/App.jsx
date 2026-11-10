@@ -27,6 +27,7 @@ import Movimientos from "./pages/Movimientos/Movimientos.jsx";
 import MovimientoDetalle from "./pages/Movimientos/MovimientoDetalle/MovimientoDetalle.jsx";
 import Inventario from "./pages/Inventario/Inventario.jsx";
 import InventarioDetalle from "./pages/Inventario/InventarioDetalle/InventarioDetalle.jsx";
+import Nuevaprogramacion from "./pages/Dashboard/Roles/CoordinacionAcademica/Nuevaprogramacion/Nuevaprogramacion.jsx";
 
 import AgregarMovimientoPage from "./pages/Movimientos/AgregarMovimiento/AgregarMovimientoPage";
 import AgregarNovedadPage from "./pages/AgregarNovedad/AgregarNovedadPage";
@@ -92,7 +93,7 @@ function App() {
                 <Route path="/ambientes/Detalle/:id" element={<AmbienteDetalle />} />
 
                 <Route path="/programacion" element={<Programacion />} />
-                
+
                 <Route path="/movimientos" element={<Movimientos />} />
                 <Route path="/movimientos/agregar" element={<AgregarMovimientoPage />} />
                 <Route path="/movimientos/Detalle/:id" element={<MovimientoDetalle />} />
@@ -103,6 +104,7 @@ function App() {
 
                 <Route path="/inventario" element={<Inventario />} />
                 <Route path="/inventario/detalle/:id" element={<InventarioDetalle />} />
+                <Route path="/coordinacion/programacion/nueva" element={<Nuevaprogramacion />}/>
 
                 {/* Ruta no encontrada */}
                 <Route

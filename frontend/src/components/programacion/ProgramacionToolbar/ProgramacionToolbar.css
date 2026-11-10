@@ -1,22 +1,35 @@
 
-/* CONTENEDOR GENERAL */
+/*
+   CONTENEDOR GENERAL */
 
 .programacion-toolbar {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    gap: 16px;
     width: 100%;
-    min-height: 86px;
     padding: 18px;
     margin-bottom: 16px;
+
     background: #FFFFFF;
     border: 1px solid #E2E7E4;
     border-radius: 12px;
+
     box-sizing: border-box;
 }
 
-/* INFORMACIÓN */
+/*
+   FILA PRINCIPAL */
+
+.programacion-toolbar-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+}
+
+/*
+   INFORMACIÓN */
 
 .programacion-toolbar-info {
     min-width: 0;
@@ -38,7 +51,8 @@
     color: #65756D;
 }
 
-/* SELECTOR DE VISTAS */
+/*
+   SELECTOR DE VISTAS */
 
 .programacion-view-selector {
     display: flex;
@@ -59,26 +73,32 @@
     align-items: center;
     padding: 4px;
     gap: 4px;
+
     background: #F6F6F6;
     border: 1px solid #E2E7E4;
     border-radius: 8px;
 }
 
-/* BOTONES */
+/*
+   BOTONES DE VISTA */
 
 .programacion-view-button {
     height: 38px;
     min-width: 76px;
     padding: 0 16px;
+
     border: none;
     border-radius: 6px;
     background: transparent;
+
     color: #65756D;
     font-family: "Work Sans", sans-serif;
     font-size: 14px;
     font-weight: 500;
+
     cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .programacion-view-button:hover {
@@ -92,13 +112,46 @@
     font-weight: 600;
 }
 
-/* TABLET */
+/*ACCIONES */
+
+.programacion-toolbar-actions {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.programacion-toolbar-actions .btn-nueva-programacion {
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 12px;
+}
+
+.programacion-toolbar-actions .btn-nueva-programacion span {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Botón del componente global */
+
+.programacion-toolbar-actions .btn-nueva-programacion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/*
+   TABLET */
 
 @media (min-width: 769px) and (max-width: 1100px) {
 
     .programacion-toolbar {
-        gap: 14px;
         padding: 16px;
+        gap: 14px;
+    }
+
+    .programacion-toolbar-main {
+        gap: 14px;
     }
 
     .programacion-toolbar-info h2 {
@@ -111,15 +164,20 @@
     }
 }
 
-/* MÓVIL */
+/*
+   MÓVIL */
 
 @media (max-width: 768px) {
 
     .programacion-toolbar {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .programacion-toolbar-main {
         align-items: flex-start;
         flex-direction: column;
         gap: 16px;
-        padding: 16px;
     }
 
     .programacion-toolbar-info h2 {
@@ -141,24 +199,39 @@
         min-width: 0;
         padding: 0 8px;
     }
+
+    .programacion-toolbar-actions {
+        justify-content: stretch;
+    }
+
+    .programacion-toolbar-actions .btn-nueva-programacion {
+        width: 100%;
+    }
 }
 
-/* CELULARES PEQUEÑOS */
+/*
+   CELULARES PEQUEÑOS */
 
 @media (max-width: 400px) {
-
-    .programacion-toolbar-selector {
-        align-items: flex-start;
-        flex-direction: column;
-    }
 
     .programacion-view-selector {
         align-items: flex-start;
         flex-direction: column;
+        gap: 8px;
     }
 
     .programacion-view-options {
         width: 100%;
         box-sizing: border-box;
+    }
+}
+
+/*
+   ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .programacion-view-button {
+        transition: none;
     }
 }

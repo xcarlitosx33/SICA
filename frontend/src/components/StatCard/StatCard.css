@@ -1,0 +1,145 @@
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    min-width: 0;
+    min-height: 120px;
+    padding: 16px;
+
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+
+    font-family: "Work Sans", sans-serif;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Encabezado */
+.stat-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.stat-card-title {
+    color: #65756D;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Indicador semántico */
+.stat-card-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.stat-card-dot.neutral {
+    background: #64748B;
+}
+
+.stat-card-dot.positive {
+    background: #007832;
+}
+
+.stat-card-dot.negative {
+    background: #DC2626;
+}
+
+.stat-card-dot.warning {
+    background: #D97706;
+}
+
+.stat-card-dot.info {
+    background: #2563EB;
+}
+
+/* Valor */
+.stat-card-value {
+    color: #18312A;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Información inferior */
+.stat-card-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.stat-card-description {
+    color: #65756D;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.stat-card-detail {
+    color: #65756D;
+    font-size: 12px;
+}
+
+/* Badge opcional */
+.stat-card-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.stat-card-badge.neutral {
+    color: #475569;
+    background: #F1F5F9;
+}
+
+.stat-card-badge.positive {
+    color: #007832;
+    background: #E8F5EC;
+}
+
+.stat-card-badge.negative {
+    color: #DC2626;
+    background: #FEECEC;
+}
+
+.stat-card-badge.warning {
+    color: #B45309;
+    background: #FEF3C7;
+}
+
+.stat-card-badge.info {
+    color: #2563EB;
+    background: #DBEAFE;
+}
+
+/* Elevación al pasar el cursor */
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: #C8D8CE;
+    box-shadow: 0 5px 14px rgba(24, 49, 42, 0.07);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .stat-card {
+        transition: none;
+    }
+
+    .stat-card:hover {
+        transform: none;
+    }
+}
