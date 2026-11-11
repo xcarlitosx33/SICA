@@ -3,7 +3,7 @@ import Sidebar from "../../../../components/Sidebar/Sidebar";
 import PageHeader from "../../../../components/PageHeader/PageHeader";
 import Button from "../../../../components/Button/Button";
 import "../../../../styles/role-dashboard.css";
-
+import "./Instructor.css";
 const agenda = [
     {
         hora: "07:00 - 10:00",
@@ -56,7 +56,7 @@ function Home() {
     const navigate = useNavigate();
 
     return (
-        <div className="role-dashboard-layout">
+        <div className="role-dashboard-layout instructor-dashboard">
             <Sidebar />
 
             <main className="role-dashboard-main">
@@ -66,10 +66,7 @@ function Home() {
                         description="Consulta tus ambientes asignados, agenda académica y novedades."
                     />
 
-                    <div className="role-dashboard-welcome">
-                        <h2>Resumen de tu actividad</h2>
-                        <p>Información de demostración para tu jornada académica.</p>
-                    </div>
+
 
                     <section className="role-dashboard-stats">
                         <article className="role-stat-card">

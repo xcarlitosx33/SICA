@@ -143,3 +143,40 @@
         transform: none;
     }
 }
+
+
+/* Animación de entrada */
+@keyframes statCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card {
+    animation: statCardEnter 0.45s ease both;
+}
+
+/* Elevación al pasar el cursor */
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: #C8D8CE;
+    box-shadow: 0 5px 14px rgba(24, 49, 42, 0.07);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .stat-card {
+        animation: none;
+        transition: none;
+    }
+
+    .stat-card:hover {
+        transform: none;
+    }
+}

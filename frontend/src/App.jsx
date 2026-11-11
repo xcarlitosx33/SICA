@@ -12,7 +12,7 @@ import HistorialResoluciones from "./pages/Dashboard/Roles/CoordinacionAcademica
 import ResolucionDetalle from "./pages/Dashboard/Roles/CoordinacionAcademica/HistorialResoluciones/ResolucionDetalle/ResolucionDetalle";
 
 import Home from "./pages/Dashboard/Roles/Instructor/home.jsx";
-import Instructor from "./pages/Dashboard/Roles/Instructor/Instructor.jsx";
+
 import AdminEdificio from "./pages/Dashboard/Roles/AdminEdificio/AdminEdificio.jsx";
 import DirectorCentro from "./pages/Dashboard/Roles/DirectorCentro/DirectorCentro.jsx";
 

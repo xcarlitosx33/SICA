@@ -21,7 +21,7 @@ function CoordinacionAcademica() {
                         description="Gestiona las solicitudes de programación y los cambios de ambientes del centro."
                     />
 
-                    <section className="role-dashboard-stats">
+                    <section className="coordinacion-stats">
                         <StatCardGrid minCardWidth={240}>
                             <StatCard
                                 title="Solicitudes pendientes"

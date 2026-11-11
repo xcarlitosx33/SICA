@@ -3,12 +3,13 @@ import Sidebar from "../../../../components/Sidebar/Sidebar";
 import PageHeader from "../../../../components/PageHeader/PageHeader";
 import Button from "../../../../components/Button/Button";
 import "../../../../styles/role-dashboard.css";
+import "./DirectorCentro.css";
 
 function DirectorCentro() {
     const navigate = useNavigate();
 
     return (
-        <div className="role-dashboard-layout">
+        <div className="role-dashboard-layout director-centro-dashboard">
             <Sidebar />
             <main className="role-dashboard-main">
                 <div className="role-dashboard-content">

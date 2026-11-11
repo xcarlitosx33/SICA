@@ -1,0 +1,119 @@
+
+/* =========================================
+   DASHBOARD DIRECTOR DE CENTRO
+========================================= */
+
+.director-centro-dashboard .role-dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+/* Tarjetas */
+
+.director-centro-dashboard .role-stat-card {
+    min-width: 0;
+    min-height: 120px;
+    padding: 18px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: #FFFFFF;
+    border: 1px solid #D5DED9;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    animation: directorCardEnter 0.45s ease backwards;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Entrada escalonada */
+
+.director-centro-dashboard .role-stat-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.director-centro-dashboard .role-stat-card:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.director-centro-dashboard .role-stat-card:nth-child(3) {
+    animation-delay: 0.20s;
+}
+
+.director-centro-dashboard .role-stat-card:nth-child(4) {
+    animation-delay: 0.30s;
+}
+
+/* Textos */
+
+.director-centro-dashboard .role-stat-card span {
+    font-size: 13px;
+    color: #65756D;
+}
+
+.director-centro-dashboard .role-stat-card strong {
+    font-size: 28px;
+    font-weight: 700;
+    color: #18312A;
+}
+
+.director-centro-dashboard .role-stat-card small {
+    font-size: 12px;
+    color: #65756D;
+}
+
+/* Hover */
+
+.director-centro-dashboard .role-stat-card:hover {
+    transform: translateY(-3px);
+    border-color: #C8D8CE;
+    box-shadow: 0 5px 14px rgba(24, 49, 42, 0.07);
+}
+
+/* Animación */
+
+@keyframes directorCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+    .director-centro-dashboard .role-dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .director-centro-dashboard .role-dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+    .director-centro-dashboard .role-stat-card {
+        animation: none;
+        transition: none;
+    }
+
+    .director-centro-dashboard .role-stat-card:hover {
+        transform: none;
+    }
+}

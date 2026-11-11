@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+
+import "./AdminEdificio.css";
+
 import Sidebar from "../../../../components/Sidebar/Sidebar";
 import PageHeader from "../../../../components/PageHeader/PageHeader";
 import Button from "../../../../components/Button/Button";
@@ -8,7 +11,7 @@ function AdminEdificio() {
     const navigate = useNavigate();
 
     return (
-        <div className="role-dashboard-layout">
+        <div className="role-dashboard-layout admin-edificio-dashboard">
             <Sidebar />
             <main className="role-dashboard-main">
                 <div className="role-dashboard-content">
@@ -16,11 +19,6 @@ function AdminEdificio() {
                         title="Administración del edificio"
                         description="Supervisa los ambientes, el inventario y las condiciones de infraestructura."
                     />
-
-                    <div className="role-dashboard-welcome">
-                        <h2>Resumen operativo</h2>
-                        <p>Estado general de los espacios y recursos asignados al edificio.</p>
-                    </div>
 
                     <section className="role-dashboard-stats">
                         <article className="role-stat-card">
