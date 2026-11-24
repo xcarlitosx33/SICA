@@ -2,7 +2,7 @@ import { useState } from 'react';
 import FormularioMovimiento from './FormularioMovimiento';
 import TarjetasAccionMovimiento from './TarjetasAccionMovimiento';
 import HistorialSidebarMovimiento from './HistorialSidebarMovimiento';
-import './AgregarMovimiento.css'; // Usa el mismo CSS que enviaste
+import './AgregarMovimiento.css';
 
 const AgregarMovimiento = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +13,8 @@ const AgregarMovimiento = () => {
     nombreElemento: 'TECLADO',
     ambienteOrigen: '102',
     ambienteDestino: '105',
-    responsable: 'Instructor',
+    sede: 'CIDE',
+    piso: '1',
     descripcion: 'Traslado de equipo por reasignación de ambiente de formación.'
   });
 
