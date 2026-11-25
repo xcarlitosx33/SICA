@@ -18,22 +18,22 @@ const FormularioMovimiento = ({ formData, setFormData }) => {
       </div>
 
       <div className="sica-section-intro">
-        Complete los siguientes campos para registrar formalmente el traslado de un elemento entre ambientes o áreas del centro.
+        Complete o modifique los campos necesarios para registrar formalmente el traslado de un elemento entre ambientes o áreas del centro.
       </div>
 
       <div className="sica-form-fields">
         <div className="sica-grid-row">
           <div className="sica-input-group">
             <label>Fecha del movimiento</label>
-            <input type="text" value={formData.fecha} readOnly />
+            <input type="text" name="fecha" value={formData.fecha} onChange={handleChange} />
           </div>
           <div className="sica-input-group">
             <label>Hora</label>
-            <input type="text" value={formData.hora} readOnly />
+            <input type="text" name="hora" value={formData.hora} onChange={handleChange} />
           </div>
           <div className="sica-input-group">
             <label>Número de placa / Código</label>
-            <input type="text" value={formData.placa} readOnly />
+            <input type="text" name="placa" value={formData.placa} onChange={handleChange} />
           </div>
           <div className="sica-input-group">
             <label>Categoría</label>
@@ -57,6 +57,26 @@ const FormularioMovimiento = ({ formData, setFormData }) => {
           <div className="sica-input-group span-2">
             <label>Ambiente Destino</label>
             <input type="text" name="ambienteDestino" value={formData.ambienteDestino} onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className="sica-grid-row duo-small">
+          <div className="sica-input-group">
+            <label>Sede</label>
+            <select name="sede" value={formData.sede} onChange={handleChange}>
+              <option value="CIDE">CIDE</option>
+              <option value="SIBATÉ">SIBATÉ</option>
+            </select>
+          </div>
+          <div className="sica-input-group">
+            <label>Piso</label>
+            <input 
+              type="text" 
+              name="piso" 
+              value={formData.piso} 
+              onChange={handleChange} 
+              placeholder="Ej. 1"
+            />
           </div>
         </div>
 

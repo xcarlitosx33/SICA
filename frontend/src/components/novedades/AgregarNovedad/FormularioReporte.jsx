@@ -25,9 +25,8 @@ const FormularioReporte = ({ formData, setFormData }) => {
       </div>
 
       <div className="sica-section-intro">
-        Complete los siguientes campos para registrar una novedad
-        relacionada con un elemento del inventario de un ambiente
-        de formación.
+        Complete o modifique los siguientes campos para registrar una novedad
+        relacionada con un elemento del inventario de un ambiente de formación.
       </div>
 
       <div className="sica-form-fields">
@@ -38,8 +37,9 @@ const FormularioReporte = ({ formData, setFormData }) => {
             <label>Fecha del reporte</label>
             <input
               type="text"
+              name="fecha"
               value={formData.fecha}
-              readOnly
+              onChange={handleChange}
             />
           </div>
 
@@ -47,8 +47,9 @@ const FormularioReporte = ({ formData, setFormData }) => {
             <label>Hora del reporte</label>
             <input
               type="text"
+              name="hora"
               value={formData.hora}
-              readOnly
+              onChange={handleChange}
             />
           </div>
 
@@ -56,8 +57,9 @@ const FormularioReporte = ({ formData, setFormData }) => {
             <label>Número de placa / Código</label>
             <input
               type="text"
+              name="placa"
               value={formData.placa}
-              readOnly
+              onChange={handleChange}
             />
           </div>
 
@@ -102,8 +104,9 @@ const FormularioReporte = ({ formData, setFormData }) => {
             <label>Nombre del centro</label>
             <input
               type="text"
+              name="centro"
               value={formData.centro}
-              readOnly
+              onChange={handleChange}
             />
           </div>
 
@@ -111,21 +114,26 @@ const FormularioReporte = ({ formData, setFormData }) => {
 
         <div className="sica-grid-row duo-small">
 
+          {/* CAMBIO: Sede ahora es un select desplegable (CIDE / SIBATÉ) */}
           <div className="sica-input-group">
             <label>Sede</label>
-            <input
-              type="text"
+            <select
+              name="sede"
               value={formData.sede}
-              readOnly
-            />
+              onChange={handleChange}
+            >
+              <option value="CIDE">CIDE</option>
+              <option value="SIBATÉ">SIBATÉ</option>
+            </select>
           </div>
 
           <div className="sica-input-group">
             <label>Piso</label>
             <input
               type="text"
+              name="piso"
               value={formData.piso}
-              readOnly
+              onChange={handleChange}
             />
           </div>
 
