@@ -14,14 +14,25 @@ function DirectorCentro() {
             <main className="role-dashboard-main">
                 <div className="role-dashboard-content">
                     <PageHeader
+                        eyebrow="PANEL DE DIRECCIÓN"
                         title="Panel de dirección"
                         description="Consulta el estado general de los recursos y la operación del centro de formación."
+                        icon={
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="M3 21h18" />
+                                <path d="M5 21V7l7-4 7 4v14" />
+                                <path d="M9 21v-5h6v5" />
+                                <path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01" />
+                            </svg>
+                        }
                     />
-
-                    <div className="role-dashboard-welcome">
-                        <h2>Resumen institucional</h2>
-                        <p>Indicadores generales para el seguimiento y la toma de decisiones.</p>
-                    </div>
 
                     <section className="role-dashboard-stats">
                         <article className="role-stat-card">
@@ -92,39 +103,45 @@ function DirectorCentro() {
                                         <h3>Ambientes</h3>
                                         <p>Disponibilidad y distribución de espacios.</p>
                                     </div>
-                                    <Button onClick={() => navigate("/ambientes")}>Consultar</Button>
+                                    <Button
+                                        type="button"
+                                        variant="primary"
+                                        onClick={() => navigate("/ambientes")}
+                                    >
+                                        Consultar
+                                    </Button>
                                 </article>
                                 <article className="role-list-item">
                                     <div>
                                         <h3>Inventario</h3>
                                         <p>Estado de los recursos registrados.</p>
                                     </div>
-                                    <Button onClick={() => navigate("/inventario")}>Consultar</Button>
+                                    <Button
+                                        type="button"
+                                        variant="primary"
+                                        onClick={() => navigate("/inventario")}
+                                    >
+                                        Consultar
+                                    </Button>
                                 </article>
                                 <article className="role-list-item">
                                     <div>
                                         <h3>Movimientos</h3>
                                         <p>Traslados y bajas de elementos.</p>
                                     </div>
-                                    <Button onClick={() => navigate("/movimientos")}>Consultar</Button>
+                                    <Button
+                                        type="button"
+                                        variant="primary"
+                                        onClick={() => navigate("/inventario")}
+                                    >
+                                        Consultar
+                                    </Button>
                                 </article>
                             </div>
                         </section>
                     </div>
 
-                    <section className="role-panel">
-                        <div className="role-panel-header">
-                            <div>
-                                <h2>Seguimiento del centro</h2>
-                                <p>Accesos a los módulos de gestión.</p>
-                            </div>
-                        </div>
-                        <div className="role-quick-actions">
-                            <Button onClick={() => navigate("/novedades")}>Consultar novedades</Button>
-                            <Button onClick={() => navigate("/ambientes")}>Ver ambientes</Button>
-                            <Button onClick={() => navigate("/inventario")}>Ver inventario</Button>
-                        </div>
-                    </section>
+
                 </div>
             </main>
         </div>

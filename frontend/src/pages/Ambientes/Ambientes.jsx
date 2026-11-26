@@ -14,8 +14,22 @@ function Ambientes() {
             <main className="ambientes-main">
                 <div className="ambientes-content">
                     <PageHeader
-                        title="Ambientes"
+                        eyebrow="GESTIÓN DE AMBIENTES"
+                        title="Ambientes de formación"
                         description="Consulta la información y disponibilidad de los ambientes de formación."
+                        icon={
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <rect x="4" y="3" width="16" height="18" rx="2" />
+                                <path d="M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M10 21v-3h4v3" />
+                            </svg>
+                        }
                     />
 
                     <AmbienteSummary />

@@ -57,7 +57,8 @@ function RolesFilters({
             </select>
 
             <Button
-                variant="secondary"
+                type="button"
+                variant="primary"
                 onClick={onClearFilters}
             >
                 Limpiar

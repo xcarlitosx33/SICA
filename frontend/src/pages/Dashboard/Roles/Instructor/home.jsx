@@ -61,9 +61,23 @@ function Home() {
 
             <main className="role-dashboard-main">
                 <div className="role-dashboard-content">
+
                     <PageHeader
-                        title="Panel del instructor"
+                        eyebrow="PANEL DEL INSTRUCTOR"
+                        title="Mi espacio de trabajo"
                         description="Consulta tus ambientes asignados, agenda académica y novedades."
+                        icon={
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" />
+                            </svg>
+                        }
                     />
 
 
@@ -98,7 +112,11 @@ function Home() {
                                     <h2>Mis ambientes asignados</h2>
                                     <p>Consulta el estado de los espacios bajo tu responsabilidad.</p>
                                 </div>
-                                <Button onClick={() => navigate("/ambientes")}>
+                                <Button
+                                    type="button"
+                                    variant="primary"
+                                    onClick={() => navigate("/ambientes")}
+                                >
                                     Ver ambientes
                                 </Button>
                             </div>
@@ -115,14 +133,7 @@ function Home() {
                                 ))}
                             </div>
 
-                            <div className="role-quick-actions">
-                                <Button onClick={() => navigate("/inventario")}>
-                                    Consultar inventario
-                                </Button>
-                                <Button onClick={() => navigate("/novedades")}>
-                                    Ver novedades
-                                </Button>
-                            </div>
+
                         </section>
 
                         <section className="role-panel">
@@ -150,22 +161,7 @@ function Home() {
                         </section>
                     </div>
 
-                    <section className="role-panel">
-                        <div className="role-panel-header">
-                            <div>
-                                <h2>Accesos rápidos</h2>
-                                <p>Gestiona las actividades relacionadas con tus espacios.</p>
-                            </div>
-                        </div>
-                        <div className="role-quick-actions">
-                            <Button onClick={() => navigate("/novedades")}>
-                                Reportar o consultar novedades
-                            </Button>
-                            <Button onClick={() => navigate("/movimientos")}>
-                                Consultar movimientos
-                            </Button>
-                        </div>
-                    </section>
+
                 </div>
             </main>
         </div>

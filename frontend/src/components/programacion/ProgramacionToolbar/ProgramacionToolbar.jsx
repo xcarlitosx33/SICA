@@ -64,7 +64,8 @@ function ProgramacionToolbar({
             <div className="programacion-toolbar-actions">
 
                 <Button
-                    variant="secondary"
+                    type="button"
+                    variant="primary"
                     className="btn-nueva-programacion"
                     onClick={onNuevaProgramacion}
                 >

@@ -1,4 +1,5 @@
 import "./AmbienteObservaciones.css";
+import Button from "../../../../components/Button/Button";
 
 function AmbienteObservaciones({ ambiente }) {
     const observacion =
@@ -17,10 +18,13 @@ function AmbienteObservaciones({ ambiente }) {
                 </div>
 
                 <div className="ambiente-observaciones-footer">
-                    <button type="button">
-                        <span aria-hidden="true">+</span>
+                    <Button
+                        type="button"
+                        variant="primary"
+                    >
+                        <span aria-hidden="true">＋</span>
                         Agregar observación
-                    </button>
+                    </Button>
                 </div>
             </div>
         </section>

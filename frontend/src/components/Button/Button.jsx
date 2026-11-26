@@ -1,16 +1,20 @@
+
 import "./Button.css";
 
 function Button({
     children,
-    variant = "secondary",
+    variant = "default",
     className = "",
     type = "button",
     ...props
 }) {
+    const variantClass =
+        variant === "default" ? "" : `sica-button--${variant}`;
+
     return (
         <button
             type={type}
-            className={`sica-button sica-button--${variant} ${className}`.trim()}
+            className={`sica-button ${variantClass} ${className}`.trim()}
             {...props}
         >
             {children}

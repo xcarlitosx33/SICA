@@ -107,10 +107,7 @@ function GestionRoles() {
             <main className="role-management-main">
                 <div className="role-management-content">
 
-                    <PageHeader
-                        title="Gestión de roles"
-                        description="Administra los roles y accesos de los usuarios del sistema SICA."
-                    />
+
 
                     <RolesWelcome />
 

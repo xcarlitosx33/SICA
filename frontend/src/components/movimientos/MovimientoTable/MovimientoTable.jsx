@@ -107,6 +107,8 @@ function MovimientoTable() {
 
                                 <td>
                                     <Button
+                                        type="button"
+                                        variant="primary"
                                         className="movement-detail-button"
                                         onClick={() =>
                                             navigate(`/movimientos/Detalle/${movimiento.id}`)

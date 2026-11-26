@@ -45,13 +45,18 @@ function ValidacionCard({
                 {estado === "Pendiente" ? (
                     <>
                         <Button
-                            onClick={() => navigate("/dashboard/coordinacion-academica/historial-resoluciones")}
+                            type="button"
+                            variant="primary"
+                            onClick={() =>
+                                navigate("/dashboard/coordinacion-academica/historial-resoluciones")
+                            }
                         >
                             Revisar historial
                         </Button>
 
                         <Button
-                            variant="secondary"
+                            type="button"
+                            variant="primary"
                             onClick={() => setEstado("Aprobada")}
                         >
                             Aprobar cambio

@@ -51,14 +51,31 @@ function InventarioDetalle() {
 
             <main className="inventario-detalle-main">
                 <div className="inventario-detalle-content">
+
                     <PageHeader
+                        eyebrow="GESTIÓN DE RECURSOS"
                         title={`Inventario del ambiente ${ambiente.numero}`}
                         description="Consulta los elementos registrados, pendientes y su estado de conservación."
+                        icon={
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="m3 7 9-4 9 4-9 4-9-4Z" />
+                                <path d="M3 7v10l9 4 9-4V7M12 11v10" />
+                            </svg>
+                        }
                     />
+
 
                     <div className="inventario-detail-actions">
                         <Button
                             type="button"
+                            variant="primary"
                             onClick={() => navigate("/inventario")}
                         >
                             ‹ Volver al inventario

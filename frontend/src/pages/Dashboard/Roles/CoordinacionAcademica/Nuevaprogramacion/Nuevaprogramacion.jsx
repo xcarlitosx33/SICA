@@ -307,7 +307,8 @@ function Nuevaprogramacion() {
                             <div className="nueva-programacion-actions">
 
                                 <Button
-                                    variant="danger"
+                                    type="button"
+                                    variant="secondary"
                                     onClick={() => {
                                         setArchivo(null);
 
@@ -320,7 +321,8 @@ function Nuevaprogramacion() {
                                 </Button>
 
                                 <Button
-                                    variant="secondary"
+                                    type="button"
+                                    variant="primary"
                                     className="btn-procesar-programacion"
                                     onClick={procesarProgramacion}
                                 >

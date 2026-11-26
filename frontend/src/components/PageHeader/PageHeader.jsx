@@ -1,11 +1,16 @@
 
 import "./PageHeader.css";
-import Notifications from "../Notifications/Notifications";
 
-function PageHeader({ title, description }) {
+function PageHeader({ eyebrow, title, description, icon }) {
     return (
         <header className="page-header">
             <div className="page-header-content">
+                {eyebrow && (
+                    <span className="page-header-eyebrow">
+                        {eyebrow}
+                    </span>
+                )}
+
                 <h1>{title}</h1>
 
                 {description && (
@@ -13,7 +18,11 @@ function PageHeader({ title, description }) {
                 )}
             </div>
 
-            <Notifications />
+            {icon && (
+                <div className="page-header-icon">
+                    {icon}
+                </div>
+            )}
         </header>
     );
 }

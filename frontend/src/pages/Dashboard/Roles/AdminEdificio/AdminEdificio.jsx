@@ -111,19 +111,7 @@ function AdminEdificio() {
                         </section>
                     </div>
 
-                    <section className="role-panel">
-                        <div className="role-panel-header">
-                            <div>
-                                <h2>Gestión del edificio</h2>
-                                <p>Accede a las herramientas operativas.</p>
-                            </div>
-                        </div>
-                        <div className="role-quick-actions">
-                            <Button onClick={() => navigate("/ambientes")}>Administrar ambientes</Button>
-                            <Button onClick={() => navigate("/inventario")}>Consultar inventario</Button>
-                            <Button onClick={() => navigate("/movimientos")}>Consultar movimientos</Button>
-                        </div>
-                    </section>
+
                 </div>
             </main>
         </div>

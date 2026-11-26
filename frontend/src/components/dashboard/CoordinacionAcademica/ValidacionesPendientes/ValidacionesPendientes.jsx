@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 import "./ValidacionesPendientes.css";
+import Button from "../../../../components/Button/Button";
 import ValidacionCard from "../ValidacionCard/ValidacionCard";
 
 const validaciones = [
@@ -67,11 +68,16 @@ function ValidacionesPendientes() {
                         {validaciones.length} requerimientos
                     </span>
 
-                    <button type="button" className="coordinacion-history-button"
-                        onClick={() => navigate("/dashboard/coordinacion-academica/historial-resoluciones")}
+                    <Button
+                        type="button"
+                        variant="primary"
+                        className="coordinacion-history-button"
+                        onClick={() =>
+                            navigate("/dashboard/coordinacion-academica/historial-resoluciones")
+                        }
                     >
                         Historial de resoluciones →
-                    </button>
+                    </Button>
 
                 </div>
             </div>

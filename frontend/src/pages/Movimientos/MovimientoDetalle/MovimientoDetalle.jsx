@@ -1,9 +1,12 @@
+
 import { useNavigate, useParams } from "react-router-dom";
 
 import "./MovimientoDetalle.css";
 
 import Sidebar from "../../../components/Sidebar/Sidebar";
 import PageHeader from "../../../components/PageHeader/PageHeader";
+import Button from "../../../components/Button/Button";
+
 import MovimientoDetalleHeader from "../../../components/movimientos/MovimientoDetalle/MovimientoDetalleHeader/MovimientoDetalleHeader";
 import MovimientoElemento from "../../../components/movimientos/MovimientoDetalle/MovimientoElemento/MovimientoElemento";
 import MovimientoOrigenDestino from "../../../components/movimientos/MovimientoDetalle/MovimientoOrigenDestino/MovimientoOrigenDestino";
@@ -15,13 +18,25 @@ import MovimientoAdjuntos from "../../../components/movimientos/MovimientoDetall
 import { movimientos } from "../../../data/movimientos";
 
 function MovimientoDetalle() {
-
     const navigate = useNavigate();
-
     const { id } = useParams();
 
     const movimiento = movimientos.find(
         (item) => item.id === id
+    );
+
+    const movimientoIcon = (
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M7 7h14l-4-4" />
+            <path d="M17 17H3l4 4" />
+        </svg>
     );
 
     if (!movimiento) {
@@ -33,9 +48,20 @@ function MovimientoDetalle() {
                     <div className="movimiento-detalle-content">
 
                         <PageHeader
+                            eyebrow="CONTROL DE RECURSOS"
                             title="Movimiento no encontrado"
                             description="No fue posible encontrar la información del movimiento solicitado."
+                            icon={movimientoIcon}
                         />
+
+                        <Button
+                            type="button"
+                            variant="primary"
+                            onClick={() => navigate("/movimientos")}
+                        >
+                            <span>←</span>
+                            Volver a movimientos
+                        </Button>
 
                     </div>
                 </main>
@@ -53,16 +79,21 @@ function MovimientoDetalle() {
                 <div className="movimiento-detalle-content">
 
                     <PageHeader
+                        eyebrow="CONTROL DE RECURSOS"
                         title="Detalle del movimiento"
                         description="Consulta la información completa del movimiento registrado."
+                        icon={movimientoIcon}
                     />
-                    <button
-                        className="movimiento-detalle-volver"
-                        onClick={() => navigate("/movimientos")}
-                    >
-                        <span>←</span>
-                        Volver a movimientos
-                    </button>
+
+                    <div className="movimiento-detalle-actions">
+                        <Button
+                            variant="primary"
+                            onClick={() => navigate("/movimientos")}
+                        >
+                            <span>←</span>
+                            Volver a movimientos
+                        </Button>
+                    </div>
 
                     <MovimientoDetalleHeader movimiento={movimiento} />
 
@@ -72,7 +103,8 @@ function MovimientoDetalle() {
 
                     <MovimientoOrigenDestino
                         origen={movimiento.origen}
-                        destino={movimiento.destino} />
+                        destino={movimiento.destino}
+                    />
 
                     <MovimientoInformacion responsable={movimiento.responsable} />
 
@@ -80,15 +112,17 @@ function MovimientoDetalle() {
 
                     <MovimientoAdjuntos adjuntos={movimiento.adjuntos} />
 
-                    <button
-                        className="movimiento-detalle-reporte"
-                        onClick={() =>
-                            alert("El reporte se descargó correctamente.")
-                        }
-                    >
-                        Descargar reporte
-                        <span>↓</span>
-                    </button>
+                    <div className="movimiento-detalle-actions">
+                        <Button
+                            variant="primary"
+                            onClick={() =>
+                                alert("El reporte se descargó correctamente.")
+                            }
+                        >
+                            Descargar reporte
+                            <span>↓</span>
+                        </Button>
+                    </div>
 
                 </div>
 

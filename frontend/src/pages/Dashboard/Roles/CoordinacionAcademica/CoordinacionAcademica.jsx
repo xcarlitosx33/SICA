@@ -17,8 +17,22 @@ function CoordinacionAcademica() {
             <main className="role-dashboard-main">
                 <div className="role-dashboard-content">
                     <PageHeader
+                        eyebrow="PANEL DE COORDINACIÓN"
                         title="Panel de coordinación académica"
                         description="Gestiona las solicitudes de programación y los cambios de ambientes del centro."
+                        icon={
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="M12 3 20 7v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z" />
+                                <path d="M9 12h6M12 9v6" />
+                            </svg>
+                        }
                     />
 
                     <section className="coordinacion-stats">
@@ -53,28 +67,7 @@ function CoordinacionAcademica() {
                         </StatCardGrid>
                     </section>
 
-                    <section className="role-panel">
-                        <div className="role-panel-header">
-                            <div>
-                                <h2>Herramientas de coordinación</h2>
-                                <p>Accesos a los módulos de seguimiento académico.</p>
-                            </div>
-                        </div>
-                        <div className="role-quick-actions">
-                            <Button onClick={() => window.location.assign("/dashboard/coordinacion-academica/historial-resoluciones")}>
-                                Historial de resoluciones
-                            </Button>
-                            <Button onClick={() => window.location.assign("/programacion")}>
-                                Programación
-                            </Button>
-                            <Button onClick={() => window.location.assign("/ambientes")}>
-                                Consultar ambientes
-                            </Button>
-                            <Button onClick={() => window.location.assign("/movimientos")}>
-                                Consultar movimientos
-                            </Button>
-                        </div>
-                    </section>
+
 
                     <ValidacionesPendientes />
                 </div>

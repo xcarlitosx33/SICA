@@ -6,8 +6,6 @@ function NovedadFilters({
     filters,
     onFilterChange,
     onClear,
-    onAdd,
-    canAdd = true,
 }) {
     return (
         <section className="novedad-filters">
@@ -82,16 +80,13 @@ function NovedadFilters({
                 </div>
 
                 <div className="novedad-filters-actions">
-                    <Button type="button" onClick={onClear}>
+                    <Button
+                        type="button"
+                        variant="primary"
+                        onClick={onClear}
+                    >
                         Limpiar filtros
                     </Button>
-
-                    {canAdd && (
-                        <Button type="button" onClick={onAdd}>
-                            <span aria-hidden="true">＋</span>
-                            Agregar novedad
-                        </Button>
-                    )}
                 </div>
             </div>
         </section>
