@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'ambientes',
     'programacion',
     'materiales',
-    'movimientos',
+    'movimientos.apps.MovimientoConfig',
     'novedades',
 
 ]
@@ -147,3 +147,12 @@ MAILERS = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
+
+
+AUTH_USER_MODEL = "usuarios.Usuario"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
+}
