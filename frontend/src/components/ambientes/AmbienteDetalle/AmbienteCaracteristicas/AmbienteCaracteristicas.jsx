@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import "./AmbienteCaracteristicas.css";
 
+import Button from "../../../../components/Button/Button";
+
 function AmbienteCaracteristicas({ ambiente }) {
     const navigate = useNavigate();
 
@@ -52,22 +54,16 @@ function AmbienteCaracteristicas({ ambiente }) {
                     </div>
                 ))}
 
-                <button
+                <Button
                     type="button"
+                    variant="primary"
                     className="ambiente-inventario-button"
                     onClick={() =>
                         navigate(`/inventario?ambiente=${ambiente.id}`)
                     }
                 >
-                    <span>Ver inventario del ambiente</span>
-
-                    <span
-                        className="ambiente-inventario-arrow"
-                        aria-hidden="true"
-                    >
-                        →
-                    </span>
-                </button>
+                    Ver inventario →
+                </Button>
             </div>
         </section>
     );

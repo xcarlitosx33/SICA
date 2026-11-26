@@ -39,8 +39,22 @@ function Inventario() {
             <main className="inventario-main">
                 <div className="inventario-content">
                     <PageHeader
-                        title="Inventario"
+                        eyebrow="GESTIÓN DE RECURSOS"
+                        title="Inventario de materiales"
                         description="Consulta el estado del inventario de los ambientes de formación."
+                        icon={
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="m3 7 9-4 9 4-9 4-9-4Z" />
+                                <path d="M3 7v10l9 4 9-4V7M12 11v10" />
+                            </svg>
+                        }
                     />
 
                     <InventarioSummary inventarios={inventarios} />

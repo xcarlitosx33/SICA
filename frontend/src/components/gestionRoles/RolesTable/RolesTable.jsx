@@ -59,8 +59,8 @@ function RolesTable({
                             <td>
                                 <span
                                     className={`roles-status ${user.status === "Activo"
-                                            ? "active"
-                                            : "inactive"
+                                        ? "active"
+                                        : "inactive"
                                         }`}
                                 >
                                     <span />
@@ -77,21 +77,24 @@ function RolesTable({
                             <td className="roles-actions-cell">
                                 <div className="roles-table-actions">
                                     <Button
-                                        variant="secondary"
+                                        type="button"
+                                        variant="primary"
                                         onClick={() => onChangeRole(user)}
                                     >
                                         Cambiar rol
                                     </Button>
 
                                     <Button
-                                        variant="secondary"
+                                        type="button"
+                                        variant="primary"
                                         onClick={() => onShowDetails(user)}
                                     >
                                         Ver detalle
                                     </Button>
 
                                     <Button
-                                        variant={user.status === "Activo" ? "danger" : "secondary"}
+                                        type="button"
+                                        variant={user.status === "Activo" ? "secondary" : "primary"}
                                         onClick={() => onToggleStatus(user.id)}
                                     >
                                         {user.status === "Activo" ? "Desactivar" : "Activar"}

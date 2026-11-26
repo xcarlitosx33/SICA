@@ -105,6 +105,7 @@ function NovedadTable({ filters }) {
                                             <div className="novedad-table-actions">
                                                 <Button
                                                     type="button"
+                                                    variant="primary"
                                                     className="novedad-table-action"
                                                     onClick={() =>
                                                         handleViewReport(novedad)

@@ -133,13 +133,6 @@
 }
 
 
-
-@media (prefers-reduced-motion: reduce) {
-    .ambiente-detail-button {
-        transition: none;
-    }
-}
-
 /* Celular */
 
 @media (max-width: 768px) {

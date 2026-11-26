@@ -44,6 +44,7 @@ function AmbienteTable() {
                                 <td>
                                     <Button
                                         type="button"
+                                        variant="primary"
                                         className="ambiente-detail-button"
                                         onClick={() => navigate(`/ambientes/Detalle/${ambiente.id}`)}
                                     >

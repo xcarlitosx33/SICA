@@ -122,6 +122,20 @@
     min-width: 0;
 }
 
+
+.movimiento-detalle-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 16px 0 20px;
+}
+
+.movimiento-detalle-actions:last-child {
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+
 @media (max-width: 768px) {
     .movimiento-detalle-volver {
         min-height: 36px;

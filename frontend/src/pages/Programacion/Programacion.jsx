@@ -60,10 +60,25 @@ function Programacion() {
             <main className="programacion-main">
                 <div className="programacion-content">
 
-                    <PageHeader
-                        title="Programación de Ambientes"
-                        description="Gestiona y consulta la programación de sesiones por grupo, ambiente y competencia."
-                    />
+<PageHeader
+    eyebrow="GESTIÓN ACADÉMICA"
+    title="Programación de ambientes"
+    description="Gestiona y consulta la programación de sesiones por grupo, ambiente y competencia."
+    icon={
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <rect x="3" y="4" width="18" height="17" rx="2" />
+            <path d="M16 2v4M8 2v4M3 10h18" />
+            <path d="m9 15 2 2 4-4" />
+        </svg>
+    }
+/>
 
                     <ProgramacionSummary />
 

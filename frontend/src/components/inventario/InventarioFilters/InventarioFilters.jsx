@@ -43,6 +43,7 @@ function InventarioFilters({
 
             <Button
                 type="button"
+                variant="primary"
                 className="inventario-clear-button"
                 onClick={limpiarFiltros}
             >

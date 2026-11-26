@@ -9,11 +9,10 @@ function RolesWelcome() {
                     ADMINISTRACIÓN DEL SISTEMA
                 </span>
 
-                <h2>Usuarios y permisos</h2>
+                <h2>Gestión de roles</h2>
 
                 <p>
-                    Consulta los usuarios registrados y administra
-                    el rol que tienen asignado.
+                    Administra los roles y accesos de los usuarios del sistema SICA.
                 </p>
             </div>
 

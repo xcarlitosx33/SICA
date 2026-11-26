@@ -73,7 +73,6 @@ const ROLES = {
             { label: "Ambientes", path: "/ambientes", icon: "building" },
             { label: "Inventario", path: "/inventario", icon: "inventory" },
             { label: "Novedades", path: "/novedades", icon: "alert" },
-            { label: "Movimientos", path: "/movimientos", icon: "movement" },
         ],
     },
 };

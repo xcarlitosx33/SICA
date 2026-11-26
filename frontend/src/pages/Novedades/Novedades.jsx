@@ -5,6 +5,7 @@ import "./Novedades.css";
 
 import Sidebar from "../../components/Sidebar/Sidebar";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import Button from "../../components/Button/Button";
 
 import NovedadSummary from "../../components/novedades/NovedadSummary/NovedadSummary";
 import NovedadFilters from "../../components/novedades/NovedadFilters/NovedadFilters";
@@ -40,7 +41,6 @@ function Novedades() {
         navigate("/novedades/agregar");
     }
 
-
     return (
         <div className="novedades-layout">
             <Sidebar />
@@ -49,8 +49,22 @@ function Novedades() {
                 <div className="novedades-content">
 
                     <PageHeader
+                        eyebrow="GESTIÓN DE NOVEDADES"
                         title="Novedades"
                         description="Consulta y realiza seguimiento de las novedades reportadas en los ambientes de formación."
+                        icon={
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z" />
+                                <path d="M10 21h4" />
+                            </svg>
+                        }
                     />
 
                     <NovedadSummary />
@@ -59,9 +73,20 @@ function Novedades() {
                         filters={filters}
                         onFilterChange={handleFilterChange}
                         onClear={handleClearFilters}
-                        onAdd={handleAddNovedad}
-                        canAdd={canAdd}
                     />
+
+                    {canAdd && (
+                        <div className="novedades-page-actions">
+                            <Button
+                                type="button"
+                                variant="primary"
+                                onClick={handleAddNovedad}
+                            >
+                                <span aria-hidden="true">＋</span>
+                                Agregar novedad
+                            </Button>
+                        </div>
+                    )}
 
                     <NovedadTable filters={filters} />
 

@@ -1,4 +1,8 @@
-/* Estilo base */
+
+/* ========================================
+   BOTÓN BASE
+======================================== */
+
 .sica-button {
     display: inline-flex;
     align-items: center;
@@ -8,9 +12,11 @@
     min-height: 40px;
     padding: 0 12px;
 
+    background-color: #FFFFFF;
     border: 1px solid #D8E0DC;
     border-radius: 8px;
 
+    color: #18312A;
     font-family: "Work Sans", sans-serif;
     font-size: 12px;
     font-weight: 600;
@@ -23,48 +29,67 @@
         color 0.2s ease;
 }
 
-/* Botón secundario */
-.sica-button--secondary {
+/* ========================================
+   BOTÓN PRINCIPAL
+======================================== */
+
+.sica-button--primary {
     background-color: #FFFFFF;
     border-color: #D8E0DC;
     color: #18312A;
 }
 
-.sica-button--secondary:hover:not(:disabled) {
+.sica-button--primary:hover:not(:disabled) {
     background-color: #E3F4E8;
     border-color: #D8E0DC;
     color: #007832;
 }
 
-/* Botón de peligro */
-.sica-button--danger {
+/* ========================================
+   BOTÓN SECUNDARIO
+======================================== */
+
+.sica-button--secondary {
     background-color: #FFFFFF;
     border-color: #D8E0DC;
     color: #B91C1C;
 }
 
-.sica-button--danger:hover:not(:disabled) {
+.sica-button--secondary:hover:not(:disabled) {
     background-color: #FEF2F2;
     border-color: #D8E0DC;
     color: #DC2626;
 }
 
-/* Iconos */
+/* ========================================
+   ICONOS
+======================================== */
+
 .sica-button span {
     color: inherit;
 }
 
-/* Accesibilidad */
+/* ========================================
+   ACCESIBILIDAD
+======================================== */
+
 .sica-button:focus-visible {
     outline: 2px solid #007832;
     outline-offset: 2px;
 }
 
-/* Deshabilitado */
+/* ========================================
+   DESHABILITADO
+======================================== */
+
 .sica-button:disabled {
     opacity: 0.55;
     cursor: not-allowed;
 }
+
+/* ========================================
+   MOVIMIENTO REDUCIDO
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
     .sica-button {

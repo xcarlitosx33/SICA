@@ -5,6 +5,7 @@ import { novedades } from "../../../data/novedades";
 
 import Sidebar from "../../../components/Sidebar/Sidebar";
 import PageHeader from "../../../components/PageHeader/PageHeader";
+import Button from "../../../components/Button/Button";
 
 import AmbienteDetalleHeader from "../../../components/ambientes/AmbienteDetalle/AmbienteDetalleHeader/AmbienteDetalleHeader";
 import AmbienteInformacion from "../../../components/ambientes/AmbienteDetalle/AmbienteInformacion/AmbienteInformacion";
@@ -26,12 +27,13 @@ function AmbienteDetalle() {
             <main>
                 <h1>Ambiente no encontrado</h1>
 
-                <button
+                <Button
                     type="button"
+                    variant="primary"
                     onClick={() => navigate("/ambientes")}
                 >
-                    Volver a ambientes
-                </button>
+                    ‹ Volver a ambientes
+                </Button>
             </main>
         );
     }
@@ -42,10 +44,23 @@ function AmbienteDetalle() {
 
             <main className="ambiente-detalle-content">
                 <PageHeader
-                    title="Detalle de ambiente"
+                    eyebrow="GESTIÓN DE AMBIENTES"
+                    title="Detalle del ambiente"
                     description="Consulta la información y características del ambiente de formación."
+                    icon={
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.6"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <rect x="4" y="3" width="16" height="18" rx="2" />
+                            <path d="M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M10 21v-3h4v3" />
+                        </svg>
+                    }
                 />
-
                 <div className="ambiente-detalle-container">
                     <AmbienteDetalleHeader ambiente={ambiente} />
 

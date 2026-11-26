@@ -50,6 +50,7 @@ function InventarioTable({ inventarios }) {
                                     <td>
                                         <Button
                                             type="button"
+                                            variant="primary"
                                             onClick={() =>
                                                 navigate(`/inventario/detalle/${item.id}`)
                                             }
